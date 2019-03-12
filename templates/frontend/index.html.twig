@@ -18,11 +18,18 @@
             <div class="main__image">
                 <picture>
                     <source media="(min-width: 1200px)"
-                            srcset="{{ asset('img/main.jpg') | imagine_filter('min_width_1200') }}">
-                    <source
-                            srcset="{{ asset('img/main_portraid.jpg') }}">
+                            sizes="100vw"
+                            srcset="
+                                {{ asset('img/main.jpg') | imagine_filter('min_width_1920') }} 1920w,
+                                {{ asset('img/main.jpg') | imagine_filter('min_width_1200') }} 1200w,
+                                {{ asset('img/main.jpg') | imagine_filter('min_width_1000') }} 1000w"
+                            alt="car view">
                     <!-- img tag for browsers that do not support picture element -->
-                    <img src="{{ asset('img/main_portraid.jpg') }}" alt="">
+                    <img sizes="100vw"
+                        srcset="
+                            {{ asset('img/main_portraid.jpg') | imagine_filter('min_width_900') }} 900w,
+                            {{ asset('img/main_portraid.jpg') | imagine_filter('min_width_800') }} 800w"
+                         alt="car view ">
                 </picture>
             </div>
             <div class="main__content">

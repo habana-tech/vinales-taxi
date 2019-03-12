@@ -97,6 +97,19 @@ liip_imagine:
                 relative_resize:
                     widen: 1000
 
+        min_width_900:
+
+            # set your image quality defaults
+            jpeg_quality:          85
+            png_compression_level: 8
+
+            # setup the filter steps to apply for this transformation
+            filters:
+                auto_rotate: ~
+                strip: ~
+                relative_resize:
+                    widen: 900
+
         min_width_800:
 
             # set your image quality defaults
