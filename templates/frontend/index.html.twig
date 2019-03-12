@@ -1,6 +1,10 @@
 {% extends 'frontend/base.html.twig' %}
+
+{% block description %}
+    If you are looking for see Vinales 🌄 in one day in classic cars, we are the best in that. We can make reservations in advance for other activities like horse riding 🐴, lunch 🥗 and discover the cuban tabaco history.
+{% endblock %}
+
 {% block javascripts_defer %}
-    <script src="{{ asset('scripts/vendor.js') }}"></script>
     <script src="{{ asset('scripts/app.js') }}" defer></script>
     <script src="{{ asset('scripts/index.js') }}" defer></script>
 {% endblock %}
@@ -77,7 +81,8 @@
                     <div class="why_with_us__cards__item__text">
                         <p>We offer <b>PUNCTUALITY</b> with a
                             <b>COMPETITIVE PRICE</b>
-                            and <b>COMFORT</b></p>
+                            and <b>COMFORT</b>
+                        </p>
                     </div>
                 </div>
 
@@ -85,7 +90,8 @@
                     <div class="why_with_us__cards__item__text">
                         <p>We can make a reservation in advance to
                             <b>RIDE HORSES</b> or <b>LUNCH</b>
-                            making this an unique experience</p>
+                            making this an unique experience
+                        </p>
                     </div>
                 </div>
 
@@ -94,6 +100,7 @@
                         <p> <b>BABIES</b> ...,
                             <b>WHEELCHAIRS</b> ...,
                             at no additional cost
+                        </p>
                     </div>
                 </div>
 
@@ -108,22 +115,42 @@
 
             <div class="activities__item">
                 <div class="activities__item__image group1">
-                    <img class="lazyload blur-up"
+                    <picture>
+                        <source class="lazyload"
+                        media="(min-width: 1200px)"
+                        sizes="(min-width: 1200px) 50vw"
+                        data-srcset="
+                            {{ asset('img/gallery/ride-horse-in-vinales.jpg') | imagine_filter('min_width_1200') }} 1200w,
+                            {{ asset('img/gallery/ride-horse-in-vinales.jpg') | imagine_filter('min_width_1000') }} 1000w
+                        ">
+
+                        <img class="lazyload blur-up"
+                         sizes="100vw"
                          data-srcset="
-                                    {{ asset('img/gallery/caballo-vinales.jpg') | imagine_filter('min_width_1200') }} 1200w,
-                                    {{ asset('img/gallery/caballo-vinales.jpg') | imagine_filter('min_width_800') }} 800w,
-                                    {{ asset('img/gallery/caballo-vinales.jpg') | imagine_filter('min_width_600') }} 600w"
-                         sizes="(min-width: 1200px) 50vw, 1000vw"
-                         src="{{ asset('img/gallery/caballo-vinales.jpg') | imagine_filter('small_thumbnail') }}"
+                            {{ asset('img/gallery/ride-horse-in-vinales-portraid.jpg') | imagine_filter('min_width_800') }} 800w,
+                            {{ asset('img/gallery/ride-horse-in-vinales-portraid.jpg') | imagine_filter('min_width_600') }} 600w"
+                         src="{{ asset('img/gallery/ride-horse-in-vinales-portraid.jpg') | imagine_filter('small_thumbnail') }}"
                          alt="Horse riding in vinales, you can make a reservation in advance with us">
-                    <img class="lazyload blur-up"
+                    </picture>
+
+                    <picture>
+                        <source class="lazyload"
+                        media="(min-width: 1200px)"
+                        sizes="(min-width: 1200px) 50vw"
+                        data-srcset="
+                            {{ asset('img/gallery/vinales-view.jpg') | imagine_filter('min_width_1200') }} 1200w,
+                            {{ asset('img/gallery/vinales-view.jpg') | imagine_filter('min_width_1000') }} 1000w
+                        ">
+
+                        <img class="lazyload blur-up"
+                         sizes="100vw"
                          data-srcset="
-                                    {{ asset('img/gallery/valle-de-vinales.jpg') | imagine_filter('min_width_1200') }} 1200w,
-                                    {{ asset('img/gallery/valle-de-vinales.jpg') | imagine_filter('min_width_800') }} 800w,
-                                    {{ asset('img/gallery/valle-de-vinales.jpg') | imagine_filter('min_width_600') }} 600w"
-                         sizes="(min-width: 1200px) 50vw, 1000vw"
-                         src="{{ asset('img/gallery/valle-de-vinales.jpg') | imagine_filter('small_thumbnail') }}"
+                            {{ asset('img/gallery/vinales-view-portraid.jpg') | imagine_filter('min_width_800') }} 800w,
+                            {{ asset('img/gallery/vinales-view-portraid.jpg') | imagine_filter('min_width_600') }} 600w"
+                         src="{{ asset('img/gallery/vinales-view-portraid.jpg') | imagine_filter('small_thumbnail') }}"
                          alt="Horse riding in vinales, you can make a reservation in advance with us">
+                    </picture>
+
                 </div>
                 <div class="activities__item__text">
                     <p>
@@ -150,22 +177,41 @@
 
             <div class="activities__item activities__item--inverse group2">
                 <div class="activities__item__image">
-                    <img class="lazyload blur-up"
-                         data-srcset="
-                                    {{ asset('img/gallery/Cueva-del-Indio-River-Vinales-Cuba.jpg') | imagine_filter('min_width_1200') }} 1200w,
-                                    {{ asset('img/gallery/Cueva-del-Indio-River-Vinales-Cuba.jpg') | imagine_filter('min_width_800') }} 800w,
-                                    {{ asset('img/gallery/Cueva-del-Indio-River-Vinales-Cuba.jpg') | imagine_filter('min_width_600') }} 600w"
-                         sizes="(min-width: 1200px) 50vw, 1000vw"
-                         src="{{ asset('img/gallery/Cueva-del-Indio-River-Vinales-Cuba.jpg') | imagine_filter('small_thumbnail') }}"
-                         alt="Horse riding in vinales, you can make a reservation in advance with us">
-                    <img class="lazyload blur-up"
-                         data-srcset="
-                                    {{ asset('img/gallery/mural-de-la-preistoria-vinales.jpg') | imagine_filter('min_width_1200') }} 1200w,
-                                    {{ asset('img/gallery/mural-de-la-preistoria-vinales.jpg') | imagine_filter('min_width_800') }} 800w,
-                                    {{ asset('img/gallery/mural-de-la-preistoria-vinales.jpg') | imagine_filter('min_width_600') }} 600w"
-                         sizes="(min-width: 1200px) 50vw, 1000vw"
-                         src="{{ asset('img/gallery/mural-de-la-preistoria-vinales.jpg') | imagine_filter('small_thumbnail') }}"
-                         alt="Horse riding in vinales, you can make a reservation in advance with us">
+                    <picture>
+                        <source class="lazyload"
+                                media="(min-width: 1200px)"
+                                sizes="(min-width: 1200px) 50vw"
+                                data-srcset="
+                            {{ asset('img/gallery/mural-de-la-preistoria-vinales.jpg') | imagine_filter('min_width_1200') }} 1200w,
+                            {{ asset('img/gallery/mural-de-la-preistoria-vinales.jpg') | imagine_filter('min_width_1000') }} 1000w
+                        ">
+
+                        <img class="lazyload blur-up"
+                             sizes="100vw"
+                             data-srcset="
+                            {{ asset('img/gallery/mural-de-la-preistoria-vinales-portraid.jpg') | imagine_filter('min_width_800') }} 800w,
+                            {{ asset('img/gallery/mural-de-la-preistoria-vinales-portraid.jpg') | imagine_filter('min_width_600') }} 600w"
+                             src="{{ asset('img/gallery/mural-de-la-preistoria-vinales-portraid.jpg') | imagine_filter('small_thumbnail') }}"
+                             alt="Horse riding in vinales, you can make a reservation in advance with us">
+                    </picture>
+
+                    <picture>
+                        <source class="lazyload"
+                                media="(min-width: 1200px)"
+                                sizes="(min-width: 1200px) 50vw"
+                                data-srcset="
+                            {{ asset('img/gallery/indio-cave-vinales.jpg') | imagine_filter('min_width_1200') }} 1200w,
+                            {{ asset('img/gallery/indio-cave-vinales.jpg') | imagine_filter('min_width_1000') }} 1000w
+                        ">
+
+                        <img class="lazyload blur-up"
+                             sizes="100vw"
+                             data-srcset="
+                            {{ asset('img/gallery/indio-cave-vinales-portraid.jpg') | imagine_filter('min_width_800') }} 800w,
+                            {{ asset('img/gallery/indio-cave-vinales-portraid.jpg') | imagine_filter('min_width_600') }} 600w"
+                             src="{{ asset('img/gallery/indio-cave-vinales-portraid.jpg') | imagine_filter('small_thumbnail') }}"
+                             alt="Horse riding in vinales, you can make a reservation in advance with us">
+                    </picture>
                 </div>
                 <div class="activities__item__text">
 
@@ -196,22 +242,41 @@
 
             <div class="activities__item">
                 <div class="activities__item__image group3">
-                    <img class="lazyload blur-up"
-                         data-srcset="
-                                    {{ asset('img/gallery/foto-tabaco-vinales.jpg') | imagine_filter('min_width_1200') }} 1200w,
-                                    {{ asset('img/gallery/foto-tabaco-vinales.jpg') | imagine_filter('min_width_800') }} 800w,
-                                    {{ asset('img/gallery/foto-tabaco-vinales.jpg') | imagine_filter('min_width_600') }} 600w"
-                         sizes="(min-width: 1200px) 50vw, 1000vw"
-                         src="{{ asset('img/gallery/foto-tabaco-vinales.jpg') | imagine_filter('small_thumbnail') }}"
-                         alt="Horse riding in vinales, you can make a reservation in advance with us">
-                    <img class="lazyload blur-up"
-                         data-srcset="
-                                    {{ asset('img/gallery/restaurant-cuban-food-vinales.jpg') | imagine_filter('min_width_1200') }} 1200w,
-                                    {{ asset('img/gallery/restaurant-cuban-food-vinales.jpg') | imagine_filter('min_width_800') }} 800w,
-                                    {{ asset('img/gallery/restaurant-cuban-food-vinales.jpg') | imagine_filter('min_width_600') }} 600w"
-                         sizes="(min-width: 1200px) 50vw, 1000vw"
-                         src="{{ asset('img/gallery/restaurant-cuban-food-vinales.jpg') | imagine_filter('small_thumbnail') }}"
-                         alt="Horse riding in vinales, you can make a reservation in advance with us">
+                    <picture>
+                        <source class="lazyload"
+                                media="(min-width: 1200px)"
+                                sizes="(min-width: 1200px) 50vw"
+                                data-srcset="
+                            {{ asset('img/gallery/restaurant-cuban-food-vinales.jpg') | imagine_filter('min_width_1200') }} 1200w,
+                            {{ asset('img/gallery/restaurant-cuban-food-vinales.jpg') | imagine_filter('min_width_1000') }} 1000w
+                        ">
+
+                        <img class="lazyload blur-up"
+                             sizes="100vw"
+                             data-srcset="
+                            {{ asset('img/gallery/restaurant-cuban-food-vinales-portraid.jpg') | imagine_filter('min_width_800') }} 800w,
+                            {{ asset('img/gallery/restaurant-cuban-food-vinales-portraid.jpg') | imagine_filter('min_width_600') }} 600w"
+                             src="{{ asset('img/gallery/restaurant-cuban-food-vinales-portraid.jpg') | imagine_filter('small_thumbnail') }}"
+                             alt="Horse riding in vinales, you can make a reservation in advance with us">
+                    </picture>
+
+                    <picture>
+                        <source class="lazyload"
+                                media="(min-width: 1200px)"
+                                sizes="(min-width: 1200px) 50vw"
+                                data-srcset="
+                            {{ asset('img/gallery/indio-cave-vinales.jpg') | imagine_filter('min_width_1200') }} 1200w,
+                            {{ asset('img/gallery/indio-cave-vinales.jpg') | imagine_filter('min_width_1000') }} 1000w
+                        ">
+
+                        <img class="lazyload blur-up"
+                             sizes="100vw"
+                             data-srcset="
+                            {{ asset('img/gallery/indio-cave-vinales-portraid.jpg') | imagine_filter('min_width_800') }} 800w,
+                            {{ asset('img/gallery/indio-cave-vinales-portraid.jpg') | imagine_filter('min_width_600') }} 600w"
+                             src="{{ asset('img/gallery/indio-cave-vinales-portraid.jpg') | imagine_filter('small_thumbnail') }}"
+                             alt="Horse riding in vinales, you can make a reservation in advance with us">
+                    </picture>
                 </div>
                 <div class="activities__item__text">
                     <p>
@@ -229,7 +294,7 @@
                     </p>
 
                     <p>
-                        We provide a private service only for you and your family
+                        We provide a private service only for you and your family.
                     </p>
 
                 </div>
@@ -242,7 +307,9 @@
             </div>
         </section>
 
-        <section id="more_places" class="more_places parallax  section section--no-margin">
+        <section id="more_places"
+                 class="more_places parallax lazyload section section--no-margin"
+                 data-bg="{{ asset('img/our-car-in-mural-prehistoria.jpg') }}">
 
             <div class="more_places__content">
                 <div class="more_places__content__title">

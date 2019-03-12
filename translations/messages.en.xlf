@@ -23,7 +23,11 @@
       </trans-unit>
       <trans-unit id="lzN.3Fx" resname="Index.title">
         <source>Index.title</source>
-        <target>Travel to Vinales</target>
+        <target>One day in Vinales 🌄</target>
+      </trans-unit>
+      <trans-unit id="lzN3FxX" resname="Form.title">
+          <source>Form.title</source>
+          <target>Let's start planning 🌄</target>
       </trans-unit>
     </body>
   </file>

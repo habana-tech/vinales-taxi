@@ -28,14 +28,14 @@
             justify-content: center;
             z-index: 1;
 
-            @mixin atMedium {
+            @mixin atLarge {
                 margin-left: 4em;
                 width: 100%;
                 justify-content: flex-start;
             }
 
             &__title{
-                @mixin atMedium {
+                @mixin atLarge {
                     width: 100%;
                 }
             }

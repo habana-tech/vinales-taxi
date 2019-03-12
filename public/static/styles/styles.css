@@ -379,7 +379,7 @@ input[type="submit"] {
     height: 100%; }
   .title--white {
     color: white; }
-  @media (min-width: 1200px) {
+  @media (min-width: 800px) {
     .title--big {
       font-size: 2.5em; } }
 
@@ -404,7 +404,7 @@ input[type="submit"] {
   justify-content: space-between;
   align-items: center;
   padding: .25em 0; }
-  @media (min-width: 1200px) {
+  @media (min-width: 800px) {
     .header {
       justify-content: space-evenly;
       position: fixed; } }
@@ -414,7 +414,7 @@ input[type="submit"] {
   .header .nav {
     display: none;
     width: 100%; }
-    @media (min-width: 1200px) {
+    @media (min-width: 800px) {
       .header .nav {
         display: block;
         width: auto; } }
@@ -446,7 +446,7 @@ input[type="submit"] {
     align-items: center;
     justify-content: center;
     margin: auto 1em; }
-    @media (min-width: 1200px) {
+    @media (min-width: 800px) {
       .header .menu-icon {
         display: none; } }
     .header .menu-icon::before {
@@ -505,7 +505,7 @@ input[type="submit"] {
 .main {
   overflow: hidden;
   position: relative; }
-  @media (min-width: 1200px) {
+  @media (min-width: 800px) {
     .main {
       height: 90vh; } }
   .main__content {
@@ -557,10 +557,13 @@ input[type="submit"] {
       height: 90%; }
 
 .reservation {
-  margin-top: 10% !important;
+  margin-top: 20% !important;
   display: flex;
   flex-wrap: wrap;
   justify-content: center; }
+  @media (min-width: 800px) {
+    .reservation {
+      margin-top: 10% !important; } }
   .reservation .title {
     width: 100%; }
   .reservation__content {
@@ -569,13 +572,13 @@ input[type="submit"] {
     flex-wrap: wrap;
     justify-content: center;
     border: 1px rgba(106, 106, 106, 0.1) solid; }
-    @media (min-width: 1200px) {
+    @media (min-width: 800px) {
       .reservation__content {
         width: 80%; } }
     .reservation__content__form {
       padding: .5em;
       width: 100%; }
-      @media (min-width: 1200px) {
+      @media (min-width: 800px) {
         .reservation__content__form {
           padding: 2em;
           width: 75%; } }
@@ -625,7 +628,10 @@ input[type="submit"] {
 #booking_pickupPlace {
   display: flex; }
   #booking_pickupPlace > div {
-    margin: auto 1em; }
+    margin: auto .5em; }
+    @media (min-width: 800px) {
+      #booking_pickupPlace > div {
+        margin: auto 1em; } }
 
 .section {
   margin: 5%; }
@@ -651,18 +657,17 @@ input[type="submit"] {
     .activities__item__image {
       width: 100%;
       position: relative;
-      overflow: hidden;
-      min-height: 50vh;
-      height: 50vh; }
-      @media (min-width: 1200px) {
+      overflow: hidden; }
+      @media (min-width: 800px) {
         .activities__item__image {
-          width: 50%;
-          min-height: 60vh;
-          height: 60vh; } }
-      .activities__item__image img {
+          width: 50%; } }
+      .activities__item__image picture {
         position: absolute;
+        top: 0;
         transition: opacity 1s ease-in; }
-      .activities__item__image img + img {
+      .activities__item__image picture:first-child {
+        position: relative; }
+      .activities__item__image picture + picture {
         opacity: 0; }
     .activities__item__text {
       width: 100%;
@@ -671,12 +676,12 @@ input[type="submit"] {
       justify-content: center;
       flex-wrap: wrap;
       margin: 5% auto; }
-      @media (min-width: 1200px) {
+      @media (min-width: 800px) {
         .activities__item__text {
           width: 50%; } }
       .activities__item__text p {
         margin: auto 10%; }
-    @media (min-width: 1200px) {
+    @media (min-width: 800px) {
       .activities__item--inverse .activities__item__image {
         order: 2; }
       .activities__item--inverse .activities__item__text {
@@ -702,7 +707,7 @@ input[type="submit"] {
       @media (min-width: 800px) {
         .why_with_us__cards__item {
           width: 45%; } }
-      @media (min-width: 1200px) {
+      @media (min-width: 800px) {
         .why_with_us__cards__item {
           width: 20%; } }
       .why_with_us__cards__item__text {
@@ -719,8 +724,7 @@ input[type="submit"] {
   position: relative;
   background-attachment: fixed;
   background-position: center center;
-  background-size: cover;
-  background-image: url("../img/our-car-in-mural-prehistoria.jpg"); }
+  background-size: cover; }
 
 .more_places {
   position: relative;
@@ -808,26 +812,26 @@ input[type="submit"] {
     .footer__image:before {
       content: '';
       position: absolute;
-      width: 100%;
-      height: 3em;
-      background: linear-gradient(#fff, #f7f7f7);
-      z-index: 1; }
-      @media (min-width: 1200px) {
-        .footer__image:before {
-          height: 5em; } }
+      width: 110%;
+      left: -5%;
+      height: 4em;
+      background: linear-gradient(#fff, #c7ecff);
+      z-index: 1;
+      -webkit-filter: blur(8px);
+      filter: blur(8px); }
     .footer__image img {
       top: 3em;
       position: relative; }
   .footer__contact {
     position: absolute;
     width: 100%;
-    background-color: rgba(26, 26, 26, 0.7);
+    background-color: rgba(26, 26, 26, 0.45);
     display: flex;
     justify-content: center;
     align-items: center;
     padding: .5em 0;
     flex-wrap: wrap; }
-    @media (min-width: 1200px) {
+    @media (min-width: 800px) {
       .footer__contact {
         flex-wrap: nowrap;
         justify-content: space-around; } }
@@ -835,7 +839,7 @@ input[type="submit"] {
       color: white;
       width: 80%;
       margin-bottom: 1em; }
-      @media (min-width: 1200px) {
+      @media (min-width: 800px) {
         .footer__contact address {
           width: auto;
           margin-bottom: auto; } }
@@ -846,7 +850,7 @@ input[type="submit"] {
         margin: .25em;
         padding: 0;
         justify-content: center; }
-        @media (min-width: 1200px) {
+        @media (min-width: 800px) {
           .footer__contact .social ul {
             justify-content: unset; } }
         .footer__contact .social ul li {
@@ -855,6 +859,6 @@ input[type="submit"] {
           margin: auto .5em; }
           .footer__contact .social ul li img {
             width: 1.5em; }
-      @media (min-width: 1200px) {
+      @media (min-width: 800px) {
         .footer__contact .social {
           width: auto; } }

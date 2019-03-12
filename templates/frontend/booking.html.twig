@@ -5,6 +5,8 @@
     <script src="{{ asset('scripts/form.js') }}" defer></script>
 {% endblock %}
 
+{% block title %}{% trans %}Form.title{% endtrans %}{% endblock %}
+
 {% block body %}
 <section class="section reservation">
     <div class="title title--center">
@@ -44,6 +46,7 @@
                     </div>
 
                     <div class="form__item">
+                        <p><b>We strongly recommend start this activity before 8:30am due to the distance.</b></p>
                         {{ form_row(form.pickupTime) }}
                     </div>
                 </div>

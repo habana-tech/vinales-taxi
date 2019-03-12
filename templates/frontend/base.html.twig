@@ -4,11 +4,21 @@
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1" />
 
-        <title>{% block title %}Welcome!{% endblock %}</title>
+
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <meta name="theme-color" content="#378203">
+
+        <title>{% block title %}{% endblock %} | Vinales Taxi 🚕</title>
         {% block stylesheets %}
             <link rel="stylesheet" href="{{ asset('styles/styles.css') }}">
         {% endblock %}
+
         {% block javascripts_defer %}{% endblock %}
+
+        <meta name="description" content="{% block description %}{% endblock %}">
+
+        <link rel="canonical" href="https://vinales.taxi"/>
+
     </head>
 
     <body>
@@ -42,11 +52,22 @@
     <footer class="footer">
         <div class="footer__image">
             <picture>
-                <source class="lazyload" media="(min-width: 800px)"
-                        srcset="{{ asset('img/vinales-aereal-view-from-los-jasmines.jpg') | imagine_filter('min_width_800') }} 800w,
-                                {{ asset('img/vinales-aereal-view-from-los-jasmines.jpg') | imagine_filter('min_width_1000') }} 1000w">
-                <!-- img tag for browsers that do not support picture element -->
-                <img class="lazyload" data-src="{{ asset('img/footer_portraid.jpg') }}" alt="">
+                <source class="lazyload"
+                        media="(min-width: 1200px)"
+                        sizes="100vw"
+                        data-srcset="
+                            {{ asset('img/vinales-aereal-view-from-los-jasmines.jpg') | imagine_filter('min_width_1920') }} 1920w,
+                            {{ asset('img/vinales-aereal-view-from-los-jasmines.jpg') | imagine_filter('min_width_1200') }} 1200w,
+                            {{ asset('img/vinales-aereal-view-from-los-jasmines.jpg') | imagine_filter('min_width_1000') }} 1000w
+                        ">
+
+                <img class="lazyload blur-up"
+                     sizes="100vw"
+                     data-srcset="
+                            {{ asset('img/vinales-aereal-view-from-los-jasmines-portraid.jpg') | imagine_filter('min_width_800') }} 800w,
+                            {{ asset('img/vinales-aereal-view-from-los-jasmines-portraid.jpg') | imagine_filter('min_width_600') }} 600w"
+                     src="{{ asset('img/vinales-aereal-view-from-los-jasmines-portraid.jpg') | imagine_filter('small_thumbnail') }}"
+                     alt="Horse riding in vinales, you can make a reservation in advance with us">
             </picture>
         </div>
 

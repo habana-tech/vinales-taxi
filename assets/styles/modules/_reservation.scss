@@ -1,8 +1,12 @@
 .reservation{
-    margin-top: 10% !important;
+    margin-top: 20% !important;
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
+
+    @mixin atLarge{
+        margin-top: 10% !important;
+    }
 
     & .title{
         width: 100%;
@@ -100,6 +104,10 @@
     display: flex;
 
     & > div{
-        margin: auto 1em;
+        margin: auto .5em;
+
+        @mixin atLarge{
+            margin: auto 1em;
+        }
     }
 }

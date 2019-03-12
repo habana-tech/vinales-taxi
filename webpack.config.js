@@ -4,7 +4,6 @@ module.exports = {
     entry: {
         app: "./assets/scripts/app.js",
         index: "./assets/scripts/index.js",
-        vendor: "./assets/scripts/vendor.js",
         form: "./assets/scripts/form.js",
     },
     output: {
