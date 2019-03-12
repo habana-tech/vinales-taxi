@@ -17,7 +17,7 @@
 
         <div class="logo">
             <a href="/">
-                <img src="{{ asset('img/logo.png') | imagine_filter('small_thumbnail') }}" alt="Vinales in taxi">
+                <img src="{{ asset('img/logo.png') }}" alt="Vinales in taxi">
             </a>
         </div>
 
@@ -42,9 +42,9 @@
     <footer class="footer">
         <div class="footer__image">
             <picture>
-                <source class="lazyloaded" media="(min-width: 800px)"
-                        srcset="{{ asset('img/footer.jpg') | imagine_filter('min_width_800') }} 800w,
-                                {{ asset('img/footer.jpg') | imagine_filter('min_width_1000') }} 1000w">
+                <source class="lazyload" media="(min-width: 800px)"
+                        srcset="{{ asset('img/vinales-aereal-view-from-los-jasmines.jpg') | imagine_filter('min_width_800') }} 800w,
+                                {{ asset('img/vinales-aereal-view-from-los-jasmines.jpg') | imagine_filter('min_width_1000') }} 1000w">
                 <!-- img tag for browsers that do not support picture element -->
                 <img class="lazyload" data-src="{{ asset('img/footer_portraid.jpg') }}" alt="">
             </picture>
@@ -53,23 +53,23 @@
         <div class="footer__contact">
             <address>
                 You can contact us at <a href="mailto:taxidriverscuba@gmail.com">taxidriverscuba@gmail.com</a>
-                or call us to phone <a href="tel://123-456-789">+53 5 123-456-798</a>
+                or call us to phone <a href="tel://+53 5 5864523">+53 5 5864523</a>
             </address>
             
             <div class="social">
                 <ul>
                     <li>
-                        <a href="">
+                        <a href="https://www.tripadvisor.es/Attraction_Review-g147271-d13554747-Reviews-Taxi_Drivers_Cuba-Havana_Ciudad_de_la_Habana_Province_Cuba.html" target="_blank">
                             <img src="{{ asset('img/icons/tripadvisor.svg') }}" alt="">
                         </a>
                     </li>
                     <li>
-                        <a href="">
+                        <a href="https://www.facebook.com/taxidriverscuba/" target="_blank">
                             <img src="{{ asset('img/icons/facebook.svg') }}" alt="">
                         </a>
                     </li>
                     <li>
-                        <a href="">
+                        <a href="http://www.instagram.com/taxidriverscuba/" target="_blank">
                             <img src="{{ asset('img/icons/instagram.svg') }}" alt="">
                         </a>
                     </li>

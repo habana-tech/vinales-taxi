@@ -1,6 +1,8 @@
 {% extends 'frontend/base.html.twig' %}
 {% block javascripts_defer %}
-    <script src="{{ asset('scripts/Index.js') }}" defer></script>
+    <script src="{{ asset('scripts/vendor.js') }}"></script>
+    <script src="{{ asset('scripts/app.js') }}" defer></script>
+    <script src="{{ asset('scripts/index.js') }}" defer></script>
 {% endblock %}
 
 {% block title %}{% trans %}Index.title{% endtrans %}{% endblock %}
@@ -11,10 +13,10 @@
 
             <div class="main__image">
                 <picture>
-                    <source media="(min-width: 1200px)" srcset="{{ asset('img/main.jpg') | imagine_filter('min_width_1200') }}">
-                    <source media="(min-width: 1000px)" srcset="{{ asset('img/main.jpg') | imagine_filter('min_width_1000') }}">
-                    <source media="(min-width: 800px)" srcset="{{ asset('img/main.jpg') | imagine_filter('min_width_800') }}">
-                    <source media="(min-width: 600px)" srcset="{{ asset('img/main.jpg') | imagine_filter('min_width_600') }}">
+                    <source media="(min-width: 1200px)"
+                            srcset="{{ asset('img/main.jpg') | imagine_filter('min_width_1200') }}">
+                    <source
+                            srcset="{{ asset('img/main_portraid.jpg') }}">
                     <!-- img tag for browsers that do not support picture element -->
                     <img src="{{ asset('img/main_portraid.jpg') }}" alt="">
                 </picture>
@@ -106,8 +108,22 @@
 
             <div class="activities__item">
                 <div class="activities__item__image group1">
-                    <img src="{{ asset('img/gallery/vinales-cuba-tobacco-plantations-1080x720.jpg') }}" alt="">
-                    <img src="{{ asset('img/gallery/gazebo-of-Los-Jazmines.jpg') }}" alt="">
+                    <img class="lazyload blur-up"
+                         data-srcset="
+                                    {{ asset('img/gallery/caballo-vinales.jpg') | imagine_filter('min_width_1200') }} 1200w,
+                                    {{ asset('img/gallery/caballo-vinales.jpg') | imagine_filter('min_width_800') }} 800w,
+                                    {{ asset('img/gallery/caballo-vinales.jpg') | imagine_filter('min_width_600') }} 600w"
+                         sizes="(min-width: 1200px) 50vw, 1000vw"
+                         src="{{ asset('img/gallery/caballo-vinales.jpg') | imagine_filter('small_thumbnail') }}"
+                         alt="Horse riding in vinales, you can make a reservation in advance with us">
+                    <img class="lazyload blur-up"
+                         data-srcset="
+                                    {{ asset('img/gallery/valle-de-vinales.jpg') | imagine_filter('min_width_1200') }} 1200w,
+                                    {{ asset('img/gallery/valle-de-vinales.jpg') | imagine_filter('min_width_800') }} 800w,
+                                    {{ asset('img/gallery/valle-de-vinales.jpg') | imagine_filter('min_width_600') }} 600w"
+                         sizes="(min-width: 1200px) 50vw, 1000vw"
+                         src="{{ asset('img/gallery/valle-de-vinales.jpg') | imagine_filter('small_thumbnail') }}"
+                         alt="Horse riding in vinales, you can make a reservation in advance with us">
                 </div>
                 <div class="activities__item__text">
                     <p>
@@ -134,8 +150,22 @@
 
             <div class="activities__item activities__item--inverse group2">
                 <div class="activities__item__image">
-                    <img src="{{ asset('img/gallery/gazebo-of-Los-Jazmines.jpg') }}" alt="">
-                    <img src="{{ asset('img/gallery/vinales-cuba-tobacco-plantations-1080x720.jpg') }}" alt="">
+                    <img class="lazyload blur-up"
+                         data-srcset="
+                                    {{ asset('img/gallery/Cueva-del-Indio-River-Vinales-Cuba.jpg') | imagine_filter('min_width_1200') }} 1200w,
+                                    {{ asset('img/gallery/Cueva-del-Indio-River-Vinales-Cuba.jpg') | imagine_filter('min_width_800') }} 800w,
+                                    {{ asset('img/gallery/Cueva-del-Indio-River-Vinales-Cuba.jpg') | imagine_filter('min_width_600') }} 600w"
+                         sizes="(min-width: 1200px) 50vw, 1000vw"
+                         src="{{ asset('img/gallery/Cueva-del-Indio-River-Vinales-Cuba.jpg') | imagine_filter('small_thumbnail') }}"
+                         alt="Horse riding in vinales, you can make a reservation in advance with us">
+                    <img class="lazyload blur-up"
+                         data-srcset="
+                                    {{ asset('img/gallery/mural-de-la-preistoria-vinales.jpg') | imagine_filter('min_width_1200') }} 1200w,
+                                    {{ asset('img/gallery/mural-de-la-preistoria-vinales.jpg') | imagine_filter('min_width_800') }} 800w,
+                                    {{ asset('img/gallery/mural-de-la-preistoria-vinales.jpg') | imagine_filter('min_width_600') }} 600w"
+                         sizes="(min-width: 1200px) 50vw, 1000vw"
+                         src="{{ asset('img/gallery/mural-de-la-preistoria-vinales.jpg') | imagine_filter('small_thumbnail') }}"
+                         alt="Horse riding in vinales, you can make a reservation in advance with us">
                 </div>
                 <div class="activities__item__text">
 
@@ -166,8 +196,22 @@
 
             <div class="activities__item">
                 <div class="activities__item__image group3">
-                    <img src="{{ asset('img/gallery/3.jpg') }}" alt="">
-                    <img src="{{ asset('img/gallery/vinales-cuba-tobacco-plantations-1080x720.jpg') }}" alt="">
+                    <img class="lazyload blur-up"
+                         data-srcset="
+                                    {{ asset('img/gallery/foto-tabaco-vinales.jpg') | imagine_filter('min_width_1200') }} 1200w,
+                                    {{ asset('img/gallery/foto-tabaco-vinales.jpg') | imagine_filter('min_width_800') }} 800w,
+                                    {{ asset('img/gallery/foto-tabaco-vinales.jpg') | imagine_filter('min_width_600') }} 600w"
+                         sizes="(min-width: 1200px) 50vw, 1000vw"
+                         src="{{ asset('img/gallery/foto-tabaco-vinales.jpg') | imagine_filter('small_thumbnail') }}"
+                         alt="Horse riding in vinales, you can make a reservation in advance with us">
+                    <img class="lazyload blur-up"
+                         data-srcset="
+                                    {{ asset('img/gallery/restaurant-cuban-food-vinales.jpg') | imagine_filter('min_width_1200') }} 1200w,
+                                    {{ asset('img/gallery/restaurant-cuban-food-vinales.jpg') | imagine_filter('min_width_800') }} 800w,
+                                    {{ asset('img/gallery/restaurant-cuban-food-vinales.jpg') | imagine_filter('min_width_600') }} 600w"
+                         sizes="(min-width: 1200px) 50vw, 1000vw"
+                         src="{{ asset('img/gallery/restaurant-cuban-food-vinales.jpg') | imagine_filter('small_thumbnail') }}"
+                         alt="Horse riding in vinales, you can make a reservation in advance with us">
                 </div>
                 <div class="activities__item__text">
                     <p>
@@ -241,7 +285,9 @@
                         <li>
                             Can I pay by making a transfer?
                             <p>yes, you can. You only need to make a
-                                transfer to this account number, #123456789</p>
+                                transfer to this account number,
+                                <b>0166364353</b> with this routing number <b>063104668</b>
+                            </p>
                         </li>
                         <li>
                             Can I pay in cash and in what currency can I pay?
