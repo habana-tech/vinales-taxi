@@ -1,8 +1,5 @@
 {% extends 'frontend/base.html.twig' %}
 
-{% block description %}
-    If you are looking for see Vinales 🌄 in one day in classic cars, we are the best in that. We can make reservations in advance for other activities like horse riding 🐴, lunch 🥗 and discover the cuban tabaco history.
-{% endblock %}
 
 {% block javascripts_defer %}
     <script src="{{ asset('scripts/app.js') }}" defer></script>
@@ -31,16 +28,16 @@
                 <source media="(min-width: 1200px)"
                         sizes="100vw"
                         srcset="
-                            {{ asset('img/main.jpg') | imagine_filter('min_width_1920') }} 1920w,
-                            {{ asset('img/main.jpg') | imagine_filter('min_width_1200') }} 1200w,
-                            {{ asset('img/main.jpg') | imagine_filter('min_width_1000') }} 1000w"
-                        alt="car view">
+                            {{ asset('img/our-car-in-mural-prehistoria.jpg') | imagine_filter('min_width_1920') }} 1920w,
+                            {{ asset('img/our-car-in-mural-prehistoria.jpg') | imagine_filter('min_width_1200') }} 1200w,
+                            {{ asset('img/our-car-in-mural-prehistoria.jpg') | imagine_filter('min_width_1000') }} 1000w"
+                        >
                 <!-- img tag for browsers that do not support picture element -->
                 <img sizes="100vw"
                     srcset="
-                        {{ asset('img/main_portraid.jpg') | imagine_filter('min_width_900') }} 900w,
-                        {{ asset('img/main_portraid.jpg') | imagine_filter('min_width_800') }} 800w"
-                     alt="car view ">
+                        {{ asset('img/our-car-in-mural-prehistoria_portraid.jpg') | imagine_filter('min_width_900') }} 900w,
+                        {{ asset('img/our-car-in-mural-prehistoria_portraid.jpg') | imagine_filter('min_width_800') }} 800w"
+                     alt="classic-car-taxi-in-cuba-in-vinales">
             </picture>
         </div>
         <div class="main__content">
@@ -49,8 +46,11 @@
 
                 <div class="main__content__text__title">
                     <h1 class="title title--white title--big">
-                        One day in Vinales <br>
-                        with classic cars
+                        Day trip to Viñales 🌄
+                        <br>
+                        from Havana, Cuba
+                        <br>
+                        on classic cars
                     </h1>
                 </div>
 
@@ -74,7 +74,7 @@
 
         <div class="section__description">
             <div class="title title--center">
-                <h2>Why with us?</h2>
+                <h2>Why make this trip with us?</h2>
             </div>
             <div class="section__description__text">
                 <p>
@@ -101,7 +101,17 @@
                 <div class="why_with_us__cards__item__text">
                     <p>We offer <b>PUNCTUALITY</b> with a
                         <b>COMPETITIVE PRICE</b>
-                        and <b>COMFORT</b>
+                        and <b>COMFORT</b>.
+                    </p>
+                </div>
+            </div>
+
+            <div class="why_with_us__cards__item">
+                <div class="why_with_us__cards__item__text">
+                    <p>We offer
+                        <a target="_blank" href="{{ url }}">
+                            <b>ONLINE BOOKING</b>
+                        </a> and you only need to pay a little amount in advance.
                     </p>
                 </div>
             </div>
@@ -110,7 +120,7 @@
                 <div class="why_with_us__cards__item__text">
                     <p>We can make a reservation in advance to
                         <b>RIDE HORSES</b> or <b>LUNCH</b>
-                        making this an unique experience
+                        making this an unique experience.
                     </p>
                 </div>
             </div>
@@ -130,7 +140,7 @@
     <section id="activities" class="activities section">
 
         <div class="title title--center">
-            <h2>Our tour includes</h2>
+            <h2>Our one day tour includes</h2>
         </div>
 
         <div class="activities__item">
@@ -142,7 +152,7 @@
                                 data-srcset="
                         {{ asset('img/gallery/ride-horse-in-vinales.jpg') | imagine_filter('min_width_1200') }} 1200w,
                         {{ asset('img/gallery/ride-horse-in-vinales.jpg') | imagine_filter('min_width_1000') }} 1000w
-                    ">
+                        ">
 
                         <img class="lazyload blur-up"
                              sizes="100vw"
@@ -150,7 +160,13 @@
                         {{ asset('img/gallery/ride-horse-in-vinales-portraid.jpg') | imagine_filter('min_width_800') }} 800w,
                         {{ asset('img/gallery/ride-horse-in-vinales-portraid.jpg') | imagine_filter('min_width_600') }} 600w"
                              src="{{ asset('img/gallery/ride-horse-in-vinales-portraid.jpg') | imagine_filter('small_thumbnail') }}"
-                             alt="Horse riding in vinales, you can make a reservation in advance with us">
+                             alt="Horse-Riding-in-Vinales-(Viñales)">
+
+                        <noscript>
+                            <img
+                                 src="{{ asset('img/gallery/ride-horse-in-vinales-portraid.jpg')}}"
+                                 alt="Horse-Riding-in-Vinales-(Viñales)">
+                        </noscript>
                     </picture>
 
                 <picture>
@@ -168,12 +184,18 @@
                         {{ asset('img/gallery/vinales-view-portraid.jpg') | imagine_filter('min_width_800') }} 800w,
                         {{ asset('img/gallery/vinales-view-portraid.jpg') | imagine_filter('min_width_600') }} 600w"
                      src="{{ asset('img/gallery/vinales-view-portraid.jpg') | imagine_filter('small_thumbnail') }}"
-                     alt="Horse riding in vinales, you can make a reservation in advance with us">
+                     alt="(Viñales)-Vinales-valley-view-wide">
+
+                    <noscript>
+                        <img
+                             src="{{ asset('img/gallery/vinales-view-portraid.jpg') }}"
+                             alt="(Viñales)-Vinales-valley-view-wide">
+                    </noscript>
                 </picture>
             </div>
             <div class="activities__item__text">
                 <p>
-                    Pick up at airport, cruise, hotel or rental house in Havana
+                    Pick up at <b>airport, cruise, hotel or rental house in Havana</b>
                     and return at the end of the tour.
                 </p>
 
@@ -185,9 +207,9 @@
                 </p>
 
                 <p>
-                    Horseback ride through the Viñales National
-                    Park for the <b>additional price of 10.00 cuc per
-                    person the excursion of approximately 1 hour</b>,
+                    <b>Horseback ride</b> through the Viñales National
+                    Park for the <i>additional price of 10.00 cuc per
+                    person the excursion of approximately 1 hour</i>,
                     where you can taste the exquisite Cuban coffee
                     and the Guayabita del Pinar rum.
                 </p>
@@ -211,7 +233,12 @@
                         {{ asset('img/gallery/mural-de-la-preistoria-vinales-portraid.jpg') | imagine_filter('min_width_800') }} 800w,
                         {{ asset('img/gallery/mural-de-la-preistoria-vinales-portraid.jpg') | imagine_filter('min_width_600') }} 600w"
                          src="{{ asset('img/gallery/mural-de-la-preistoria-vinales-portraid.jpg') | imagine_filter('small_thumbnail') }}"
-                         alt="Horse riding in vinales, you can make a reservation in advance with us">
+                         alt="prehistory-mural-in-Vinales-(Viñales)">
+                    <noscript>
+                        <img
+                            src="{{ asset('img/gallery/mural-de-la-preistoria-vinales-portraid.jpg') }}"
+                            alt="prehistory-mural-in-Vinales-(Viñales)">
+                    </noscript>
                 </picture>
 
                 <picture>
@@ -229,31 +256,36 @@
                         {{ asset('img/gallery/indio-cave-vinales-portraid.jpg') | imagine_filter('min_width_800') }} 800w,
                         {{ asset('img/gallery/indio-cave-vinales-portraid.jpg') | imagine_filter('min_width_600') }} 600w"
                          src="{{ asset('img/gallery/indio-cave-vinales-portraid.jpg') | imagine_filter('small_thumbnail') }}"
-                         alt="Horse riding in vinales, you can make a reservation in advance with us">
+                         alt="indian-cave-in-Vinales-(Viñales)">
+                    <noscript>
+                        <img
+                             src="{{ asset('img/gallery/indio-cave-vinales-portraid.jpg') }}"
+                             alt="indian-cave-in-Vinales-(Viñales)">
+                    </noscript>
                 </picture>
             </div>
             <div class="activities__item__text">
 
                 <p>
-                    Visit the Indian Cave, a natural
+                    Visit the <b>Indian Cave</b>, a natural
                     refuge of the first habitants of
-                    our lands and you’ll take a ride
-                    in a boat through subterranean waters.
+                    our lands and you’ll take a <i>ride
+                        in a boat</i> through subterranean waters.
                     <b>For the additional price of 5.00 cuc per person.</b>
                 </p>
 
                 <p>
-                    Visit the Mural of Prehistory, one of biggest
+                    Visit the <b>Mural of Prehistory</b>, one of biggest
                     murals outdoors of the world.</p>
 
                 <p>
-                    Visit the gazebo of Los Jazmines with a wide
+                    Visit <b>the gazebo of Los Jazmines</b> with a wide
                     and beautiful view of the whole place.</p>
 
                 <p>
-                    This whole tour will be combined with delicious
-                    food offers in restaurants. <b>For the additional
-                    price of 15.00 cuc per person the main course you want</b>.
+                    This whole tour will be combined with <b>delicious
+                    food offers in restaurants</b>. For the additional
+                    price of 15.00 cuc per person the main course you want.
                 </p>
 
             </div>
@@ -276,7 +308,12 @@
                         {{ asset('img/gallery/restaurant-cuban-food-vinales-portraid.jpg') | imagine_filter('min_width_800') }} 800w,
                         {{ asset('img/gallery/restaurant-cuban-food-vinales-portraid.jpg') | imagine_filter('min_width_600') }} 600w"
                          src="{{ asset('img/gallery/restaurant-cuban-food-vinales-portraid.jpg') | imagine_filter('small_thumbnail') }}"
-                         alt="Horse riding in vinales, you can make a reservation in advance with us">
+                         alt="restaurant-in-Vinales-(Viñales)-tipical-cuban-food-for-launch">
+                    <noscript>
+                        <img
+                             src="{{ asset('img/gallery/restaurant-cuban-food-vinales-portraid.jpg') }}"
+                             alt="restaurant-in-Vinales-(Viñales)-tipical-cuban-food-for-launch">
+                    </noscript>
                 </picture>
 
                 <picture>
@@ -294,19 +331,24 @@
                         {{ asset('img/gallery/foto-tabaco-vinales-portraid.jpg') | imagine_filter('min_width_800') }} 800w,
                         {{ asset('img/gallery/foto-tabaco-vinales-portraid.jpg') | imagine_filter('min_width_600') }} 600w"
                          src="{{ asset('img/gallery/foto-tabaco-vinales-portraid.jpg') | imagine_filter('small_thumbnail') }}"
-                         alt="Horse riding in vinales, you can make a reservation in advance with us">
+                         alt="Tabaco-in-vinales-(Viñales)-people-learning-and-smoking">
+                    <noscript>
+                        <img
+                             src="{{ asset('img/gallery/foto-tabaco-vinales-portraid.jpg') }}"
+                             alt="Tabaco-in-vinales-(Viñales)-people-learning-and-smoking">
+                    </noscript>
                 </picture>
             </div>
             <div class="activities__item__text">
                 <p>
-                    We recommend you bring light clothes, sunglasses,
-                    a hat or cap, camera if you want to
-                    take beautiful photos, plus a bottle of water.
-                    Also a extra bit of cash for buying ciggar if you want ;)
+                    We recommend you bring <b>light clothes</b>, <b>sunglasses</b>,
+                    a <b>hat or cap</b>, camera if you want to
+                    take beautiful photos, plus a <b>bottle of water</b>.
+                    Also a extra bit of cash for <b>buying ciggar</b> if you want ;)
                 </p>
 
                 <p>
-                    We recommend <b>doing this tour starting at 7:30 am </b>
+                    We recommend <b>doing this tour starting at 7:30 am</b>
                     for the distance needed to travel.
                     The return to Havana will take place in the afternoon,
                     at the end of the tour.
@@ -329,7 +371,7 @@
 
     <section id="more_places"
              class="more_places parallax lazyload section section--no-margin"
-             data-bg="{{ asset('img/our-car-in-mural-prehistoria.jpg') }}">
+             data-bg="{{ asset('img/more-destinations.jpg') }}">
 
         <div class="more_places__content">
             <div class="more_places__content__title">
@@ -370,20 +412,21 @@
                     <h4>Frequently askly questions</h4>
                     <ul>
                         <li>
-                            Can I pay by making a transfer?
-                            <p>yes, you can. You only need to make a
-                                transfer to this account number,
-                                <b>0166364353</b> with this routing number <b>063104668</b>
+                            Can I booking online?
+                            <p>yes, you can. You only need to fill the
+                                <a target="_self" href="{{ url }}">
+                                    RESERVATION FORM</a>.
                             </p>
                         </li>
                         <li>
                             Can I pay in cash and in what currency can I pay?
-                            <p>Yes, you can pay in cash to driver at the beginning of the travel, we
+                            <p>Yes, you can pay in cash to driver at the end of the travel, we
                             accept payments in EUR, USD and CUC.</p>
                         </li>
                         <li>
                             The tour to Vinales includes the return?
-                            <p>Yes, we can leave where we pickup you or in any place you want in Havana</p>
+                            <p>Yes, we can leave where we pickup you or in any place
+                                you want in Havana</p>
                         </li>
                         <li>
                             Do you offer a pickup from Cruise or Airport?

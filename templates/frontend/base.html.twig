@@ -1,4 +1,6 @@
 {% set url = "https://taxidriverscuba.trekksoft.com/en/tours/book/254469" %}
+{% set description = "If you are looking for see Vinales 🌄 in one day in classic cars, we are the best in that. We can make reservations in advance for other activities like horse riding 🐴, lunch 🥗 and discover the cuban tabaco history." %}
+{% set title = "Day trip to Viñales 🌄 from Havana, Cuba | Vinales Taxi 🚕" %}
 
 <!DOCTYPE html>
 <html>
@@ -6,18 +8,77 @@
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1" />
 
-
         <link rel="preconnect" href="https://fonts.googleapis.com">
         <meta name="theme-color" content="#378203">
+
+        {# Facebook Tags #}
+        <meta property="og:type"               content="article" />
+        <meta property="og:title"              content="{{ title }}" />
+        <meta property="og:description"        content="{{ description }}" />
+        <meta property="og:image"              content="{{ absolute_url(asset('img/our-car-in-mural-prehistoria.jpg')) }}" />
+
+        {# Twitter tags #}
+        <meta name="twitter:card" content="summary" />
+        <meta name="twitter:site" content="@taxiDriverCuba" />
+        <meta name="twitter:creator" content="@taxiDriverCuba" />
+        <meta property="og:title" content="{{ title }}" />
+        <meta property="og:description" content="{{ description }}" />
+        <meta property="og:image" content="{{ absolute_url(asset('img/our-car-in-mural-prehistoria.jpg')) }}" />
+
+        <meta property="keyword" content="vinales, viñales, tour, taxi, havana, cuba, reservation, old car, classic car, driver">
+        {#breadcrumbs#}
+        <script type="application/ld+json">
+            {
+              "@context": "http://schema.org",
+              "@type": "BreadcrumbList",
+              "itemListElement": [{
+                "@type": "ListItem",
+                "position": 1,
+                "item": {
+                  "@id": "{{ absolute_url(path("frontend")) }}",
+                  "name": "Home",
+                  "image": "{{ asset("/images/favicon.png") }}"
+                }
+              }]
+            }
+        </script>
+
+        {#Logo and customer Service Number#}
+        <script type="application/ld+json">
+        {
+          "@context": "http://schema.org",
+          "@type": "Organization",
+          "name": "TaxiDriversCuba",
+          "url": "https://www.taxidriverscuba.com",
+          "logo": "https://www.taxidriverscuba.com/images/logo.png",
+          "contactPoint": [
+            { "@type": "ContactPoint",
+              "telephone": "+53 5 5864523",
+              "contactType": "customer service",
+              "availableLanguage": [
+              "English",
+              "Spanish"
+               ]
+            }
+          ],
+          "sameAs": [
+            "http://www.facebook.com/taxidriverscuba",
+            "http://instagram.com/taxidriverscuba",
+            "http://plus.google.com/taxidriverscuba"
+          ]
+        }
+        </script>
+
+
         <link rel="icon" type="image/png" href="{{ asset('img/favicon.png') }}" />
-        <title>{% block title %}{% endblock %} | Vinales Taxi 🚕</title>
+        <title>{{ title }}</title>
         {% block stylesheets %}
             <link rel="stylesheet" href="{{ asset('styles/styles.css') }}">
         {% endblock %}
 
         {% block javascripts_defer %}{% endblock %}
 
-        <meta name="description" content="{% block description %}{% endblock %}">
+        <meta name="description" content="{{ description }}">
 
         <link rel="canonical" href="https://vinales.taxi"/>
         <!-- Global site tag (gtag.js) - Google Analytics -->
@@ -39,7 +100,7 @@
 
         <div class="logo">
             <a href="/">
-                <img src="{{ asset('img/logo.png') }}" alt="Vinales in taxi">
+                <img src="{{ asset('img/logo.png') }}" alt="Viñales-Taxi-Cuba-logo">
             </a>
         </div>
 

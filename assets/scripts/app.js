@@ -4,4 +4,3 @@ new MobileMenu();
 
 //avoid vendor.js file, one requests less
 import 'lazysizes/plugins/unveilhooks/ls.unveilhooks.min';
-console.log('hi');
