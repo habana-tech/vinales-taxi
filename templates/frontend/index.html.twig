@@ -64,7 +64,8 @@
 
             <div class="main__content__button">
                 <a class="btn btn--primary-gradient"
-                   target="_self" href="{{ url }}">
+                   {#target="_self" href="{{ url }}">#}
+                   target="_self" href="{{ path('booking') }}">
                     Make a Reservation</a>
             </div>
         </div>
@@ -109,7 +110,8 @@
             <div class="why_with_us__cards__item">
                 <div class="why_with_us__cards__item__text">
                     <p>We offer
-                        <a target="_blank" href="{{ url }}">
+                        {#<a target="_blank" href="{{ url }}">#}
+                        <a target="_blank" href="{{ path('booking') }}">
                             <b>ONLINE BOOKING</b>
                         </a> and you only need to pay a little amount in advance.
                     </p>
@@ -363,7 +365,8 @@
 
         <div class="activities__button">
             <a class="btn btn--primary-gradient"
-               target="_self" href="{{ url }}">
+               {#target="_self" href="{{ url }}">#}
+               target="_self" href="{{ path('booking') }}">
                 Make a reservation
             </a>
         </div>
@@ -432,7 +435,8 @@
                             Do you offer a pickup from Cruise or Airport?
                             <p>
                                 Yes, you only need to check this option in the
-                                <a target="_self" href="{{ url }}">
+                                {#<a target="_self" href="{{ url }}">#}
+                                <a target="_self" href="{{ path('booking') }}">
                                     RESERVATION FORM</a>.
                             </p>
                         </li>
