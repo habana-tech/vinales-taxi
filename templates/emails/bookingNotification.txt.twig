@@ -9,6 +9,8 @@ Email del cliente: {{ booking.clientEmail }}
 
 Lugar: {{ booking.pickupPlace }}
 
+Cantidad de personas: {{ booking.peopleCount }}
+
 Detalles: {{ booking.pickupDetails }}
 
 Fecha: {{ booking.pickupTime ? booking.pickupDate|date('Y-m-d') : '' }} a las {{ booking.pickupTime ? booking.pickupTime|date('H:i:s') : '' }}.
