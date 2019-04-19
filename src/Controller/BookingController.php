@@ -103,11 +103,9 @@ class BookingController extends AbstractController
 
 
             $mailer->send($messageToClient);
-            return $this->render('frontend/booked.html.twig', [
-                'booking' => $booking,
-            ]);
+            
 
-            //return $this->redirectToRoute('booking_index');
+            return $this->redirectToRoute('booking_confirmation', ['OrderNumber'=>$booking->getOrderNumber()]);
         }
 
         return $this->render('backend/booking/new.html.twig', [
@@ -115,6 +113,17 @@ class BookingController extends AbstractController
             'form' => $form->createView(),
         ]);
     }
+
+    /**
+     * @Route("/booking/confirmation/{orderNumber}", name="booking_confirmation", methods={"GET"})
+     */
+    public function confirmation(Booking $booking): Response
+    {
+        return $this->render('frontend/booked.html.twig', [
+                'booking' => $booking,
+            ]);
+    }
+
 
     /**
      * @Route("/backend/booking/{id}", name="booking_show", methods={"GET"})
