@@ -1,5 +1,9 @@
 {% extends 'frontend/base.html.twig' %}
 
+{% block javascripts_defer %}
+    <script src="{{ asset('scripts/app.js') }}" defer></script>
+{% endblock %}
+
 {% block title %}{% trans %}Your booking have been saved{% endtrans %}{% endblock %}
 
 {% block trackingcodes %}
@@ -18,40 +22,56 @@
         <div class="main__image">
             <picture>
                 <source media="(min-width: 1200px)"
-                        sizes="100vw"
-                        srcset="
-                            {{ asset('img/our-car-in-mural-prehistoria.jpg') | imagine_filter('min_width_1920') }} 1920w,
-                            {{ asset('img/our-car-in-mural-prehistoria.jpg') | imagine_filter('min_width_1200') }} 1200w,
-                            {{ asset('img/our-car-in-mural-prehistoria.jpg') | imagine_filter('min_width_1000') }} 1000w"
-                        >
+                    sizes="100vw"
+                    srcset="
+                        {{ asset('img/our-car-in-mural-prehistoria.jpg') | imagine_filter('min_width_1920') }} 1920w,
+                        {{ asset('img/our-car-in-mural-prehistoria.jpg') | imagine_filter('min_width_1200') }} 1200w,
+                        {{ asset('img/our-car-in-mural-prehistoria.jpg') | imagine_filter('min_width_1000') }} 1000w"
+                    >
                 <!-- img tag for browsers that do not support picture element -->
                 <img sizes="100vw"
                     srcset="
                         {{ asset('img/our-car-in-mural-prehistoria_portraid.jpg') | imagine_filter('min_width_900') }} 900w,
                         {{ asset('img/our-car-in-mural-prehistoria_portraid.jpg') | imagine_filter('min_width_800') }} 800w"
                      alt="classic-car-taxi-in-cuba-in-vinales">
-</picture>
+            </picture>
         </div>
-        <div class="main__content">
-
-            <div class="main__content__text">
-
-                <div class="main__content__text__title">
-                    <h1 class="title title--white title--big">
-                        Taxi <small>to</small> Vinales
-                    </h1>
-                </div>
-
-                <div class="main__content__text__subtext">
-                   <p style="color: white">Your request have been save. We'll contact you soon to confirm it. Thanks and have a nice day.</p>
-                </div>
-
+        <section class="section reservation_details">
+            <div class="title title--center">
+                <h1>Your reservation has been processed</h1>
             </div>
+            <hr>
+            <div class="reservation_details__body">
+                <ul>
+                    <li>
+                        The reservation was made on behalf of <b>{{ booking.clientName }}</b>.
+                    </li>
 
-            <div class="main__content__button">
-                <a class="btn btn--primary-gradient" href="{{ path('booking') }}">Make other Reservation</a>
+                    <li>
+                        We will pick you up at
+                        {% if booking.pickupPlace == 'place' %}
+                            the <b>house / hotel</b> at
+                        {% elseif booking.pickupPlace == 'airport' %}
+                            the <b>airport</b> looking for the flight with number
+                        {% else %}
+                            the <b>cruise</b> named
+                        {% endif %}
+                        <b>
+                            {{ booking.pickupDetails }}
+                        </b>
+
+                        on <b>{{ booking.pickupDate | date('l')  }}</b>,
+                        <b> {{ booking.pickupDate | date('F d, Y')  }}</b>
+                        at
+                        <b>{{ booking.pickupTime | date('H:i') }}</b>.
+                    </li>
+
+                    <li>
+                        The number of passengers is <b>{{ booking.peopleCount }}</b>.
+                    </li>
+                </ul>
             </div>
-        </div>
+        </section>
     </main>
 
 {% endblock %}

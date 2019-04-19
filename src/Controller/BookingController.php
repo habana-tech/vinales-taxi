@@ -56,8 +56,6 @@ class BookingController extends AbstractController
                 ->setFrom('booking@taxidriverscuba.com')
                 ->setTo('taxidriverscuba@gmail.com')
                 ->setCc(['14ndy15@gmail.com','josmiguel92@gmail.com'])
-
-
                 ->setBody(
                     $this->renderView(
                     // templates/emails/registration.html.twig
@@ -74,11 +72,11 @@ class BookingController extends AbstractController
                     ),
                     'text/plain',
                     'UTF-8'
-                )
-            ;
+                );
 
             $mailer->send($message);
             return $this->render('frontend/booked.html.twig', [
+                'booking' => $booking,
             ]);
 
             //return $this->redirectToRoute('booking_index');

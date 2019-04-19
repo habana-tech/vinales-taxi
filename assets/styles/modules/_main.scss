@@ -36,32 +36,36 @@
 
             &__title{
                 @mixin atLarge {
-                    width: 100%;
+                    width: 35%;
                 }
             }
 
-            & span{
-                color: white;
-                margin: .5em .75em;
-                position: relative;
+            &__subtext {
+                width: 100%;
 
-                &::after{
-                    content: '';
-                    position: absolute;
-                    height: .5em;
-                    width: .5em;
-                    margin: .05em .5em;
-                    border-radius: 50%;
-                    background-color: $mainGreen;
-                    top: 50%;
-                    transform: translateY(-50%);
+                & span {
+                    color: white;
+                    margin: .5em .75em;
+                    position: relative;
+
+                    &::after {
+                        content: '';
+                        position: absolute;
+                        height: .5em;
+                        width: .5em;
+                        margin: .05em .5em;
+                        border-radius: 50%;
+                        background-color: $mainGreen;
+                        top: 50%;
+                        transform: translateY(-50%);
+
+                    }
+
+                    &:last-child::after {
+                        display: none;
+                    }
 
                 }
-
-                &:last-child::after{
-                    display: none;
-                }
-
             }
         }
 

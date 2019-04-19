@@ -530,24 +530,26 @@ input[type="submit"] {
           justify-content: flex-start; } }
       @media (min-width: 800px) {
         .main__content__text__title {
-          width: 100%; } }
-      .main__content__text span {
-        color: white;
-        margin: .5em .75em;
-        position: relative; }
-        .main__content__text span::after {
-          content: '';
-          position: absolute;
-          height: .5em;
-          width: .5em;
-          margin: .05em .5em;
-          border-radius: 50%;
-          background-color: #60a902;
-          top: 50%;
-          -webkit-transform: translateY(-50%);
-          transform: translateY(-50%); }
-        .main__content__text span:last-child::after {
-          display: none; }
+          width: 35%; } }
+      .main__content__text__subtext {
+        width: 100%; }
+        .main__content__text__subtext span {
+          color: white;
+          margin: .5em .75em;
+          position: relative; }
+          .main__content__text__subtext span::after {
+            content: '';
+            position: absolute;
+            height: .5em;
+            width: .5em;
+            margin: .05em .5em;
+            border-radius: 50%;
+            background-color: #60a902;
+            top: 50%;
+            -webkit-transform: translateY(-50%);
+            transform: translateY(-50%); }
+          .main__content__text__subtext span:last-child::after {
+            display: none; }
     .main__content__button {
       position: absolute;
       display: flex;
@@ -557,13 +559,13 @@ input[type="submit"] {
       height: 90%; }
 
 .reservation {
-  margin-top: 20% !important;
+  margin-top: 0 !important;
   display: flex;
   flex-wrap: wrap;
-  justify-content: center; }
-  @media (min-width: 800px) {
-    .reservation {
-      margin-top: 10% !important; } }
+  justify-content: center;
+  background-color: white;
+  top: -3em;
+  position: relative; }
   .reservation .title {
     width: 100%; }
   .reservation__content {
@@ -633,6 +635,11 @@ input[type="submit"] {
       #booking_pickupPlace > div {
         margin: auto 1em; } }
 
+.reservation_details {
+  top: -3em;
+  position: relative;
+  background-color: white; }
+
 .section {
   margin: 5%; }
   .section__description {
@@ -675,12 +682,13 @@ input[type="submit"] {
       align-items: center;
       justify-content: center;
       flex-wrap: wrap;
-      margin: 5% auto; }
+      margin: auto; }
       @media (min-width: 800px) {
         .activities__item__text {
           width: 50%; } }
       .activities__item__text p {
-        margin: auto 10%; }
+        margin: auto 10%;
+        width: 100%; }
     @media (min-width: 800px) {
       .activities__item--inverse .activities__item__image {
         order: 2; }

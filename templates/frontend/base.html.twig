@@ -25,7 +25,20 @@
         <meta property="og:description" content="{{ description }}" />
         <meta property="og:image" content="{{ absolute_url(asset('img/our-car-in-mural-prehistoria.jpg')) }}" />
 
-        <meta property="keyword" content="vinales, viñales, tour, taxi, havana, cuba, reservation, old car, classic car, driver">
+        <meta property="keyword" content="
+        taxi to,
+        day trips from havana,
+        havana to vinales,
+        cuban tour,
+        taxis to airport,
+        havana to vinales day trip,
+        havana travel,
+        taxi prices,
+        taxi drivers
+
+        ">
+        <meta name="description" content="{{ description }}">
+        <link rel="canonical" href="https://vinales.taxi"/>
         {#breadcrumbs#}
         <script type="application/ld+json">
             {
@@ -69,6 +82,37 @@
         }
         </script>
 
+        {#product and price#}
+        <script type="application/ld+json">
+        {
+            "@context": "http://schema.org/",
+            "@type": "Product",
+                "name": "Tour to Vinales | Tobacco, Horse ride and more",
+            "image": [
+            "{{ absolute_url(asset('img/google/ride-horse-in-vinales_1x1.jpg') )}}",
+            "{{ absolute_url(asset('img/google/ride-horse-in-vinales_4x3.jpg') )}}",
+            "{{ absolute_url(asset('img/google/ride-horse-in-vinales_16x9.jpg') )}}"
+            ],
+            "description": "Tour to Vinales | Tobacco, Horse ride and more",
+            "mpn": "",
+            "brand": {
+                "@type": "Thing",
+                "name": "Taxi Drivers Cuba"
+            },
+            "offers": {
+                "@type": "Offer",
+                "priceCurrency": "USD",
+                "price": "135.00",
+                "priceValidUntil": "2019-12-31",
+                "itemCondition": "http://schema.org/UsedCondition",
+                "availability": "http://schema.org/InStock",
+                "seller": {
+                    "@type": "Organization",
+                    "name": "Taxi Drivers Cuba"
+                    }
+                }
+        }
+        </script>
 
         <link rel="icon" type="image/png" href="{{ asset('img/favicon.png') }}" />
         <title>{{ title }}</title>
@@ -78,9 +122,6 @@
 
         {% block javascripts_defer %}{% endblock %}
 
-        <meta name="description" content="{{ description }}">
-
-        <link rel="canonical" href="https://vinales.taxi"/>
         <!-- Global site tag (gtag.js) - Google Analytics -->
         <script async src="https://www.googletagmanager.com/gtag/js?id=UA-136613257-1"></script>
 
@@ -142,14 +183,15 @@
 
         <nav class="nav">
             <ul>
-                <li><a href="{{ path('frontend') }}#why_with_us" data-section="#why_with_us">Us</a></li>
                 <li><a href="{{ path('frontend') }}#activities" data-section="#activities">Activities</a></li>
+                <li><a href="{{ path('frontend') }}#why_with_us" data-section="#why_with_us">Us</a></li>
                 <li><a href="{{ path('frontend') }}#more_places" data-section="#more_places">More places</a></li>
                 <li><a href="{{ path('frontend') }}#contact" data-section="#contact">Contact & FAQ</a></li>
                 <li class="nav--special">
                     {#<a target="_self" href="{{ url }}">#}
                     <a target="_self" href="{{ path('booking') }}">
-                        Make a Reservation</a>
+                        Make a reservation
+                    </a>
                 </li>
             </ul>
         </nav>

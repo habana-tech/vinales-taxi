@@ -35,7 +35,7 @@
             align-items: center;
             justify-content: center;
             flex-wrap: wrap;
-            margin: 5% auto;
+            margin: auto;
 
             @mixin atLarge{
                 width: 50%;
@@ -43,6 +43,7 @@
 
             & p{
                 margin: auto 10%;
+                width: 100%;
             }
         }
 

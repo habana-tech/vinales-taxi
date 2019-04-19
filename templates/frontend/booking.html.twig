@@ -8,11 +8,38 @@
 {% block title %}{% trans %}Form.title{% endtrans %}{% endblock %}
 
 {% block body %}
+<section class="section section--no-margin">
+    <picture>
+        <source class="lazyload"
+                media="(min-width: 1200px)"
+                sizes="100vw"
+                data-srcset="
+                    {{ asset('img/lesther-and-ernesto.jpg') | imagine_filter('min_width_1200') }} 1200w,
+                    {{ asset('img/lesther-and-ernesto.jpg') | imagine_filter('min_width_1000') }} 1000w
+                    {{ asset('img/lesther-and-ernesto.jpg') | imagine_filter('min_width_800') }} 800w
+                    ">
+
+        <img class="lazyload blur-up"
+             sizes="100vw"
+             height="50vh"
+             data-srcset="
+                    {{ asset('img/lesther-and-ernesto_portraid.jpg') | imagine_filter('min_width_800') }} 800w,
+                    {{ asset('img/lesther-and-ernesto_portraid.jpg') | imagine_filter('min_width_600') }} 600w"
+             src="{{ asset('img/lesther-and-ernesto_portraid.jpg') | imagine_filter('small_thumbnail') }}"
+             alt="Horse-Riding-in-Vinales-(Viñales)">
+
+        <noscript>
+            <img
+                    src="{{ asset('img/lesther-and-ernesto_portraid.jpg')}}"
+                    alt="Horse-Riding-in-Vinales-(Viñales)">
+        </noscript>
+    </picture>
+</section>
+
 <section class="section reservation">
     <div class="title title--center">
         <h1>Reservation Form 🎫</h1>
     </div>
-
     <div class="reservation__content">
         {{ form_start(form, {'attr': {'class': 'reservation__content__form'} }) }}
             <div class="reservation__content__form__group">
@@ -46,7 +73,7 @@
                     </div>
 
                     <div class="form__item">
-                        <p><b>We strongly recommend start this activity before 8:30am due to the distance.</b></p>
+                        <p><b>We strongly recommend start this activity before 8:30 am due to the distance.</b></p>
                         {{ form_row(form.pickupTime) }}
                     </div>
                 </div>
