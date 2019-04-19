@@ -78,6 +78,34 @@ class BookingController extends AbstractController
             ;
 
             $mailer->send($message);
+
+            $messageToClient = (new \Swift_Message(($booking->getBookingLang() == 'es' ? 'Reserva en Vinales.taxi' : 'Booking on Vinales.Taxi').' - '.$booking->getOrderNumber()))
+                ->setFrom('booking@taxidriverscuba.com')
+                ->setTo($booking->getClientEmail())
+                ->setBcc(['14ndy15@gmail.com','josmiguel92@gmail.com'])
+
+
+                ->setBody(
+                    $this->renderView(
+                    // templates/emails/registration.html.twig
+                        'emails/clientNotificationOnBooking.html.twig',
+                        ['booking' => $booking]
+                    ),
+                    'text/html',
+                    'UTF-8'
+                )
+                ->addPart(
+                    $this->renderView(
+                        'emails/clientNotificationOnBooking.txt.twig',
+                        ['booking' => $booking]
+                    ),
+                    'text/plain',
+                    'UTF-8'
+                )
+            ;
+
+
+            $mailer->send($messageToClient);
             return $this->render('frontend/booked.html.twig', [
             ]);
 
