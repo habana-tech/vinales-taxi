@@ -1,233 +1,422 @@
 {% extends 'frontend/base.html.twig' %}
+
+
 {% block javascripts_defer %}
-    <script src="{{ asset('scripts/Index.js') }}" defer></script>
+    <script src="{{ asset('scripts/app.js') }}" defer></script>
+    <script src="{{ asset('scripts/index.js') }}" defer></script>
+
+    <!-- Global site tag (gtag.js) - Google Ads: 760508485 -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=AW-760508485"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+
+        gtag('config', 'AW-760508485');
+    </script>
+
 {% endblock %}
 
 {% block title %}{% trans %}Index.title{% endtrans %}{% endblock %}
 
 {% block body %}
    
-           <main class="main">
+    <main class="main">
 
-            <div class="main__image">
+        <div class="main__image">
+            <picture>
+                <source media="(min-width: 1200px)"
+                        sizes="100vw"
+                        srcset="
+                            {{ asset('img/our-car-in-mural-prehistoria.jpg') | imagine_filter('min_width_1920') }} 1920w,
+                            {{ asset('img/our-car-in-mural-prehistoria.jpg') | imagine_filter('min_width_1200') }} 1200w,
+                            {{ asset('img/our-car-in-mural-prehistoria.jpg') | imagine_filter('min_width_1000') }} 1000w
+                ">
+                <!-- img tag for browsers that do not support picture element -->
+                <img sizes="100vw"
+                    srcset="
+                        {{ asset('img/our-car-in-mural-prehistoria_portraid.jpg') | imagine_filter('min_width_900') }} 900w,
+                        {{ asset('img/our-car-in-mural-prehistoria_portraid.jpg') | imagine_filter('min_width_800') }} 800w"
+                     alt="classic-car-taxi-in-cuba-in-vinales">
+            </picture>
+        </div>
+        <div class="main__content">
+
+            <div class="main__content__text">
+
+                <div class="main__content__text__title">
+                    <h1 class="title title--white title--big">
+                        Day trip from Havana 🌄
+                        to Vinales
+                        an authentic cuban tour
+                    </h1>
+                </div>
+
+                <div class="main__content__text__subtext">
+                    <span>Airport transfer</span>
+                    <span>Havana trip</span>
+                    <span>Taxi driver</span>
+                </div>
+
+            </div>
+
+            <div class="main__content__button">
+                <a class="btn btn--primary-gradient"
+                   {#target="_self" href="{{ url }}">#}
+                   target="_self" href="{{ path('booking') }}">
+                    Make a reservation</a>
+            </div>
+        </div>
+    </main>
+
+    <section id="activities" class="activities section">
+
+        <div class="title title--center">
+            <h2>Our one day trip from havana to vinales offer</h2>
+        </div>
+
+        <div class="activities__item">
+            <div class="activities__item__image group1">
                 <picture>
-                    <source media="(min-width: 1200px)" srcset="{{ asset('img/main.jpg') | imagine_filter('min_width_1200') }}">
-                    <source media="(min-width: 1000px)" srcset="{{ asset('img/main.jpg') | imagine_filter('min_width_1000') }}">
-                    <source media="(min-width: 800px)" srcset="{{ asset('img/main.jpg') | imagine_filter('min_width_800') }}">
-                    <source media="(min-width: 600px)" srcset="{{ asset('img/main.jpg') | imagine_filter('min_width_600') }}">
-                    <!-- img tag for browsers that do not support picture element -->
-                    <img src="{{ asset('img/main_portraid.jpg') }}" alt="">
+                    <source class="lazyload"
+                            media="(min-width: 1200px)"
+                            sizes="(min-width: 1200px) 50vw"
+                            data-srcset="
+                    {{ asset('img/gallery/ride-horse-in-vinales.jpg') | imagine_filter('min_width_1200') }} 1200w,
+                    {{ asset('img/gallery/ride-horse-in-vinales.jpg') | imagine_filter('min_width_1000') }} 1000w
+                    ">
+
+                    <img class="lazyload blur-up"
+                         sizes="100vw"
+                         data-srcset="
+                    {{ asset('img/gallery/ride-horse-in-vinales-portraid.jpg') | imagine_filter('min_width_800') }} 800w,
+                    {{ asset('img/gallery/ride-horse-in-vinales-portraid.jpg') | imagine_filter('min_width_600') }} 600w"
+                         src="{{ asset('img/gallery/ride-horse-in-vinales-portraid.jpg') | imagine_filter('small_thumbnail') }}"
+                         alt="Horse-Riding-in-Vinales-(Viñales)">
+
+                    <noscript>
+                        <img
+                                src="{{ asset('img/gallery/ride-horse-in-vinales-portraid.jpg')}}"
+                                alt="Horse-Riding-in-Vinales-(Viñales)">
+                    </noscript>
+                </picture>
+
+                <picture>
+                    <source class="lazyload"
+                            media="(min-width: 1200px)"
+                            sizes="(min-width: 1200px) 50vw"
+                            data-srcset="
+                        {{ asset('img/gallery/vinales-view.jpg') | imagine_filter('min_width_1200') }} 1200w,
+                        {{ asset('img/gallery/vinales-view.jpg') | imagine_filter('min_width_1000') }} 1000w
+                    ">
+
+                    <img class="lazyload blur-up"
+                         sizes="100vw"
+                         data-srcset="
+                        {{ asset('img/gallery/vinales-view-portraid.jpg') | imagine_filter('min_width_800') }} 800w,
+                        {{ asset('img/gallery/vinales-view-portraid.jpg') | imagine_filter('min_width_600') }} 600w"
+                         src="{{ asset('img/gallery/vinales-view-portraid.jpg') | imagine_filter('small_thumbnail') }}"
+                         alt="(Viñales)-Vinales-valley-view-wide">
+
+                    <noscript>
+                        <img
+                                src="{{ asset('img/gallery/vinales-view-portraid.jpg') }}"
+                                alt="(Viñales)-Vinales-valley-view-wide">
+                    </noscript>
                 </picture>
             </div>
-            <div class="main__content">
+            <div class="activities__item__text">
+                <p>
+                    Pick up at <b>airport, cruise, hotel or rental house in Havana</b>
+                    and return if you want at the end of the travel.
+                </p>
 
-                <div class="main__content__text">
+                <br>
 
-                    <div class="main__content__text__title">
-                        <h1 class="title title--white title--big">
-                            One day in Vinales <br>
-                            with classic cars
-                        </h1>
-                    </div>
-
-                    <div class="main__content__text__subtext">
-                        <span>Preciseness</span>
-                        <span>Reliability</span>
-                        <span>Comfort</span>
-                    </div>
-
-                </div>
-
-                <div class="main__content__button">
-                    <a class="btn btn--primary-gradient" href="{{ path('booking') }}">Make a Reservation</a>
-                </div>
-            </div>
-        </main>
-
-        <section id="why_with_us" class="why_with_us section">
-
-            <div class="section__description">
-                <div class="title title--center">
-                    <h2>Why with us?</h2>
-                </div>
-                <div class="section__description__text">
-                    <p>
-                        There are many options out there, but ...
-                    </p>
-                </div>
-
-            </div>
-
-            <div class="why_with_us__cards">
-
-                <div class="why_with_us__cards__item">
-                    <div class="why_with_us__cards__item__text">
-                        <p>We have been in the top five of
-                            <a target="_blank" href="https://www.tripadvisor.com/Attraction_Review-g147271-d13554747-Reviews-Taxi_Drivers_Cuba-Havana_Ciudad_de_la_Habana_Province_Cuba.html">
-                                    <b>TRIPADVISOR</b>
-                            </a>
-                            for more than a year.
-                        </p>
-                    </div>
-                </div>
-
-                <div class="why_with_us__cards__item">
-                    <div class="why_with_us__cards__item__text">
-                        <p>We offer <b>PUNCTUALITY</b> with a
-                            <b>COMPETITIVE PRICE</b>
-                            and <b>COMFORT</b></p>
-                    </div>
-                </div>
-
-                <div class="why_with_us__cards__item">
-                    <div class="why_with_us__cards__item__text">
-                        <p>We can make a reservation in advance to
-                            <b>RIDE HORSES</b> or <b>LUNCH</b>
-                            making this an unique experience</p>
-                    </div>
-                </div>
-
-                <div class="why_with_us__cards__item">
-                    <div class="why_with_us__cards__item__text">
-                        <p> <b>BABIES</b> ...,
-                            <b>WHEELCHAIRS</b> ...,
-                            at no additional cost
-                    </div>
-                </div>
-
-            </div>
-        </section>
-
-        <section id="activities" class="activities section">
-
-            <div class="title title--center">
-                <h2>Our tour includes</h2>
-            </div>
-
-            <div class="activities__item">
-                <div class="activities__item__image group1">
-                    <img src="{{ asset('img/gallery/vinales-cuba-tobacco-plantations-1080x720.jpg') }}" alt="">
-                    <img src="{{ asset('img/gallery/gazebo-of-Los-Jazmines.jpg') }}" alt="">
-                </div>
-                <div class="activities__item__text">
-                    <p>
-                        Pick up at airport, cruise, hotel or rental house in Havana
-                        and return at the end of the tour.
-                    </p>
-
-                    <p>Tours through the tobacco fields, where you can
-                        acquire some knowledge about traditional Cuban
-                        cigars, learn about its growth and elaboration.
-                        <b>If you want, you can smoke the cigars and carry
+                <p>Tours through the tobacco fields, where you can
+                    acquire some knowledge about traditional Cuban
+                    cigars, learn about its growth and elaboration.
+                    <b>If you want, you can smoke the cigars and carry
                         them with you: your friends will be thrilled!</b>
-                    </p>
+                </p>
 
-                    <p>
-                        Horseback ride through the Viñales National
-                        Park for the <b>additional price of 10.00 cuc per
-                        person the excursion of approximately 1 hour</b>,
-                        where you can taste the exquisite Cuban coffee
-                        and the Guayabita del Pinar rum.
+                <br>
+
+                <p>
+                    <b>Horseback ride</b> through the Viñales National
+                    Park for the <i>additional price of 10.00 cuc per
+                        person the excursion of approximately 1 hour</i>,
+                    where you can taste the exquisite Cuban coffee
+                    and the Guayabita del Pinar rum.
+                </p>
+            </div>
+        </div>
+
+        <div class="activities__item activities__item--inverse group2">
+            <div class="activities__item__image">
+                <picture>
+                    <source class="lazyload"
+                            media="(min-width: 1200px)"
+                            sizes="(min-width: 1200px) 50vw"
+                            data-srcset="
+                        {{ asset('img/gallery/mural-de-la-preistoria-vinales.jpg') | imagine_filter('min_width_1200') }} 1200w,
+                        {{ asset('img/gallery/mural-de-la-preistoria-vinales.jpg') | imagine_filter('min_width_1000') }} 1000w
+                    ">
+
+                    <img class="lazyload blur-up"
+                         sizes="100vw"
+                         data-srcset="
+                        {{ asset('img/gallery/mural-de-la-preistoria-vinales-portraid.jpg') | imagine_filter('min_width_800') }} 800w,
+                        {{ asset('img/gallery/mural-de-la-preistoria-vinales-portraid.jpg') | imagine_filter('min_width_600') }} 600w"
+                         src="{{ asset('img/gallery/mural-de-la-preistoria-vinales-portraid.jpg') | imagine_filter('small_thumbnail') }}"
+                         alt="prehistory-mural-in-Vinales-(Viñales)">
+                    <noscript>
+                        <img
+                                src="{{ asset('img/gallery/mural-de-la-preistoria-vinales-portraid.jpg') }}"
+                                alt="prehistory-mural-in-Vinales-(Viñales)">
+                    </noscript>
+                </picture>
+
+                <picture>
+                    <source class="lazyload"
+                            media="(min-width: 1200px)"
+                            sizes="(min-width: 1200px) 50vw"
+                            data-srcset="
+                        {{ asset('img/gallery/indio-cave-vinales.jpg') | imagine_filter('min_width_1200') }} 1200w,
+                        {{ asset('img/gallery/indio-cave-vinales.jpg') | imagine_filter('min_width_1000') }} 1000w
+                    ">
+
+                    <img class="lazyload blur-up"
+                         sizes="100vw"
+                         data-srcset="
+                        {{ asset('img/gallery/indio-cave-vinales-portraid.jpg') | imagine_filter('min_width_800') }} 800w,
+                        {{ asset('img/gallery/indio-cave-vinales-portraid.jpg') | imagine_filter('min_width_600') }} 600w"
+                         src="{{ asset('img/gallery/indio-cave-vinales-portraid.jpg') | imagine_filter('small_thumbnail') }}"
+                         alt="indian-cave-in-Vinales-(Viñales)">
+                    <noscript>
+                        <img
+                                src="{{ asset('img/gallery/indio-cave-vinales-portraid.jpg') }}"
+                                alt="indian-cave-in-Vinales-(Viñales)">
+                    </noscript>
+                </picture>
+            </div>
+            <div class="activities__item__text">
+
+                <p>
+                    Visit the <b>Indian Cave</b>, a natural
+                    refuge of the first habitants of
+                    our lands and you’ll take a <i>ride
+                        in a boat</i> through subterranean waters.
+                    <b>For the additional price of 5.00 cuc per person.</b>
+                </p>
+
+                <br>
+
+                <p>
+                    Visit the <b>Mural of Prehistory</b>, one of biggest
+                    murals outdoors of the world.
+                </p>
+
+                <br>
+
+                <p>
+                    Visit <b>the gazebo of Los Jazmines</b> with a wide
+                    and beautiful view of the whole place.
+                </p>
+
+                <br>
+
+                <p>
+                    This whole tour will be combined with <b>delicious
+                        food offers in restaurants</b>. For the additional
+                    price of 15.00 cuc per person the main course you want.
+                </p>
+
+            </div>
+        </div>
+
+        <div class="activities__item">
+            <div class="activities__item__image group3">
+                <picture>
+                    <source class="lazyload"
+                            media="(min-width: 1200px)"
+                            sizes="(min-width: 1200px) 50vw"
+                            data-srcset="
+                        {{ asset('img/gallery/restaurant-cuban-food-vinales.jpg') | imagine_filter('min_width_1200') }} 1200w,
+                        {{ asset('img/gallery/restaurant-cuban-food-vinales.jpg') | imagine_filter('min_width_1000') }} 1000w
+                    ">
+
+                    <img class="lazyload blur-up"
+                         sizes="100vw"
+                         data-srcset="
+                        {{ asset('img/gallery/restaurant-cuban-food-vinales-portraid.jpg') | imagine_filter('min_width_800') }} 800w,
+                        {{ asset('img/gallery/restaurant-cuban-food-vinales-portraid.jpg') | imagine_filter('min_width_600') }} 600w"
+                         src="{{ asset('img/gallery/restaurant-cuban-food-vinales-portraid.jpg') | imagine_filter('small_thumbnail') }}"
+                         alt="restaurant-in-Vinales-(Viñales)-tipical-cuban-food-for-launch">
+                    <noscript>
+                        <img
+                                src="{{ asset('img/gallery/restaurant-cuban-food-vinales-portraid.jpg') }}"
+                                alt="restaurant-in-Vinales-(Viñales)-tipical-cuban-food-for-launch">
+                    </noscript>
+                </picture>
+
+                <picture>
+                    <source class="lazyload"
+                            media="(min-width: 1200px)"
+                            sizes="(min-width: 1200px) 50vw"
+                            data-srcset="
+                        {{ asset('img/gallery/foto-tabaco-vinales.jpg') | imagine_filter('min_width_1200') }} 1200w,
+                        {{ asset('img/gallery/foto-tabaco-vinales.jpg') | imagine_filter('min_width_1000') }} 1000w
+                    ">
+
+                    <img class="lazyload blur-up"
+                         sizes="100vw"
+                         data-srcset="
+                        {{ asset('img/gallery/foto-tabaco-vinales-portraid.jpg') | imagine_filter('min_width_800') }} 800w,
+                        {{ asset('img/gallery/foto-tabaco-vinales-portraid.jpg') | imagine_filter('min_width_600') }} 600w"
+                         src="{{ asset('img/gallery/foto-tabaco-vinales-portraid.jpg') | imagine_filter('small_thumbnail') }}"
+                         alt="Tabaco-in-vinales-(Viñales)-people-learning-and-smoking">
+                    <noscript>
+                        <img
+                                src="{{ asset('img/gallery/foto-tabaco-vinales-portraid.jpg') }}"
+                                alt="Tabaco-in-vinales-(Viñales)-people-learning-and-smoking">
+                    </noscript>
+                </picture>
+            </div>
+            <div class="activities__item__text">
+                <p>
+                    We recommend you bring <b>light clothes</b>, <b>sunglasses</b>,
+                    a <b>hat or cap</b>, camera if you want to
+                    take beautiful photos, plus a <b>bottle of water</b>.
+                    Also a extra bit of cash for <b>buying ciggar</b> if you want ;)
+                </p>
+
+                <br>
+
+                <p>
+                    We recommend <b>doing this tour starting at 7:30 am</b>
+                    for the distance needed to travel.
+                    The return to Havana will take place in the afternoon,
+                    at the end of the tour.
+                </p>
+
+                <br>
+
+                <p>
+                    We provide a private service only for you and your family.
+                </p>
+            </div>
+        </div>
+
+        <div class="activities__button">
+            <a class="btn btn--primary-gradient"
+                    {#target="_self" href="{{ url }}">#}
+               target="_self" href="{{ path('booking') }}">
+                Make a reservation
+            </a>
+        </div>
+    </section>
+
+    <section id="why_with_us" class="why_with_us section">
+
+        <div class="section__description">
+            <div class="title title--center">
+                <h2>Why make this trip with us?</h2>
+            </div>
+            <div class="section__description__text">
+                <p>
+                    There are many options out there, but ...
+                </p>
+            </div>
+
+        </div>
+
+        <div class="why_with_us__cards">
+
+            <div class="why_with_us__cards__item">
+                <div class="why_with_us__cards__item__text">
+                    <p>We have been in the top five of
+                        <a target="_blank" href="https://www.tripadvisor.com/Attraction_Review-g147271-d13554747-Reviews-Taxi_Drivers_Cuba-Havana_Ciudad_de_la_Habana_Province_Cuba.html">
+                                <b>TRIPADVISOR</b>
+                        </a>
+                        for more than a year.
                     </p>
                 </div>
             </div>
 
-            <div class="activities__item activities__item--inverse group2">
-                <div class="activities__item__image">
-                    <img src="{{ asset('img/gallery/gazebo-of-Los-Jazmines.jpg') }}" alt="">
-                    <img src="{{ asset('img/gallery/vinales-cuba-tobacco-plantations-1080x720.jpg') }}" alt="">
-                </div>
-                <div class="activities__item__text">
-
-                    <p>
-                        Visit the Indian Cave, a natural
-                        refuge of the first habitants of
-                        our lands and you’ll take a ride
-                        in a boat through subterranean waters.
-                        <b>For the additional price of 5.00 cuc per person.</b>
+            <div class="why_with_us__cards__item">
+                <div class="why_with_us__cards__item__text">
+                    <p>We offer <b>PUNCTUALITY</b> with a
+                        <b>COMPETITIVE PRICE</b>
+                        and <b>COMFORT</b>.
                     </p>
-
-                    <p>
-                        Visit the Mural of Prehistory, one of biggest
-                        murals outdoors of the world.</p>
-
-                    <p>
-                        Visit the gazebo of Los Jazmines with a wide
-                        and beautiful view of the whole place.</p>
-
-                    <p>
-                        This whole tour will be combined with delicious
-                        food offers in restaurants. <b>For the additional
-                        price of 15.00 cuc per person the main course you want</b>.
-                    </p>
-
                 </div>
             </div>
 
-            <div class="activities__item">
-                <div class="activities__item__image group3">
-                    <img src="{{ asset('img/gallery/3.jpg') }}" alt="">
-                    <img src="{{ asset('img/gallery/vinales-cuba-tobacco-plantations-1080x720.jpg') }}" alt="">
-                </div>
-                <div class="activities__item__text">
-                    <p>
-                        We recommend you bring light clothes, sunglasses,
-                        a hat or cap, camera if you want to
-                        take beautiful photos, plus a bottle of water.
-                        Also a extra bit of cash for buying ciggar if you want ;)
-                    </p>
+            {#<div class="why_with_us__cards__item">#}
+                {#<div class="why_with_us__cards__item__text">#}
+                    {#<p>We offer#}
+                        {#<a target="_blank" href="{{ url }}">#}
+                        {#<a target="_blank" href="{{ path('booking') }}">#}
+                            {#<b>ONLINE BOOKING</b>#}
+                        {#</a> and you only need to pay a little amount in advance.#}
+                    {#</p>#}
+                {#</div>#}
+            {#</div>#}
 
-                    <p>
-                        We recommend <b>doing this tour starting at 7:30 am </b>
-                        for the distance needed to travel.
-                        The return to Havana will take place in the afternoon,
-                        at the end of the tour.
+            <div class="why_with_us__cards__item">
+                <div class="why_with_us__cards__item__text">
+                    <p>We can make a reservation in advance to
+                        <b>RIDE HORSES</b> or <b>LUNCH</b>
+                        making this an unique experience.
                     </p>
-
-                    <p>
-                        We provide a private service only for you and your family
-                    </p>
-
                 </div>
             </div>
 
-            <div class="activities__button">
-                <a class="btn btn--primary-gradient" href="{{ path('booking') }}">
-                    Make a reservation
+            <div class="why_with_us__cards__item">
+                <div class="why_with_us__cards__item__text">
+                    <p> <b>BABIES</b> ...,
+                        <b>WHEELCHAIRS</b> ...,
+                        at no additional cost
+                    </p>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <section id="more_places"
+             class="more_places parallax lazyload section section--no-margin"
+             data-bg="{{ asset('img/more-destinations.jpg') }}">
+
+        <div class="more_places__content">
+            <div class="more_places__content__title">
+                <h2 class="title title--white title--big title--center">
+                    Do you need another taxi driver option?
+                </h2>
+            </div>
+            <div class="more_places__content__places">
+                <ul>
+                    <li><a target="_blank"  href="https://www.taxidriverscuba.com/en/airport/1/transfer-from-the-airports-of-cuba-to-your-destination">Airport</a></li>
+                    <li><a target="_blank" href="https://www.taxidriverscuba.com/en/experience/7/attractive-day-excursion-from-havana-to-varadero">Varadero</a></li>
+                    <li><a target="_blank" href="https://www.taxidriverscuba.com/en/booking/5/habana-to-cayo-santa-maria">Cayo Santa Maria</a></li>
+                    <li><a target="_blank" href="https://www.taxidriverscuba.com/en/booking/6/habana-to-cayo-coco">Cayo Coco</a></li>
+                    <li><a target="_blank" href="https://www.taxidriverscuba.com/en/booking/11/habana-to-cienfuegos">Cienfuegos</a></li>
+                    <li><a target="_blank" href="https://www.taxidriverscuba.com/en/booking/12/habana-to-trinidad">Trinidad</a></li>
+                    <li><a target="_blank" href="https://www.taxidriverscuba.com/en/booking/7/habana-to-vinales">Vinales (transfer only)</a></li>
+                </ul>
+            </div>
+            <div class="more_places__content__button">
+                <a target="_blank" class="btn btn--primary-gradient"
+                   href="https://www.taxidriverscuba.com">
+                    See other destinations
                 </a>
             </div>
-        </section>
+        </div>
 
-        <section id="more_places" class="more_places parallax  section section--no-margin">
+    </section>
 
-            <div class="more_places__content">
-                <div class="more_places__content__title">
-                    <h2 class="title title--white title--big title--center">
-                        Did you need more?
-                    </h2>
-                </div>
-                <div class="more_places__content__places">
-                    <ul>
-                        <li><a target="_blank"  href="https://www.taxidriverscuba.com/en/airport/1/transfer-from-the-airports-of-cuba-to-your-destination">Airport</a></li>
-                        <li><a target="_blank" href="https://www.taxidriverscuba.com/en/experience/7/attractive-day-excursion-from-havana-to-varadero">Varadero</a></li>
-                        <li><a target="_blank" href="https://www.taxidriverscuba.com/en/booking/5/habana-to-cayo-santa-maria">Cayo Santa Maria</a></li>
-                        <li><a target="_blank" href="https://www.taxidriverscuba.com/en/booking/6/habana-to-cayo-coco">Cayo Coco</a></li>
-                        <li><a target="_blank" href="https://www.taxidriverscuba.com/en/booking/11/habana-to-cienfuegos">Cienfuegos</a></li>
-                        <li><a target="_blank" href="https://www.taxidriverscuba.com/en/booking/12/habana-to-trinidad">Trinidad</a></li>
-                        <li><a target="_blank" href="https://www.taxidriverscuba.com/en/booking/7/habana-to-vinales">Vinales (transfer only)</a></li>
-                    </ul>
-                </div>
-                <div class="more_places__content__button">
-                    <a target="_blank" class="btn btn--primary-gradient"
-                       href="https://www.taxidriverscuba.com">
-                        See other destinations
-                    </a>
-                </div>
-            </div>
-
-        </section>
-
-        <section id="contact" class="contact_faq">
+    <section id="contact" class="contact_faq">
 
             <div class="title title--center">
                 <h2>Contact & FAQ</h2>
@@ -239,23 +428,29 @@
                     <h4>Frequently askly questions</h4>
                     <ul>
                         <li>
-                            Can I pay by making a transfer?
-                            <p>yes, you can. You only need to make a
-                                transfer to this account number, #123456789</p>
+                            Can I booking online?
+                            <p>yes, you can. You only need to fill the
+                                <a href="{{ path('booking') }}">
+                                    RESERVATION FORM</a>.
+                            </p>
                         </li>
                         <li>
                             Can I pay in cash and in what currency can I pay?
-                            <p>Yes, you can pay in cash to driver at the beginning of the travel, we
+                            <p>Yes, you can pay in cash to driver at the end of the travel, we
                             accept payments in EUR, USD and CUC.</p>
                         </li>
                         <li>
                             The tour to Vinales includes the return?
-                            <p>Yes, we can leave where we pickup you or in any place you want in Havana</p>
+                            <p>Yes, we can leave where we pickup you or in any place
+                                you want in Havana</p>
                         </li>
                         <li>
                             Do you offer a pickup from Cruise or Airport?
                             <p>
-                                Yes, you only need to check this option in the <a href="">RESERVATION FORM</a>.
+                                Yes, you only need to check this option in the
+                                {#<a target="_self" href="{{ url }}">#}
+                                <a target="_self" href="{{ path('booking') }}">
+                                    RESERVATION FORM</a>.
                             </p>
                         </li>
                     </ul>
@@ -263,13 +458,8 @@
 
                 <div class="contact_faq__content__contact">
                     <h4>Send us a message</h4>
-
                     {{ form(form) }}
                 </div>
-
             </div>
-
         </section>
-
-
 {% endblock %}

@@ -1,14 +1,170 @@
+{% set url = "https://taxidriverscuba.trekksoft.com/en/tours/book/254469" %}
+{% set description = "If you are looking for see Vinales 🌄 in one day in classic cars, we are the best in that. We can make reservations in advance for other activities like horse riding 🐴, lunch 🥗 and discover the cuban tabaco history." %}
+{% set title = "Day trip to Viñales 🌄 from Havana, Cuba | Vinales Taxi 🚕" %}
+
 <!DOCTYPE html>
 <html>
     <head>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1" />
 
-        <title>{% block title %}Welcome!{% endblock %}</title>
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <meta name="theme-color" content="#378203">
+
+        {# Facebook Tags #}
+        <meta property="og:type"               content="article" />
+        <meta property="og:title"              content="{{ title }}" />
+        <meta property="og:description"        content="{{ description }}" />
+        <meta property="og:image"              content="{{ absolute_url(asset('img/our-car-in-mural-prehistoria.jpg')) }}" />
+
+        {# Twitter tags #}
+        <meta name="twitter:card" content="summary" />
+        <meta name="twitter:site" content="@taxiDriverCuba" />
+        <meta name="twitter:creator" content="@taxiDriverCuba" />
+        <meta property="og:title" content="{{ title }}" />
+        <meta property="og:description" content="{{ description }}" />
+        <meta property="og:image" content="{{ absolute_url(asset('img/our-car-in-mural-prehistoria.jpg')) }}" />
+
+        <meta property="keyword" content="
+        taxi to,
+        day trips from havana,
+        havana to vinales,
+        cuban tour,
+        taxis to airport,
+        havana to vinales day trip,
+        havana travel,
+        taxi prices,
+        taxi drivers
+
+        ">
+        <meta name="description" content="{{ description }}">
+        <link rel="canonical" href="https://vinales.taxi"/>
+        {#breadcrumbs#}
+        <script type="application/ld+json">
+            {
+              "@context": "http://schema.org",
+              "@type": "BreadcrumbList",
+              "itemListElement": [{
+                "@type": "ListItem",
+                "position": 1,
+                "item": {
+                  "@id": "{{ absolute_url(path("frontend")) }}",
+                  "name": "Home",
+                  "image": "{{ asset("/images/favicon.png") }}"
+                }
+              }]
+            }
+        </script>
+
+        {#Logo and customer Service Number#}
+        <script type="application/ld+json">
+        {
+          "@context": "http://schema.org",
+          "@type": "Organization",
+          "name": "TaxiDriversCuba",
+          "url": "https://www.taxidriverscuba.com",
+          "logo": "https://www.taxidriverscuba.com/images/logo.png",
+          "contactPoint": [
+            { "@type": "ContactPoint",
+              "telephone": "+53 5 5864523",
+              "contactType": "customer service",
+              "availableLanguage": [
+              "English",
+              "Spanish"
+               ]
+            }
+          ],
+          "sameAs": [
+            "http://www.facebook.com/taxidriverscuba",
+            "http://instagram.com/taxidriverscuba",
+            "http://plus.google.com/taxidriverscuba"
+          ]
+        }
+        </script>
+
+        {#product and price#}
+        <script type="application/ld+json">
+        {
+            "@context": "http://schema.org/",
+            "@type": "Product",
+                "name": "Tour to Vinales | Tobacco, Horse ride and more",
+            "image": [
+            "{{ absolute_url(asset('img/google/ride-horse-in-vinales_1x1.jpg') )}}",
+            "{{ absolute_url(asset('img/google/ride-horse-in-vinales_4x3.jpg') )}}",
+            "{{ absolute_url(asset('img/google/ride-horse-in-vinales_16x9.jpg') )}}"
+            ],
+            "description": "Tour to Vinales | Tobacco, Horse ride and more",
+            "mpn": "",
+            "brand": {
+                "@type": "Thing",
+                "name": "Taxi Drivers Cuba"
+            },
+            "offers": {
+                "@type": "Offer",
+                "priceCurrency": "USD",
+                "price": "135.00",
+                "priceValidUntil": "2019-12-31",
+                "itemCondition": "http://schema.org/UsedCondition",
+                "availability": "http://schema.org/InStock",
+                "seller": {
+                    "@type": "Organization",
+                    "name": "Taxi Drivers Cuba"
+                    }
+                }
+        }
+        </script>
+
+        <link rel="icon" type="image/png" href="{{ asset('img/favicon.png') }}" />
+        <title>{{ title }}</title>
         {% block stylesheets %}
             <link rel="stylesheet" href="{{ asset('styles/styles.css') }}">
         {% endblock %}
+
         {% block javascripts_defer %}{% endblock %}
+
+        <!-- Global site tag (gtag.js) - Google Analytics -->
+        <script async src="https://www.googletagmanager.com/gtag/js?id=UA-136613257-1"></script>
+
+        <script>
+            window.dataLayer = window.dataLayer || [];
+            function gtag(){dataLayer.push(arguments);}
+            gtag('js', new Date());
+
+            gtag('config', 'UA-136613257-1');
+        </script>
+
+        {% block trackingcodes %}{% endblock %}
+        
+
+<!-- Matomo -->
+<script type="text/javascript">
+  var _paq = window._paq || [];
+  /* tracker methods like "setCustomDimension" should be called before "trackPageView" */
+  _paq.push(['trackPageView']);
+  _paq.push(['enableLinkTracking']);
+  (function() {
+    var u="//habana.tech/matomo/";
+    _paq.push(['setTrackerUrl', u+'matomo.php']);
+    _paq.push(['setSiteId', '2']);
+    var d=document, g=d.createElement('script'), s=d.getElementsByTagName('script')[0];
+    g.type='text/javascript'; g.async=true; g.defer=true; g.src=u+'matomo.js'; s.parentNode.insertBefore(g,s);
+  })();
+</script>
+<!-- End Matomo Code -->
+
+<!-- Hotjar Tracking Code for https://vinales.taxi -->
+<script>
+    (function(h,o,t,j,a,r){
+        h.hj=h.hj||function(){(h.hj.q=h.hj.q||[]).push(arguments)};
+        h._hjSettings={hjid:1271922,hjsv:6};
+        a=o.getElementsByTagName('head')[0];
+        r=o.createElement('script');r.async=1;
+        r.src=t+h._hjSettings.hjid+j+h._hjSettings.hjsv;
+        a.appendChild(r);
+    })(window,document,'https://static.hotjar.com/c/hotjar-','.js?sv=');
+</script>
+
+        
     </head>
 
     <body>
@@ -17,7 +173,7 @@
 
         <div class="logo">
             <a href="/">
-                <img src="{{ asset('img/logo.png') | imagine_filter('small_thumbnail') }}" alt="Vinales in taxi">
+                <img src="{{ asset('img/logo.png') }}" alt="Viñales-Taxi-Cuba-logo">
             </a>
         </div>
 
@@ -27,11 +183,16 @@
 
         <nav class="nav">
             <ul>
-                <li><a href="{{ path('frontend') }}#why_with_us" data-section="#why_with_us">Us</a></li>
                 <li><a href="{{ path('frontend') }}#activities" data-section="#activities">Activities</a></li>
+                <li><a href="{{ path('frontend') }}#why_with_us" data-section="#why_with_us">Us</a></li>
                 <li><a href="{{ path('frontend') }}#more_places" data-section="#more_places">More places</a></li>
                 <li><a href="{{ path('frontend') }}#contact" data-section="#contact">Contact & FAQ</a></li>
-                <li class="nav--special"><a href="{{ path('booking') }}">Make a Reservation</a></li>
+                <li class="nav--special">
+                    {#<a target="_self" href="{{ url }}">#}
+                    <a target="_self" href="{{ path('booking') }}">
+                        Make a reservation
+                    </a>
+                </li>
             </ul>
         </nav>
 
@@ -42,34 +203,45 @@
     <footer class="footer">
         <div class="footer__image">
             <picture>
-                <source class="lazyloaded" media="(min-width: 800px)"
-                        srcset="{{ asset('img/footer.jpg') | imagine_filter('min_width_800') }} 800w,
-                                {{ asset('img/footer.jpg') | imagine_filter('min_width_1000') }} 1000w">
-                <!-- img tag for browsers that do not support picture element -->
-                <img class="lazyload" data-src="{{ asset('img/footer_portraid.jpg') }}" alt="">
+                <source class="lazyload"
+                        media="(min-width: 1200px)"
+                        sizes="100vw"
+                        data-srcset="
+                            {{ asset('img/vinales-aereal-view-from-los-jasmines.jpg') | imagine_filter('min_width_1920') }} 1920w,
+                            {{ asset('img/vinales-aereal-view-from-los-jasmines.jpg') | imagine_filter('min_width_1200') }} 1200w,
+                            {{ asset('img/vinales-aereal-view-from-los-jasmines.jpg') | imagine_filter('min_width_1000') }} 1000w
+                        ">
+
+                <img class="lazyload blur-up"
+                     sizes="100vw"
+                     data-srcset="
+                            {{ asset('img/vinales-aereal-view-from-los-jasmines-portraid.jpg') | imagine_filter('min_width_800') }} 800w,
+                            {{ asset('img/vinales-aereal-view-from-los-jasmines-portraid.jpg') | imagine_filter('min_width_600') }} 600w"
+                     src="{{ asset('img/vinales-aereal-view-from-los-jasmines-portraid.jpg') | imagine_filter('small_thumbnail') }}"
+                     alt="Horse riding in vinales, you can make a reservation in advance with us">
             </picture>
         </div>
 
         <div class="footer__contact">
             <address>
                 You can contact us at <a href="mailto:taxidriverscuba@gmail.com">taxidriverscuba@gmail.com</a>
-                or call us to phone <a href="tel://123-456-789">+53 5 123-456-798</a>
+                or call us to phone <a href="tel://+53 5 5864523">+53 5 5864523</a>
             </address>
             
             <div class="social">
                 <ul>
                     <li>
-                        <a href="">
+                        <a href="https://www.tripadvisor.es/Attraction_Review-g147271-d13554747-Reviews-Taxi_Drivers_Cuba-Havana_Ciudad_de_la_Habana_Province_Cuba.html" target="_blank">
                             <img src="{{ asset('img/icons/tripadvisor.svg') }}" alt="">
                         </a>
                     </li>
                     <li>
-                        <a href="">
+                        <a href="https://www.facebook.com/taxidriverscuba/" target="_blank">
                             <img src="{{ asset('img/icons/facebook.svg') }}" alt="">
                         </a>
                     </li>
                     <li>
-                        <a href="">
+                        <a href="http://www.instagram.com/taxidriverscuba/" target="_blank">
                             <img src="{{ asset('img/icons/instagram.svg') }}" alt="">
                         </a>
                     </li>
@@ -78,7 +250,6 @@
         </div>
 
     </footer>
-
 
         {% block javascripts %}{% endblock %}
     </body>

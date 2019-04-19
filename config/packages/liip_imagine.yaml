@@ -67,7 +67,18 @@ liip_imagine:
                     position: center
                     color:    '#fff'
 
+        min_width_1920:
+            jpeg_quality: 85
+            png_compression_level: 8
+            filters:
+                auto_rotate: ~
+                strip: ~
+                relative_resize:
+                    widen: 1920
+
         min_width_1200:
+            jpeg_quality: 85
+            png_compression_level: 8
             filters:
                 auto_rotate: ~
                 strip: ~
@@ -75,7 +86,6 @@ liip_imagine:
                     widen: 1200
 
         min_width_1000:
-
             # set your image quality defaults
             jpeg_quality:          85
             png_compression_level: 8
@@ -86,6 +96,19 @@ liip_imagine:
                 strip: ~
                 relative_resize:
                     widen: 1000
+
+        min_width_900:
+
+            # set your image quality defaults
+            jpeg_quality:          85
+            png_compression_level: 8
+
+            # setup the filter steps to apply for this transformation
+            filters:
+                auto_rotate: ~
+                strip: ~
+                relative_resize:
+                    widen: 900
 
         min_width_800:
 

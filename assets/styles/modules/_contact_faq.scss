@@ -9,7 +9,7 @@
         &__contact {
             width: 100%;
 
-            @mixin atMedium{
+            @mixin atLarge{
                 width: 45%;
                 order: 1;
             }
@@ -23,7 +23,7 @@
         &__faq {
             width: 100%;
 
-            @mixin atMedium{
+            @mixin atLarge{
                 width: 45%;
                 order: 2;
             }

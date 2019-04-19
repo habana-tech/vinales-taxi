@@ -1,8 +1,11 @@
 .reservation{
-    margin-top: 10% !important;
+    margin-top: 0 !important;
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
+    background-color: white;
+    top: -3em;
+    position: relative;
 
     & .title{
         width: 100%;
@@ -34,7 +37,7 @@
                 height: 2px;
                 border-bottom: 1px rgba($mainSoftDark, .1) solid;
                 width: 80%;
-                margin: 2em auto;
+                margin: 1em auto;
             }
 
             &__group{
@@ -69,7 +72,6 @@
             }
 
         }
-
     }
 }
 
@@ -100,6 +102,10 @@
     display: flex;
 
     & > div{
-        margin: auto 1em;
+        margin: auto .5em;
+
+        @mixin atLarge{
+            margin: auto 1em;
+        }
     }
 }
