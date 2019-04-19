@@ -594,7 +594,7 @@ input[type="submit"] {
         height: 2px;
         border-bottom: 1px rgba(106, 106, 106, 0.1) solid;
         width: 80%;
-        margin: 2em auto; }
+        margin: 1em auto; }
       .reservation__content__form__group__single {
         width: 100%;
         display: flex;
