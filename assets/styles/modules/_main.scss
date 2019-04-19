@@ -35,6 +35,9 @@
             }
 
             &__title{
+                width: 90%;
+                margin: auto 5%;
+
                 @mixin atLarge {
                     width: 35%;
                 }

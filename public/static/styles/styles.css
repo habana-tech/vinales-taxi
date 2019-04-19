@@ -528,9 +528,12 @@ input[type="submit"] {
           margin-left: 4em;
           width: 100%;
           justify-content: flex-start; } }
-      @media (min-width: 800px) {
-        .main__content__text__title {
-          width: 35%; } }
+      .main__content__text__title {
+        width: 90%;
+        margin: auto 5%; }
+        @media (min-width: 800px) {
+          .main__content__text__title {
+            width: 35%; } }
       .main__content__text__subtext {
         width: 100%; }
         .main__content__text__subtext span {
@@ -682,10 +685,11 @@ input[type="submit"] {
       align-items: center;
       justify-content: center;
       flex-wrap: wrap;
-      margin: auto; }
+      margin: 2em auto; }
       @media (min-width: 800px) {
         .activities__item__text {
-          width: 50%; } }
+          width: 50%;
+          margin: auto; } }
       .activities__item__text p {
         margin: auto 10%;
         width: 100%; }
