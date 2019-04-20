@@ -203,9 +203,12 @@ class Booking
         return $this->pickupTime;
     }
 
-    public function setPickupTime(\DateTimeInterface $pickupTime): self
+    public function setPickupTime($pickupTime): self
     {
-        $this->pickupTime = $pickupTime;
+        if(is_object($pickupTime))
+            $this->pickupTime = $pickupTime;
+        else
+            $this->pickupTime = new \DateTime($pickupTime);
 
         return $this;
     }

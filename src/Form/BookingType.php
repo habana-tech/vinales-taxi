@@ -20,8 +20,17 @@ class BookingType extends AbstractType
     {
         $builder
             ->add('peopleCount', null, ['attr'=>['min'=>1, 'max'=>40, 'placeholder'=>1]])
-            ->add('pickupDate', DateType::class, ['widget'=>'single_text'])
-            ->add('pickupTime', TimeType::class, ['widget'=>'single_text'])
+            ->add('pickupDate', DateType::class, ['widget'=>'single_text', 'attr'=>['min'=>date('Y-m-d')]])
+            //->add('pickupTime', TimeType::class, ['widget'=>'single_text'])
+            ->add('pickupTime', ChoiceType::class,[
+                'choices'=>[
+                    '7:00 am'=>'07:00',
+                    '7:30 am'=>'07:30',
+                    '8:00 am'=>'08:00',
+                    '8:30 am'=>'08:30',
+                    '9:00 am'=>'09:00'
+                ],'expanded'=>false
+            ])
 
             ->add('pickupPlace', ChoiceType::class,[
                 'choices'=>[

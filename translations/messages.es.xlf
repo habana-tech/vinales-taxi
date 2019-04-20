@@ -29,6 +29,10 @@
         <source>Index.title</source>
         <target>Viaje a Viñales</target>
       </trans-unit>
+      <trans-unit id="LlWqcUh" resname="Form.title">
+        <source>Form.title</source>
+        <target>__Form.title</target>
+      </trans-unit>
     </body>
   </file>
 </xliff>
