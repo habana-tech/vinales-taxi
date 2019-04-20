@@ -26,7 +26,8 @@ class FrontendController extends AbstractController
         $form = $this->createForm(ContactType::class,
             new Contact(),
             ['action'=> $this->generateUrl('contact'),
-            'method'=>'POST']);
+            'method'=>'POST',
+            ]);
 
 
         return $this->render('frontend/index.html.twig', [

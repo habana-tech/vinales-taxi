@@ -70,7 +70,18 @@
                     <li>
                         The number of passengers is <b>{{ booking.peopleCount }}</b>.
                     </li>
+
+                    <li>
+                        {% if booking.price is null %}
+                            We will send you a quote for this trip.
+                        {% else %}
+                            The total cost is: <b>{{ booking.price }}.00 USD</b>.
+                            <br>
+                            You will pay to the driver at the end of the trip.
+                        {% endif %}
+                    </li>
                 </ul>
+
                 <p>We send you an email with the reservation details.</p>
             </div>
         </section>

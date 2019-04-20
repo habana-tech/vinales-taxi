@@ -280,6 +280,15 @@ class Booking
 
     public function getPrice(): ?float
     {
+            if ($this->peopleCount >= 1 && $this->peopleCount <= 3)
+                $this->Price = 153;
+            else if ($this->peopleCount == 4)
+                $this->Price = 165;
+            else if ($this->peopleCount == 5)
+                $this->Price = 177;
+            else
+                $this->Price = null;
+
         return $this->Price;
     }
 

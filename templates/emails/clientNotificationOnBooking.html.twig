@@ -882,8 +882,16 @@
                                                                 <table style="width:100%;" class="cke_show_border" cellspacing="0" cellpadding="0" border="0">
                                                                     <tbody>
                                                                     <tr>
+                                                                        {#{% if booking.price is null %}#}
+                                                                        {#We will send you a quote for this trip.#}
+                                                                        {#{% else %}#}
+
                                                                         <td width="50%" align="left">
-                                                                            <h3 style="font-size: 17px; line-height: 150%;"><strong>Total</strong></h3>
+                                                                            <h3 style="font-size: 17px; line-height: 150%;">
+                                                                                <strong>
+                                                                                    Total
+                                                                                </strong>
+                                                                            </h3>
                                                                         </td>
                                                                         <td align="right">
                                                                             <h3 style="font-size: 17px; line-height: 150%;"><strong>${{ booking.price }}</strong></h3>
@@ -1244,7 +1252,7 @@
                                                         </tr>
                                                         <tr>
                                                             <td class="esd-block-text es-p10t" esdev-links-color="#333333" esd-links-color="#ffffff" esd-links-underline="underline" align="center">
-                                                                <p style="line-height: 150%; color: #ffffff;">vinales.taxi is a branch of Taxi Drivers Cuba.</p>
+                                                                <p style="line-height: 150%; color: #ffffff;"><a href="https://vinales.taxi" target="_blank">vinales.taxi</a> is a branch of <a href="https://www.taxidriverscuba.com" target="_blank">Taxi Drivers Cuba</a>.</p>
                                                                 <p style="line-height: 150%; color: #ffffff;"><a target="_blank" href="https://www.taxidriverscuba.com/#about" style="color: #ffffff; text-decoration: underline;">Who we are</a></p>
                                                                 <p style="line-height: 150%; color: #ffffff;"><a target="_blank" href="https://www.taxidriverscuba.com/#services" style="color: #ffffff; text-decoration: underline;">Services</a><br></p>
                                                                 <p style="line-height: 150%; color: #ffffff;"><a target="_blank" href="https://www.taxidriverscuba.com/#contact" style="color: #ffffff; text-decoration: underline;">Contacts</a><br></p>
@@ -1295,7 +1303,15 @@
                                                         </tr>
                                                         <tr>
                                                             <td class="esd-block-text es-p10t es-m-txt-c" align="left">
-                                                                <p style="font-size: 12px; line-height: 150%; color: #ffffff;">You are receiving this email because you make a reservation in our site.<br></p>
+                                                                <p style="font-size: 12px; line-height: 150%; color: #ffffff;">
+                                                                    You are receiving this email because you make a reservation in our site.
+                                                                    <br>
+                                                                    if this is not the case, please
+                                                                        <a href="mailto:taxidriverscuba@gmail.com?subject=wrong email reservatiopn&body=i don't make any reservation in your site.">
+                                                                            let us know
+                                                                        </a>.
+                                                                    <br>
+                                                                </p>
                                                             </td>
                                                         </tr>
                                                         </tbody>
