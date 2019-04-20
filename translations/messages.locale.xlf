@@ -1,37 +1,34 @@
 <?xml version="1.0" encoding="utf-8"?>
 <xliff xmlns="urn:oasis:names:tc:xliff:document:1.2" version="1.2">
-  <file source-language="en" target-language="en" datatype="plaintext" original="file.ext">
+  <file source-language="en" target-language="locale" datatype="plaintext" original="file.ext">
     <header>
       <tool tool-id="symfony" tool-name="Symfony"/>
     </header>
     <body>
-      <trans-unit id="Lg6WCrM" resname="Form">
-        <source>Form</source>
-        <target>The Form</target>
-      </trans-unit>
       <trans-unit id="jsa1A4y" resname="Your booking have been saved">
         <source>Your booking have been saved</source>
-        <target>Your booking have been saved!</target>
+        <target>__Your booking have been saved</target>
+      </trans-unit>
+      <trans-unit id="LlWqcUh" resname="Form.title">
+        <source>Form.title</source>
+        <target>__Form.title</target>
       </trans-unit>
       <trans-unit id="yYutWwI" resname="Address or Fly/Cruise number">
         <source>Address or Fly/Cruise number</source>
-        <target>Address or Fly/Cruise number</target>
+        <target>__Address or Fly/Cruise number</target>
       </trans-unit>
       <trans-unit id="JDifA2E" resname="Book.send">
         <source>Book.send</source>
-        <target>Send reservation</target>
+        <target>__Book.send</target>
       </trans-unit>
-
-      <trans-unit id="lzN3FxX" resname="Form.title">
-          <source>Form.title</source>
-          <target>Let's start planning 🌄</target>
-      </trans-unit>
-
       <trans-unit id="lzN.3Fx" resname="Index.title">
-         <source>Index.title</source>
-         <target>Day trip from Havana 🌄 to Vinales an authentic cuban tour</target>
+        <source>Index.title</source>
+        <target>__Index.title</target>
       </trans-unit>
-
+      <trans-unit id="o2R1.HY" resname="Main.title">
+        <source>Main.title</source>
+        <target>__Main.title</target>
+      </trans-unit>
     </body>
   </file>
 </xliff>
