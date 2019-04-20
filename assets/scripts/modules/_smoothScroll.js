@@ -12,15 +12,19 @@ class SmoothScrooll{
     }
 
     scroll() {
-        console.info(this.offset);
-        console.info(document.documentElement.scrollTop);
+        let posElement = this.offset;
+        let posDocument = document.documentElement.scrollTop;
+        let increment = Math.pow(Math.abs(posElement - posDocument), 2)/(posDocument);
+
         if (Math.abs(this.offset - document.documentElement.scrollTop) < 10)
             clearInterval(this.call);
         else if ((this.offset - document.documentElement.scrollTop) > 0) {
             document.documentElement.scrollTop += 10;
+            // document.documentElement.scrollTop += increment;
         }
         else {
             document.documentElement.scrollTop -= 10;
+            // document.documentElement.scrollTop -= increment;
         }
 
     };
