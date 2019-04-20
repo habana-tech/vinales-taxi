@@ -12,6 +12,8 @@ class SmoothScrooll{
     }
 
     scroll() {
+        console.info(this.offset);
+        console.info(document.documentElement.scrollTop);
         if (Math.abs(this.offset - document.documentElement.scrollTop) < 10)
             clearInterval(this.call);
         else if ((this.offset - document.documentElement.scrollTop) > 0) {
