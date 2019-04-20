@@ -678,7 +678,7 @@
                                                         <tbody>
                                                         <tr>
                                                             <td class="esd-block-text es-m-txt-c" esd-links-color="#333333" align="right">
-                                                                <p><a href="http://#" target="_blank" style="color: rgb(51, 51, 51);">View in browser</a></p>
+                                                                <p><a href="{{ absolute_url('booking_confirmation', {'orderNumber': booking.orderNumber}) }}" target="_blank" style="color: rgb(51, 51, 51);">View in browser</a></p>
                                                             </td>
                                                         </tr>
                                                         </tbody>
@@ -752,7 +752,11 @@
                                                         <tbody>
                                                         <tr>
                                                             <td class="esd-block-text es-m-txt-c" align="right">
-                                                                <p style="color: #333333;">Mon, February&nbsp;4, 2019 <br></p>
+                                                                <p style="color: #333333;">
+                                                                    {{ "now" | date('l') }},
+                                                                    {{ "now" | date('F d, Y') }}
+                                                                    <br>
+                                                                </p>
                                                             </td>
                                                         </tr>
                                                         </tbody>
@@ -984,7 +988,10 @@
                                                                     <tr>
                                                                         <td class="esd-block-text es-m-txt-l" align="left">
                                                                             <h3 style="color: #ffce00; line-height: 100%;">
-                                                                                {{ booking.pickupTime | date('H:i') }}
+                                                                                {{ booking.pickupDate | date('l') }},
+                                                                                {{ booking.pickupDate | date('F d, Y') }}
+                                                                                <br>
+                                                                                at {{ booking.pickupTime | date('H:i') }} am
                                                                             </h3>
                                                                         </td>
                                                                     </tr>
@@ -1280,9 +1287,9 @@
                                                             <td class="esd-block-text es-m-txt-c" esd-links-underline="none" esd-links-color="#ffffff" align="left">
                                                                 <p style="color: #ffffff;">Street O, Havana, Cuba</p>
                                                                 <p style="color: #ffffff;"><a target="_blank" href="tel:+535-586-4523" style="color: #ffffff; text-decoration: none;">+535-586-4523</a> <br></p>
-                                                                <p style="color: #ffffff;"><a target="_blank" href="mailto:taxidriverscuba@gmail.com" style="text-decoration: none; color: #ffffff;">taxidriverscuba@gmail.com</a></p>
-                                                                <p style="color: #ffffff;"><a target="_blank" style="text-decoration: none; color: #ffffff;" href="https://www.taxidriverscuba.com/">taxidriverscuba.com</a><br></p>
-                                                                <p style="color: #ffffff;"><a target="_blank" style="color: #ffffff; text-decoration: none;" href="https://vinales.taxi">vinales.taxi</a> <br></p>
+                                                                <p style="color: #ffffff;"><a target="_blank" href="mailto:taxidriverscuba@gmail.com" style="text-decoration: underline; color: #ffffff;">taxidriverscuba@gmail.com</a></p>
+                                                                <p style="color: #ffffff;"><a target="_blank" style="text-decoration: underline; color: #ffffff;" href="https://www.taxidriverscuba.com/">taxidriverscuba.com</a><br></p>
+                                                                <p style="color: #ffffff;"><a target="_blank" style="color: #ffffff; text-decoration: underline;" href="https://vinales.taxi">vinales.taxi</a> <br></p>
                                                             </td>
                                                         </tr>
                                                         <tr>
