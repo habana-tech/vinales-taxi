@@ -31,13 +31,6 @@
         <target>Viaje a Viñales</target>
       </trans-unit>
 
-      <trans-unit id="lzN.3Fx" resname="Index.title">
-          <source>Index.title</source>
-          <target>Viaje a Viñales</target>
-      </trans-unit>
-
-
-
     </body>
   </file>
 </xliff>
