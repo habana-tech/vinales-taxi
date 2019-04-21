@@ -2,6 +2,7 @@
 
 namespace App\Controller;
 
+use App\Entity\Booking;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\Routing\Annotation\Route;
 use App\Repository\BookingRepository;
@@ -55,5 +56,29 @@ class ApiController extends AbstractController
         }
 
         return $this->json(['labels'=>$labels, 'bookings'=>array_values($calendar)]);
+    }
+
+
+
+    /**
+     * @Route("/external/api/booking/getbookingsfromid/{marker_id}/key/{authorization_key}", name="getbookingsfrom", methods={"GET"})
+     */
+    public function getbookingsfromid($marker_id, $authorization_key, BookingRepository $bookingRepository): Response
+    {
+        if(!is_numeric($marker_id) OR $marker_id < 0)
+            return new Response('ERROR ON REQUEST', 418);
+
+        if($this->getParameter('external_app_authorization_key') != $authorization_key)
+            return new Response('WRONG KEY',403 );
+
+        $bookings = $bookingRepository->createQueryBuilder("b")
+            ->where("b.id > :marker_id")
+            ->setParameter("marker_id", $marker_id)
+            ->orderBy("b.id", "ASC")
+            ->getQuery()->getArrayResult();
+
+        if(!$bookings)
+            return $this->json(null, 404);
+        return $this->json($bookings);
     }
 }
