@@ -9,6 +9,7 @@ use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
+use Dompdf\Dompdf;
 
 
 class BookingController extends AbstractController
@@ -85,7 +86,7 @@ class BookingController extends AbstractController
                 ->setBody(
                     $this->renderView(
                     // templates/emails/registration.html.twig
-                        'emails/clientNotificationOnBooking.html.twig',
+                        'api/bookingPdfExport.html.twig',
                         ['booking' => $booking]
                     ),
                     'text/html',
@@ -135,6 +136,35 @@ class BookingController extends AbstractController
         ]);
     }
 
+    /**
+     * @Route("/backend/booking/{orderNumber}/pdf", name="booking_pdf_export", methods={"GET"})
+     */
+    public function pdfExport(Booking $booking): Response
+    {
+        // instantiate and use the dompdf class
+        $dompdf = new Dompdf();
+        $dompdf->set_option('dpi', 120);
+
+
+
+        $dompdf->loadHtml(
+            $this->renderView('emails/clientNotificationOnBooking.html.twig', array(
+                'booking' => $booking,
+            ))
+        );
+
+
+        // (Optional) Setup the paper size and orientation
+        $dompdf->setPaper('A4', 'landscape');
+
+        // Render the HTML as PDF
+        $dompdf->render();
+
+        $filename = $booking->getOrderNumber().'.pdf';
+        // Output the generated PDF to Browser
+        return $dompdf->stream($filename);
+
+    }
     /**
      * @Route("/backend/booking/{id}/edit", name="booking_edit", methods={"GET","POST"})
      */
