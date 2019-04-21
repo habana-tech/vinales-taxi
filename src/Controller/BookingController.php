@@ -85,8 +85,8 @@ class BookingController extends AbstractController
 
                 ->setBody(
                     $this->renderView(
-                    // templates/emails/registration.html.twig
-                        'api/bookingPdfExport.html.twig',
+                     'emails/clientNotificationOnBooking.html.twig',
+                  //      'api/bookingPdfExport.html.twig',
                         ['booking' => $booking]
                     ),
                     'text/html',
