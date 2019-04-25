@@ -409,8 +409,11 @@ input[type="submit"] {
       justify-content: space-evenly;
       position: fixed; } }
   .header .logo {
-    width: 7em;
+    width: 4em;
     position: relative; }
+    @media (min-width: 800px) {
+      .header .logo {
+        width: 5em; } }
   .header .nav {
     display: none;
     width: 100%; }
@@ -426,7 +429,7 @@ input[type="submit"] {
       list-style: none; }
       .header .nav ul li a {
         margin: auto .5em;
-        padding: .75em 1em;
+        padding: .75em;
         border: 1px transparent solid;
         transition: border .3s ease-in-out; }
         .header .nav ul li a:hover {
@@ -502,12 +505,24 @@ input[type="submit"] {
     .header--is-visible li a {
       color: #fff; }
 
+.section {
+  margin: 5%; }
+  .section__description {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center; }
+    .section__description .title {
+      width: 100%; }
+    .section__description__text {
+      width: 50%; }
+      .section__description__text p {
+        text-align: center; }
+  .section--no-margin {
+    margin: 0; }
+
 .main {
   overflow: hidden;
   position: relative; }
-  @media (min-width: 800px) {
-    .main {
-      height: 90vh; } }
   .main__content {
     position: absolute;
     height: 100%;
@@ -640,24 +655,14 @@ input[type="submit"] {
         margin: auto 1em; } }
 
 .reservation_details {
+  padding-top: 1em;
   top: -3em;
   position: relative;
   background-color: white; }
-
-.section {
-  margin: 5%; }
-  .section__description {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center; }
-    .section__description .title {
-      width: 100%; }
-    .section__description__text {
-      width: 50%; }
-      .section__description__text p {
-        text-align: center; }
-  .section--no-margin {
-    margin: 0; }
+  @media (min-width: 800px) {
+    .reservation_details {
+      margin-top: 0;
+      padding-top: 3em; } }
 
 .activities {
   margin: 5% 0; }

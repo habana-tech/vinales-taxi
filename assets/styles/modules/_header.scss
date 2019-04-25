@@ -16,8 +16,12 @@
     }
 
     & .logo {
-        width: 7em;
+        width: 4em;
         position: relative;
+
+        @mixin atLarge{
+            width: 5em;
+        }
     }
 
     & .nav {
@@ -40,7 +44,7 @@
 
                 & a {
                     margin: auto .5em;
-                    padding: .75em 1em;
+                    padding: .75em;
                     border: 1px transparent solid;
                     transition: border .3s ease-in-out;
 

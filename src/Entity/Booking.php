@@ -358,7 +358,7 @@ class Booking
      */
     public function calculatePrice()
     {
-        if ($this->peopleCount > 1 and $this->peopleCount < 4)
+        if ($this->peopleCount >= 1 and $this->peopleCount < 4)
             $this->setPrice(153);
         if ($this->peopleCount == 4)
             $this->setPrice(165);

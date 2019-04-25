@@ -19,23 +19,24 @@
 
 {% block body %}
     <main class="main">
-        <div class="main__image">
+        <section class="section section--no-margin main__image">
             <picture>
                 <source media="(min-width: 1200px)"
                     sizes="100vw"
                     srcset="
-                        {{ asset('img/our-car-in-mural-prehistoria.jpg') | imagine_filter('min_width_1920') }} 1920w,
-                        {{ asset('img/our-car-in-mural-prehistoria.jpg') | imagine_filter('min_width_1200') }} 1200w,
-                        {{ asset('img/our-car-in-mural-prehistoria.jpg') | imagine_filter('min_width_1000') }} 1000w"
+                        {{ asset('img/vinales-aereal-view-from-los-jasmines.jpg') | imagine_filter('min_width_1920') }} 1920w,
+                        {{ asset('img/vinales-aereal-view-from-los-jasmines.jpg') | imagine_filter('min_width_1200') }} 1200w,
+                        {{ asset('img/vinales-aereal-view-from-los-jasmines.jpg') | imagine_filter('min_width_1000') }} 1000w"
                     >
                 <!-- img tag for browsers that do not support picture element -->
                 <img sizes="100vw"
                     srcset="
-                        {{ asset('img/our-car-in-mural-prehistoria_portraid.jpg') | imagine_filter('min_width_900') }} 900w,
-                        {{ asset('img/our-car-in-mural-prehistoria_portraid.jpg') | imagine_filter('min_width_800') }} 800w"
+                        {{ asset('img/vinales-aereal-view-from-los-jasmines-portraid.jpg') | imagine_filter('min_width_900') }} 900w,
+                        {{ asset('img/vinales-aereal-view-from-los-jasmines-portraid.jpg') | imagine_filter('min_width_800') }} 800w"
                      alt="classic-car-taxi-in-cuba-in-vinales">
             </picture>
-        </div>
+        </section>
+
         <section class="section reservation_details">
             <div class="title title--center">
                 <h1>Your reservation has been processed</h1>
