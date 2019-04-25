@@ -678,7 +678,7 @@
                                                         <tbody>
                                                         <tr>
                                                             <td class="esd-block-text es-m-txt-c" esd-links-color="#333333" align="right">
-                                                                <p><a href="{{ absolute_url(path('booking_confirmation', {'orderNumber': booking.orderNumber})) }}" target="_blank" style="color: rgb(51, 51, 51);">View in browser</a></p>
+                                                                <p><a href="{{ absolute_url('booking_confirmation', {'orderNumber': booking.orderNumber}) }}" target="_blank" style="color: rgb(51, 51, 51);">View in browser</a></p>
                                                             </td>
                                                         </tr>
                                                         </tbody>
@@ -898,7 +898,7 @@
                                                                             </h3>
                                                                         </td>
                                                                         <td align="right">
-                                                                            <h3 style="font-size: 17px; line-height: 150%;"><strong>{{ booking.price }}.00 USD</strong></h3>
+                                                                            <h3 style="font-size: 17px; line-height: 150%;"><strong>${{ booking.price }}.00 usd</strong></h3>
                                                                         </td>
                                                                     </tr>
                                                                     </tbody>
@@ -1019,7 +1019,7 @@
                                                                             <p style="color: #ffffff;">
                                                                                 We will pick you up at
                                                                                 {% if booking.pickupPlace == 'Hotel or House' %}
-                                                                                    the <b>Hotel or House</b> at
+                                                                                    the <b>house / hotel</b> at
                                                                                 {% elseif booking.pickupPlace == 'airport' %}
                                                                                     the <b>airport</b> looking for the flight with number
                                                                                 {% else %}
@@ -1096,7 +1096,7 @@
                                                         <tr>
                                                             <td class="esd-block-image" align="center">
                                                                 <a target="_blank">
-                                                                    <img src="https://vbnpn.stripocdn.email/content/guids/CABINET_fc1ed99d184ba795381a73a93e4cad2f/images/40271555779988611.png" alt="" style="display: block; -webkit-border-radius: 50%;-moz-border-radius: 50%;border-radius: 50%;" width="60">
+                                                                    <img src="https://vbnpn.stripocdn.email/content/guids/CABINET_fc1ed99d184ba795381a73a93e4cad2f/images/40271555779988611.png" alt="" style="display: block;" width="60">
                                                                 </a>
                                                             </td>
                                                         </tr>
@@ -1262,7 +1262,7 @@
                                                         </tr>
                                                         <tr>
                                                             <td class="esd-block-text es-p10t" esdev-links-color="#333333" esd-links-color="#ffffff" esd-links-underline="underline" align="center">
-                                                                <p style="line-height: 150%; color: #ffffff;"><a href="https://vinales.taxi" target="_blank" style="text-decoration: underline; color: #ffffff;">Vinales.Taxi</a> is a branch of <a href="https://www.taxidriverscuba.com" target="_blank" style="text-decoration: underline; color: #ffffff;">Taxi Drivers Cuba</a>.</p>
+                                                                <p style="line-height: 150%; color: #ffffff;"><a href="https://vinales.taxi" target="_blank" style="text-decoration: underline; color: #ffffff;">vinales.taxi</a> is a branch of <a href="https://www.taxidriverscuba.com" target="_blank" style="text-decoration: underline; color: #ffffff;">Taxi Drivers Cuba</a>.</p>
                                                                 <p style="line-height: 150%; color: #ffffff;"><a target="_blank" href="https://www.taxidriverscuba.com/#about" style="color: #ffffff; text-decoration: underline;">Who we are</a></p>
                                                                 <p style="line-height: 150%; color: #ffffff;"><a target="_blank" href="https://www.taxidriverscuba.com/#services" style="color: #ffffff; text-decoration: underline;">Services</a><br></p>
                                                                 <p style="line-height: 150%; color: #ffffff;"><a target="_blank" href="https://www.taxidriverscuba.com/#contact" style="color: #ffffff; text-decoration: underline;">Contacts</a><br></p>

@@ -15,19 +15,12 @@
             <tr>
                 <th>Id/orderNumber</th>
                 <th>BookingDate</th>
-                <th>AirportPickup</th>
-                <th>FlyNumber</th>
                 <th>Campaign</th>
+
                 <th>ClientName</th>
                 <th>ClientEmail</th>
                 <th>PickupPlace</th>
-                <th>PickupDate</th>
-                <th>PickupTime</th>
-                <th>BookingLang</th>
-                <th>ReturnTravel</th>
-                <th>ReturnPickupPlace</th>
-                <th>ReturnPickupDate</th>
-                <th>ReturnPickupTime</th>
+                <th>PickupDate/Time</th>
                 <th>actions</th>
             </tr>
         </thead>
@@ -35,17 +28,18 @@
         {% for booking in bookings %}
             <tr>
                 <td>{{ booking.id }}/{{ booking.orderNumber }}</td>
-                <td>{{ booking.bookingTime ? booking.bookingTime|date('Y-m-d H:i:s') : '' }}</td>
+                <td>{{ booking.bookingTime ? booking.bookingTime|date('Y-m-d') : '' }}<br>
+                    {{ booking.bookingTime ? booking.bookingTime|date('H:i') : '' }}</td>
                 <td>{{ booking.campaign }}</td>
                 <td>{{ booking.clientName }}</td>
                 <td>{{ booking.clientEmail }}</td>
                 <td>{{ booking.pickupPlace }}</td>
-                <td>{{ booking.pickupDate ? booking.pickupDate|date('Y-m-d') : '' }}</td>
-                <td>{{ booking.pickupTime ? booking.pickupTime|date('H:i:s') : '' }}</td>
-                <td>{{ booking.bookingLang }}</td>
+                <td>{{ booking.pickupDate ? booking.pickupDate|date('Y-m-d') : '' }} <br>
+                    {{ booking.pickupTime ? booking.pickupTime|date('H:i') : '' }}</td>
                 <td>
-                    <a href="{{ path('booking_show', {'id': booking.id}) }}">show</a>
-                    <a href="{{ path('booking_edit', {'id': booking.id}) }}">edit</a>
+                    <a href="{{ path('booking_pdf_export', {'orderNumber': booking.orderNumber}) }}"><i class="ti-printer"></i> </a>
+                    <a href="{{ path('booking_show', {'id': booking.id}) }}"><i class="ti-eye"></i></a>
+                    <a href="{{ path('booking_edit', {'id': booking.id}) }}"><i class="ti-pencil"></i></a>
                 </td>
             </tr>
         {% else %}
