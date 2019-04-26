@@ -11,8 +11,6 @@ class MobileMenu{
     //link the events with the functions
     events(){
         this.menuIcon.addEventListener('click', this.toggleTheMenu.bind(this));
-        for (let link of this.links)
-            link.addEventListener("click", this.toggleTheMenu.bind(this));
     }
 
     toggleTheMenu(){
