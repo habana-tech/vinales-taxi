@@ -25,6 +25,7 @@ class Booking
 
     /**
      * @ORM\Column(type="string", length=250, nullable=false)
+     * @Assert\NotBlank
      */
     private $pickupPlace;
 
@@ -45,6 +46,10 @@ class Booking
 
     /**
      * @ORM\Column(type="string", length=255)
+     * @Assert\Email(
+     *     message = "The email '{{ value }}' is not a valid email."
+     * )
+     *  @Assert\NotBlank
      */
     private $clientEmail;
 
