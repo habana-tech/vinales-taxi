@@ -6,6 +6,8 @@
 
 {% block title %}{% trans %}Your booking have been saved{% endtrans %}{% endblock %}
 
+
+
 {% block trackingcodes %}
     <!-- Event snippet for Fill the registration form conversion page -->
     <script>
@@ -16,6 +18,8 @@
     </script>
 
 {% endblock %}
+
+
 
 {% block body %}
     <main class="main">
@@ -39,18 +43,32 @@
 
         <section class="section reservation_details">
             <div class="title title--center">
-                <h1>Your reservation has been processed</h1>
-                <h3>Thanks for choosing vinales.taxi</h3>
+                <h1>
+                    {% trans %}
+                        title.reservation_processed
+                    {% endtrans %}
+                </h1>
+                <h3>
+                    {% trans %}
+                        subtitle.thank
+                    {% endtrans %}
+                </h3>
             </div>
             <hr>
             <div class="reservation_details__body">
                 <ul>
                     <li>
-                        The reservation was made on behalf of <b>{{ booking.clientName }}</b>.
+
+                        {% trans %}
+                            text.reservation_made
+                        {% endtrans %}
+                        <b>{{ booking.clientName }}</b>.
                     </li>
 
                     <li>
-                        We will pick you up at
+                        {% trans %}
+                            text.reservation_pickup_time
+                        {% endtrans %}
                         {% if booking.pickupPlace == 'place' %}
                             the <b>house / hotel</b> at
                         {% elseif booking.pickupPlace == 'airport' %}
@@ -69,21 +87,36 @@
                     </li>
 
                     <li>
-                        The number of passengers is <b>{{ booking.peopleCount }}</b>.
+
+                        {% trans %}
+                            text.amount_passenger
+                        {% endtrans %}
+                        <b>{{ booking.peopleCount }}</b>.
                     </li>
 
                     <li>
                         {% if booking.price is null %}
-                            We will send you a quote for this trip.
+                            {% trans %}
+                                text.reservation_quota
+                            {% endtrans %}
                         {% else %}
-                            The total cost is: <b>{{ booking.price }}.00 USD</b>.
+                            {% trans %}
+                                text.total_cost
+                            {% endtrans %}
+                            <b>{{ booking.price }}.00 USD</b>.
                             <br>
-                            You will pay to the driver at the end of the trip.
+                            {% trans %}
+                                text.pay_driver
+                            {% endtrans %}
                         {% endif %}
                     </li>
                 </ul>
 
-                <p>We send you an email with the reservation details.</p>
+                <p>
+                    {% trans %}
+                        text.confirmation_email
+                    {% endtrans %}
+                </p>
             </div>
         </section>
     </main>

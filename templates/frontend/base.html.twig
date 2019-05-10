@@ -1,6 +1,10 @@
 {% set url = "https://taxidriverscuba.trekksoft.com/en/tours/book/254469" %}
 {% set description = "If you want to live an authentic Cuban journey, that is Vinales. With our one day tour, you can feel many experiences, from nature to Cuban people. Discover the Horseback ride adventure, see the tobacco fields, the Indian Cave, Mural of Prehistory, the gazebo of Los Jazmines and have a launch in the restaurants." %}
+
+
 {% set title = "One day trip from Havana to Vinales an authentic cuban tour 😍 | Vinales Taxi" %}
+{% set title_es = "Viaje de un día a Viñales desde La Habana, un auténtico viaje Cubano | Vinales Taxi" %}
+{% set title_fr = "Excursion d´une journée de La Havane à Vinales. Un tour cubain authentique. 😍 | Vinales Taxi" %}
 
 
 <!DOCTYPE html>
@@ -14,31 +18,48 @@
 
         {# Facebook Tags #}
         <meta property="og:type"               content="article" />
-        <meta property="og:title"              content="{{ title }}" />
-        <meta property="og:description"        content="{{ description }}" />
+        <meta property="og:title"              content="{% if app.request.locale == 'es' %}
+                                                            {{ title_es }}
+                                                        {% elseif  app.request.locale == 'fr'%}
+                                                            {{ title_fr }}
+                                                        {% else %}
+                                                            {{ title }}
+                                                        {% endif %}" />
+        <meta property="og:description"        content="
+                                                        {% trans %}
+                                                            description
+                                                        {% endtrans %}
+                                                        " />
         <meta property="og:image"              content="{{ absolute_url(asset('img/our-car-in-mural-prehistoria.jpg')) }}" />
 
         {# Twitter tags #}
         <meta name="twitter:card" content="summary" />
         <meta name="twitter:site" content="@taxiDriverCuba" />
         <meta name="twitter:creator" content="@taxiDriverCuba" />
-        <meta property="og:title" content="{{ title }}" />
-        <meta property="og:description" content="{{ description }}" />
+        <meta property="og:title" content="{% if app.request.locale == 'es' %}
+                                                {{ title_es }}
+                                            {% elseif  app.request.locale == 'fr'%}
+                                                {{ title_fr }}
+                                            {% else %}
+                                                {{ title }}
+                                            {% endif %}" />
+        <meta property="og:description" content="
+                                                {% trans %}
+                                                    description
+                                                {% endtrans %}
+                                                " />
         <meta property="og:image" content="{{ absolute_url(asset('img/our-car-in-mural-prehistoria.jpg')) }}" />
 
         <meta property="keyword" content="
-        taxi to,
-        day trips from havana,
-        havana to vinales,
-        cuban tour,
-        taxis to airport,
-        havana to vinales day trip,
-        havana travel,
-        taxi prices,
-        taxi drivers
-
+            {% trans %}
+                keywords
+            {% endtrans %}
         ">
-        <meta name="description" content="{{ description }}">
+        <meta name="description" content="
+                                        {% trans %}
+                                            description
+                                        {% endtrans %}
+                                        " />
         <link rel="canonical" href="https://vinales.taxi"/>
         {#breadcrumbs#}
         <script type="application/ld+json">
@@ -116,55 +137,65 @@
         </script>
 
         <link rel="icon" type="image/png" href="{{ asset('img/favicon.png') }}" />
-        <title>{{ title }}</title>
+        <title>
+            {% if app.request.locale == 'es' %}
+                {{ title_es }}
+            {% elseif  app.request.locale == 'fr'%}
+                {{ title_fr }}
+            {% else %}
+                {{ title }}
+            {% endif %}
+        </title>
         {% block stylesheets %}
             <link rel="stylesheet" href="{{ asset('styles/styles.css') }}">
         {% endblock %}
 
         {% block javascripts_defer %}{% endblock %}
 
-        <!-- Global site tag (gtag.js) - Google Analytics -->
-        <script async src="https://www.googletagmanager.com/gtag/js?id=UA-136613257-1"></script>
+        {% if app.environment == 'prod' %}
+            <!-- Global site tag (gtag.js) - Google Analytics -->
+            <script async src="https://www.googletagmanager.com/gtag/js?id=UA-136613257-1"></script>
 
-        <script>
-            window.dataLayer = window.dataLayer || [];
-            function gtag(){dataLayer.push(arguments);}
-            gtag('js', new Date());
+            <script>
+                window.dataLayer = window.dataLayer || [];
+                function gtag(){dataLayer.push(arguments);}
+                gtag('js', new Date());
 
-            gtag('config', 'UA-136613257-1');
-        </script>
+                gtag('config', 'UA-136613257-1');
+            </script>
 
-        {% block trackingcodes %}{% endblock %}
-        
+            {% block trackingcodes %}{% endblock %}
 
-        <!-- Matomo -->
-        <script type="text/javascript">
-          var _paq = window._paq || [];
-          /* tracker methods like "setCustomDimension" should be called before "trackPageView" */
-          _paq.push(['trackPageView']);
-          _paq.push(['enableLinkTracking']);
-          (function() {
-            var u="//habana.tech/matomo/";
-            _paq.push(['setTrackerUrl', u+'matomo.php']);
-            _paq.push(['setSiteId', '2']);
-            var d=document, g=d.createElement('script'), s=d.getElementsByTagName('script')[0];
-            g.type='text/javascript'; g.async=true; g.defer=true; g.src=u+'matomo.js'; s.parentNode.insertBefore(g,s);
-          })();
-        </script>
-        <!-- End Matomo Code -->
 
-        <!-- Hotjar Tracking Code for https://vinales.taxi -->
-        <script>
-            (function(h,o,t,j,a,r){
-                h.hj=h.hj||function(){(h.hj.q=h.hj.q||[]).push(arguments)};
-                h._hjSettings={hjid:1271922,hjsv:6};
-                a=o.getElementsByTagName('head')[0];
-                r=o.createElement('script');r.async=1;
-                r.src=t+h._hjSettings.hjid+j+h._hjSettings.hjsv;
-                a.appendChild(r);
-            })(window,document,'https://static.hotjar.com/c/hotjar-','.js?sv=');
-        </script>
+            <!-- Matomo -->
+            <script type="text/javascript">
+              var _paq = window._paq || [];
+              /* tracker methods like "setCustomDimension" should be called before "trackPageView" */
+              _paq.push(['trackPageView']);
+              _paq.push(['enableLinkTracking']);
+              (function() {
+                var u="//habana.tech/matomo/";
+                _paq.push(['setTrackerUrl', u+'matomo.php']);
+                _paq.push(['setSiteId', '2']);
+                var d=document, g=d.createElement('script'), s=d.getElementsByTagName('script')[0];
+                g.type='text/javascript'; g.async=true; g.defer=true; g.src=u+'matomo.js'; s.parentNode.insertBefore(g,s);
+              })();
+            </script>
+            <!-- End Matomo Code -->
 
+            <!-- Hotjar Tracking Code for https://vinales.taxi -->
+            <script>
+                (function(h,o,t,j,a,r){
+                    h.hj=h.hj||function(){(h.hj.q=h.hj.q||[]).push(arguments)};
+                    h._hjSettings={hjid:1271922,hjsv:6};
+                    a=o.getElementsByTagName('head')[0];
+                    r=o.createElement('script');r.async=1;
+                    r.src=t+h._hjSettings.hjid+j+h._hjSettings.hjsv;
+                    a.appendChild(r);
+                })(window,document,'https://static.hotjar.com/c/hotjar-','.js?sv=');
+            </script>
+
+        {% endif %}
         
     </head>
 
@@ -184,19 +215,56 @@
 
         <nav class="nav">
             <ul>
-                <li><a href="{{ path('frontend') }}#activities" data-section="#activities">Activities</a></li>
-                <li><a href="{{ path('frontend') }}#why_with_us" data-section="#why_with_us">Us</a></li>
-                <li><a href="{{ path('frontend') }}#more_places" data-section="#more_places">More places</a></li>
-                <li><a href="{{ path('frontend') }}#contact" data-section="#contact">Contact & FAQ</a></li>
+                <li><a href="{{ path('frontend') }}#activities" data-section="#activities">
+                        {% trans %}
+                            button.activities
+                        {% endtrans %}
+                    </a></li>
+                <li><a href="{{ path('frontend') }}#why_with_us" data-section="#why_with_us">
+                        {% trans %}
+                            button.us
+                        {% endtrans %}
+                    </a></li>
+                <li><a href="{{ path('frontend') }}#more_places" data-section="#more_places">
+                        {% trans %}
+                            button.other_options
+                        {% endtrans %}
+                    </a></li>
+                <li><a href="{{ path('frontend') }}#contact" data-section="#contact">
+                        {% trans %}
+                            button.contact
+                        {% endtrans %}
+                    </a></li>
                 <li class="nav--special">
                     {#<a target="_self" href="{{ url }}">#}
                     <a target="_self" href="{{ path('booking') }}">
-                        Make a reservation
+                        {% trans %}
+                            button.reservation
+                        {% endtrans %}
                     </a>
                 </li>
             </ul>
         </nav>
 
+        {#<div class="lang">#}
+            {#<ul>#}
+                {#<li>#}
+                    {#<a href="#">{{ app.request.locale }}</a>#}
+                    {#<ul class="dropdown">#}
+                        {#{% if app.request.locale == 'es' %}#}
+                            {#<li><a href="/en">EN</a></li>#}
+                            {#<li><a href="/fr">FR</a></li>#}
+                        {#{% elseif app.request.locale == 'fr' %}#}
+                            {#<li><a href="/en">EN</a></li>#}
+                            {#<li><a href="/es">ES</a></li>#}
+                        {#{% else %}#}
+                            {#<li><a href="/es">ES</a></li>#}
+                            {#<li><a href="/fr">FR</a></li>#}
+                        {#{% endif %}#}
+                    {#</ul>#}
+                {#</li>#}
+            {#</ul>#}
+        {#</div>#}
     </header>
 
     {% block body %}{% endblock %}
@@ -225,8 +293,14 @@
 
         <div class="footer__contact">
             <address>
-                You can contact us at <a href="mailto:taxidriverscuba@gmail.com">taxidriverscuba@gmail.com</a>
-                or call us to phone <a href="tel://+53 5 5864523">+53 5 5864523</a>
+                {% trans %}
+                    text.contact_footer_mail
+                {% endtrans %}
+                <a href="mailto:taxidriverscuba@gmail.com">taxidriverscuba@gmail.com</a>
+                {% trans %}
+                    text.contact_footer_phone
+                {% endtrans %}
+                <a href="tel://+53 5 5864523">+53 5 5864523</a>
             </address>
             
             <div class="social">

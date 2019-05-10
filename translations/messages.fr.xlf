@@ -1,0 +1,326 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xliff xmlns="urn:oasis:names:tc:xliff:document:1.2" version="1.2">
+  <file source-language="en" target-language="fr" datatype="plaintext" original="file.ext">
+    <header>
+      <tool tool-id="symfony" tool-name="Symfony"/>
+    </header>
+    <body>
+      <trans-unit id="jsa1A4y" resname="Your booking have been saved">
+        <source>Your booking have been saved</source>
+        <target>__Your booking have been saved</target>
+      </trans-unit>
+      <trans-unit id="LlWqcUh" resname="Form.title">
+        <source>Form.title</source>
+        <target>__Form.title</target>
+      </trans-unit>
+      <trans-unit id="yYutWwI" resname="Address or Fly/Cruise number">
+        <source>Address or Fly/Cruise number</source>
+        <target>__Address or Fly/Cruise number</target>
+      </trans-unit>
+      <trans-unit id="lzN.3Fx" resname="Index.title">
+        <source>Index.title</source>
+        <target>__Index.title</target>
+      </trans-unit>
+      <trans-unit id="d2RC.s_" resname="main.text">
+        <source>main.text</source>
+        <target>Excursion d´une journée de La Havane à Vinales. Un tour cubain authentique.</target>
+      </trans-unit>
+      <trans-unit id="nON0WWH" resname="button.activities">
+        <source>button.activities</source>
+        <target>Activités</target>
+      </trans-unit>
+      <trans-unit id="lCpDnSb" resname="button.us">
+        <source>button.us</source>
+        <target>Nous</target>
+      </trans-unit>
+      <trans-unit id="ok_7jxk" resname="button.other_options">
+        <source>button.other_options</source>
+        <target>Ailleurs</target>
+      </trans-unit>
+      <trans-unit id="ipMNW6E" resname="button.contact">
+        <source>button.contact</source>
+        <target>Contact</target>
+      </trans-unit>
+      <trans-unit id="zKOFfei" resname="button.reservation">
+        <source>button.reservation</source>
+        <target>Réservez</target>
+      </trans-unit>
+      <trans-unit id="QMexVqn" resname="main.subtitle_1">
+        <source>main.subtitle_1</source>
+        <target>Prise en charge à l´aéroport</target>
+      </trans-unit>
+      <trans-unit id="6GgNkOo" resname="main.subtitle_2">
+        <source>main.subtitle_2</source>
+        <target>Voyage depuis La Havane</target>
+      </trans-unit>
+      <trans-unit id="UOrdCPB" resname="main.subtitle_3">
+        <source>main.subtitle_3</source>
+        <target>Chouffer de taxi</target>
+      </trans-unit>
+      <trans-unit id="50gU.qQ" resname="section_title.offers">
+        <source>section_title.offers</source>
+        <target>Offerte d´excursion d´une journée de La Havane à Vinales.</target>
+      </trans-unit>
+      <trans-unit id="QK0I5Zs" resname="text.activities_1.part_1">
+        <source>text.activities_1.part_1</source>
+        <target>Nous vous assurons la prise en charge à l´aéroport, à la croisière, à l´hôtel ou à la maison à louer à La Havane et le retour à la fin de l´excursion.</target>
+      </trans-unit>
+      <trans-unit id="XUakdrO" resname="text.activities_1.part_2">
+        <source>text.activities_1.part_2</source>
+        <target>Vous pouvez profiter d´un parcours à travers des plantations de tabacs où vous acquerrez des connaissances sur les procès d´élaboration du tabac cubain traditionnel. Si vous voulez, vous pourrez fumer les tabacs et les gardez avec vous : tous vos amis seront ravis.</target>
+      </trans-unit>
+      <trans-unit id="6r3lkIv" resname="text.activities_1.part_3">
+        <source>text.activities_1.part_3</source>
+        <target>Nous vous proposons aussi une promenade à cheval au Parc National de Vinales par le prix additionnel de 10.00 cuc par personne. C´est une excursion de 1 heure où vous pourrez goûter l´excellant café cubain et le rhum Guayabita del Pinar.</target>
+      </trans-unit>
+      <trans-unit id="Y_tZikS" resname="text.activities_2.part_1">
+        <source>text.activities_2.part_1</source>
+        <target>Visitez la Cueva del Indio, un refuge naturel de nos premiers habitants où vous pouvez profiter d´une promenade en bateau à travers d´eaux souterraines par le prix additionnel de 5.00 cuc par personne.</target>
+      </trans-unit>
+      <trans-unit id="3lM_Mam" resname="text.activities_2.part_2">
+        <source>text.activities_2.part_2</source>
+        <target>Visitez le Mural de la Préhistoire, l´un des plus grands muraux extérieurs au monde. </target>
+      </trans-unit>
+      <trans-unit id="Vt_qtKz" resname="text.activities_2.part_3">
+        <source>text.activities_2.part_3</source>
+        <target>Visitez le belvédère de l´hôtel Los Jazmines et jouissez de la beauté du paysage naturel. </target>
+      </trans-unit>
+      <trans-unit id="GgaknHH" resname="text.activities_2.part_4">
+        <source>text.activities_2.part_4</source>
+        <target>Cette excursion est accompagné d´un délicieux déjeuner au restaurant par le prix additionnel de 15 cuc par personne.  </target>
+      </trans-unit>
+      <trans-unit id="d.ah5AI" resname="text.activities_3.part_1">
+        <source>text.activities_3.part_1</source>
+        <target>Nous vous recommandons d´apporter des vêtements légers, des lunettes de soleil, un chapeau ou une casquette, une caméra pour prendre des belles photos et une bouteille d´eau. En plus, si vous voulez, apportez un peu plus d´argent pour acheter des tabacs. </target>
+      </trans-unit>
+      <trans-unit id="tLSDr_2" resname="text.activities_3.part_2">
+        <source>text.activities_3.part_2</source>
+        <target>Nous vous recommandons de commencer cette excursion à 7 :30 h à cause du temps qu´il est nécessaire pour se transporter de La Havane à Vinales. Le retour à La Havane sera au soir, à la fin de l´excursion.</target>
+      </trans-unit>
+      <trans-unit id="2LBB9cR" resname="text.activities_3.part_3">
+        <source>text.activities_3.part_3</source>
+        <target>Nous vous offrons un service individuel pour vous et pour toute votre famille.  </target>
+      </trans-unit>
+      <trans-unit id="JaqECq4" resname="section_title.why_with_us">
+        <source>section_title.why_with_us</source>
+        <target>Pour quoi vous devez faire cette excursion avec nous ?</target>
+      </trans-unit>
+      <trans-unit id="kVAp.jv" resname="text.reason_1_part_1">
+        <source>text.reason_1_part_1</source>
+        <target>Nous sommes au top cinq de</target>
+      </trans-unit>
+      <trans-unit id="8A_2OBu" resname="text.reason_1_part_2">
+        <source>text.reason_1_part_2</source>
+        <target>depuis un an.</target>
+      </trans-unit>
+      <trans-unit id="GYgzehL" resname="text.reason_2">
+        <source>text.reason_2</source>
+        <target>Nous vous offrons de la PONTUALITÉ, des BONS PRIX et de CONFORT.</target>
+      </trans-unit>
+      <trans-unit id="7IHw81A" resname="text.reason_3">
+        <source>text.reason_3</source>
+        <target>Nous pouvons réserver les promenades à cheval et le déjeuner pour faire de cette excursion une expérience magnifique. </target>
+      </trans-unit>
+      <trans-unit id="9d1p7X4" resname="text.reason_4">
+        <source>text.reason_4</source>
+        <target>BÉBÉS…, FAUTEUILS ROULANTS…, sans prix additionnel.</target>
+      </trans-unit>
+      <trans-unit id="sguXMnu" resname="section_title.other_options">
+        <source>section_title.other_options</source>
+        <target>Est-ce que vous besoin de vous transporter à un autre lieu ?</target>
+      </trans-unit>
+      <trans-unit id="tKJgTJO" resname="destination.airport">
+        <source>destination.airport</source>
+        <target>Aéroport</target>
+      </trans-unit>
+      <trans-unit id="RQJZCow" resname="button.other_places">
+        <source>button.other_places</source>
+        <target>Regardez autres destinations</target>
+      </trans-unit>
+      <trans-unit id="tcjj2m5" resname="section_title.contact">
+        <source>section_title.contact</source>
+        <target>Contact et questions fréquemment posées</target>
+      </trans-unit>
+      <trans-unit id="AQFRi1f" resname="subtitle.frequently_askly_questions">
+        <source>subtitle.frequently_askly_questions</source>
+        <target>Des Questions Fréquentes</target>
+      </trans-unit>
+      <trans-unit id="iieh8Cz" resname="text.question_1">
+        <source>text.question_1</source>
+        <target>Est-ce que je peux réserver en ligne ?</target>
+      </trans-unit>
+      <trans-unit id="paLpnkF" resname="text.answer_1">
+        <source>text.answer_1</source>
+        <target>Oui, vous devez cliquer sur </target>
+      </trans-unit>
+      <trans-unit id="3ash9oJ" resname="button.reservation_form">
+        <source>button.reservation_form</source>
+        <target>Réservation</target>
+      </trans-unit>
+      <trans-unit id="DLZxvve" resname="text.question_2">
+        <source>text.question_2</source>
+        <target>Est-ce que je peux payer cash et dans quelle monnaie?</target>
+      </trans-unit>
+      <trans-unit id="BvwEgM5" resname="text.answer_2">
+        <source>text.answer_2</source>
+        <target>Oui vous pouvez payer cash. Nous acceptons EUR, USD, CAD et CUC.</target>
+      </trans-unit>
+      <trans-unit id="E4ngzOl" resname="text.question_3">
+        <source>text.question_3</source>
+        <target>Le taxi à Vinales inclue le retour ?</target>
+      </trans-unit>
+      <trans-unit id="_D4Lzbq" resname="text.answer_3">
+        <source>text.answer_3</source>
+        <target>Oui, nous vous retournons au lieu de la prise en charge ou bien à quelque lieu de La Havane de votre préférence.</target>
+      </trans-unit>
+      <trans-unit id="E_N0_Ng" resname="text.question_4">
+        <source>text.question_4</source>
+        <target>Est-ce que vous offrez de la prise en charge à l`aéroport ou au Croisière ?</target>
+      </trans-unit>
+      <trans-unit id="ba7QGWG" resname="text.answer_4">
+        <source>text.answer_4</source>
+        <target>Oui, vous devez marquer cette option au </target>
+      </trans-unit>
+      <trans-unit id="BuUmMu6" resname="subtitle.send_message">
+        <source>subtitle.send_message</source>
+        <target>Envoyez-nous un message</target>
+      </trans-unit>
+      <trans-unit id="6E7d7Iv" resname="section_title.why_with_us.subtitle">
+        <source>section_title.why_with_us.subtitle</source>
+        <target>Ilya plusieurs d´option mais</target>
+      </trans-unit>
+      <trans-unit id="Z94NEID" resname="keywords">
+        <source>keywords</source>
+        <target>taxi à, excursions depuis La Havane, de la havane à vinales, tour cubain, taxi à l´aéroport, une journée de la havane à vinales, voyage havane, prix de taxi, chauffeurs de taxi </target>
+      </trans-unit>
+      <trans-unit id="yQRveje" resname="description">
+        <source>description</source>
+        <target>Si vous voulez exprimer un tour cubain authentique, la réponse c´est Vinales. Avec notre offerte d´une journée vous aurez plusieurs expériences, dès la nature au peuple cubain. Découvrez l´aventure d´une promenade á cheval, voyez les plantations de tabacs, la Cueva del Indio, le Mural de la Préhistoire, le belvédère Los Jazmines et profitez d´un délicieux déjeuner au restaurant.</target>
+      </trans-unit>
+      <trans-unit id="YPC5KBZ" resname="title.reservation">
+        <source>title.reservation</source>
+        <target>Réservation</target>
+      </trans-unit>
+      <trans-unit id="CY8Jv16" resname="field.pickup_place">
+        <source>field.pickup_place</source>
+        <target>__field.pickup_place</target>
+      </trans-unit>
+      <trans-unit id="ewV4ZaA" resname="label.pickup_place.option_1">
+        <source>label.pickup_place.option_1</source>
+        <target>__label.pickup_place.option_1</target>
+      </trans-unit>
+      <trans-unit id="KouefVV" resname="label.pickup_place.option_2">
+        <source>label.pickup_place.option_2</source>
+        <target>__label.pickup_place.option_2</target>
+      </trans-unit>
+      <trans-unit id="jM1NhMe" resname="label.pickup_place.option_3">
+        <source>label.pickup_place.option_3</source>
+        <target>__label.pickup_place.option_3</target>
+      </trans-unit>
+      <trans-unit id="MLuhDzN" resname="field.pickup_time">
+        <source>field.pickup_time</source>
+        <target>__field.pickup_time</target>
+      </trans-unit>
+      <trans-unit id="XFUgJJT" resname="text.advise_time">
+        <source>text.advise_time</source>
+        <target>Nous vous recommandons commencer cette excursion à 8:30 h à cause du temps qu´on en besoin pour se transporter de La Havane à Vinales.</target>
+      </trans-unit>
+      <trans-unit id="arTFX42" resname="label.price">
+        <source>label.price</source>
+        <target>__label.price</target>
+      </trans-unit>
+      <trans-unit id="mpNqQ4E" resname="label.offer">
+        <source>label.offer</source>
+        <target>__label.offer</target>
+      </trans-unit>
+      <trans-unit id="jIzRorK" resname="field.personal_data">
+        <source>field.personal_data</source>
+        <target>__field.personal_data</target>
+      </trans-unit>
+      <trans-unit id="PBBCrMq" resname="image.description.mural">
+        <source>image.description.mural</source>
+        <target>Mural de la Préhistoire </target>
+      </trans-unit>
+      <trans-unit id="ET9hvCc" resname="image.description.horse">
+        <source>image.description.horse</source>
+        <target>Promenade à cheval, montagne et ciel dégagé</target>
+      </trans-unit>
+      <trans-unit id="JCDID7W" resname="image.description.view">
+        <source>image.description.view</source>
+        <target>Plantation de tabac, montagne et ciel dégagé</target>
+      </trans-unit>
+      <trans-unit id="jd5cLB5" resname="image.description.indian_cave">
+        <source>image.description.indian_cave</source>
+        <target>Intérieur d´une grotte, Cueva del Indio</target>
+      </trans-unit>
+      <trans-unit id="2znR9OS" resname="image.description.restaurant">
+        <source>image.description.restaurant</source>
+        <target>Personnes au restaurant</target>
+      </trans-unit>
+      <trans-unit id="ukuAKD2" resname="image.description.tabacco">
+        <source>image.description.tabacco</source>
+        <target>Personnes à la plantation de tabac</target>
+      </trans-unit>
+      <trans-unit id="gVwARvQ" resname="button.send">
+        <source>button.send</source>
+        <target>Envoyer réservation</target>
+      </trans-unit>
+      <trans-unit id="OMtiaHS" resname="field.number_passengers">
+        <source>field.number_passengers</source>
+        <target>Numéro de Personnes</target>
+      </trans-unit>
+      <trans-unit id="xWzq4cx" resname="image.description.mural_car">
+        <source>image.description.mural_car</source>
+        <target>__image.description.mural_car</target>
+      </trans-unit>
+      <trans-unit id="IXqKP3o" resname="field.pickup_date">
+        <source>field.pickup_date</source>
+        <target>Date de prise en charge</target>
+      </trans-unit>
+      <trans-unit id="9760Pdt" resname="title.reservation_processed">
+        <source>title.reservation_processed</source>
+        <target>Votre réservation a été reçue</target>
+      </trans-unit>
+      <trans-unit id="JuRirNO" resname="subtitle.thank">
+        <source>subtitle.thank</source>
+        <target>Merci de choisir vinales.taxi</target>
+      </trans-unit>
+      <trans-unit id="V7oRZSU" resname="text.reservation_made">
+        <source>text.reservation_made</source>
+        <target>La rèservation a été faite au nom de </target>
+      </trans-unit>
+      <trans-unit id="23vmdDz" resname="text.reservation_pickup_time">
+        <source>text.reservation_pickup_time</source>
+        <target>__text.reservation_pickup_time</target>
+      </trans-unit>
+      <trans-unit id="wbSt5ZA" resname="text.amount_passenger">
+        <source>text.amount_passenger</source>
+        <target>Le numéro de personnes est:</target>
+      </trans-unit>
+      <trans-unit id="vHPvIcK" resname="text.reservation_quota">
+        <source>text.reservation_quota</source>
+        <target>__text.reservation_quota</target>
+      </trans-unit>
+      <trans-unit id="6HhNoGG" resname="text.total_cost">
+        <source>text.total_cost</source>
+        <target>Il coute en adition:</target>
+      </trans-unit>
+      <trans-unit id="eczPIVQ" resname="text.pay_driver">
+        <source>text.pay_driver</source>
+        <target>Vous devez payer au chauffeur à la fin de l´excursion.</target>
+      </trans-unit>
+      <trans-unit id="TPzHjM8" resname="text.confirmation_email">
+        <source>text.confirmation_email</source>
+        <target>Nous vous enverrons un email avec tous les détails de la réservation.    </target>
+      </trans-unit>
+      <trans-unit id="Vmtq870" resname="text.contact_footer_mail">
+        <source>text.contact_footer_mail</source>
+        <target>Vous pouvez nous contacter à </target>
+      </trans-unit>
+      <trans-unit id="t7xMynJ" resname="text.contact_footer_phone">
+        <source>text.contact_footer_phone</source>
+        <target>ou téléphonez-nous au</target>
+      </trans-unit>
+    </body>
+  </file>
+</xliff>

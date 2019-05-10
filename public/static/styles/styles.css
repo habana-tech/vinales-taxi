@@ -692,6 +692,7 @@ input[type="submit"] {
       .header .nav--is-visible ul li {
         margin: .75em auto; }
   .header .menu-icon {
+    order: 2;
     width: 20px;
     height: 19px;
     position: relative;
@@ -749,12 +750,65 @@ input[type="submit"] {
     .header .menu-icon--close-x::after {
       -webkit-transform: rotate(-45deg) scale(1.25) translateY(1px);
       transform: rotate(-45deg) scale(1.25) translateY(1px); }
+  .header .lang {
+    order: 1;
+    display: flex;
+    width: auto;
+    z-index: -10; }
+    @media (min-width: 800px) {
+      .header .lang {
+        opacity: 1;
+        z-index: 1; } }
+    .header .lang > ul > li {
+      border-bottom: 1px #60a902 solid;
+      text-transform: uppercase; }
+    .header .lang ul {
+      padding-left: 0;
+      margin: 0; }
+    .header .lang li {
+      color: #fff;
+      background-color: #1a1a1a;
+      display: block;
+      float: left;
+      padding: .55em;
+      position: relative;
+      text-decoration: none;
+      transition-duration: 0.5s;
+      transition: all;
+      border-bottom: 1px transparent solid; }
+      .header .lang li:hover {
+        border-bottom: 1px #60a902 solid; }
+      .header .lang li a {
+        color: white;
+        font-size: .9em;
+        font-weight: 500; }
+    .header .lang ul li ul {
+      visibility: hidden;
+      opacity: 0;
+      position: absolute;
+      transition: all 0.5s ease;
+      margin-top: .5em;
+      left: 0;
+      display: none;
+      top: 1.6em; }
+    .header .lang ul li:hover > ul,
+    .header .lang ul li ul:hover {
+      visibility: visible;
+      opacity: 1;
+      display: block; }
+    .header .lang ul li ul li {
+      clear: both;
+      width: 100%; }
   .header--is-visible {
     flex-wrap: wrap;
     z-index: 2;
     background-color: rgba(26, 26, 26, 0.9); }
     .header--is-visible li a {
       color: #fff; }
+    .header--is-visible .menu-icon {
+      order: 0; }
+    .header--is-visible .lang {
+      display: none; }
 
 .section {
   margin: 5%; }
@@ -800,9 +854,13 @@ input[type="submit"] {
         text-shadow: 2px 2px 10px #000000e0; }
         @media (min-width: 800px) {
           .main__content__text__title {
-            width: 35%; } }
+            width: 40%; } }
       .main__content__text__subtext {
-        width: 100%; }
+        width: 100%;
+        display: none; }
+        @media (min-width: 800px) {
+          .main__content__text__subtext {
+            display: block; } }
         .main__content__text__subtext span {
           color: white;
           margin: .5em .75em;
@@ -1067,7 +1125,8 @@ input[type="submit"] {
         margin: .5em; }
         .contact_faq__content__faq ul li a {
           color: #6a6a6a;
-          text-decoration: underline; }
+          text-decoration: underline;
+          text-transform: uppercase; }
 
 .footer {
   position: relative;

@@ -5,7 +5,7 @@
     <script src="{{ asset('scripts/Form.js') }}" defer></script>
 {% endblock %}
 
-{% block title %}{% trans %}Form.title{% endtrans %}{% endblock %}
+{% set title = "Reservation Form for One day trip from Havana to Vinales | Vinales Taxi" %}
 
 {% block body %}
 <section class="section section--no-margin">
@@ -38,12 +38,20 @@
 
 <section class="section reservation">
     <div class="title title--center">
-        <h1>Reservation Form 🎫</h1>
+        <h1>
+            {% trans %}
+                title.reservation
+            {% endtrans %}
+            🎫</h1>
     </div>
     <div class="reservation__content">
         {{ form_start(form, {'attr': {'class': 'reservation__content__form'} }) }}
             <div class="reservation__content__form__group">
-                <h2>Pickup place?</h2>
+                <h2>
+                    {% trans %}
+                        field.pickup_place
+                    {% endtrans %}
+                </h2>
 
                 <div class="reservation__content__form__group__single place">
                     {{ form_row(form.pickupPlace) }}
@@ -52,7 +60,17 @@
                 <div class="reservation__content__form__group__single">
 
                     <div class="form__item">
-                        <label for="{{ form.pickupDetails.vars.id }}">{% trans %}Address or Fly/Cruise number{% endtrans %}</label>
+                        <label for="{{ form.pickupDetails.vars.id }}">
+                            {% trans %}
+                                label.pickup_place.option_1
+                            {% endtrans %}
+                            {% trans %}
+                                label.pickup_place.option_2
+                            {% endtrans %}
+                            {% trans %}
+                                label.pickup_place.option_3
+                            {% endtrans %}
+                        </label>
                         {{ form_widget(form.pickupDetails) }}
 
                     </div>
@@ -64,7 +82,11 @@
             <div class="reservation__content__form__division"></div>
 
             <div class="reservation__content__form__group">
-                <h2>Pickup time?</h2>
+                <h2>
+                    {% trans %}
+                        field.pickup_date
+                    {% endtrans %}
+                </h2>
 
                 <div class="reservation__content__form__group__single time">
 
@@ -73,7 +95,13 @@
                     </div>
 
                     <div class="form__item">
-                        <p><b>We strongly recommend start this activity before 8:30 am due to the distance.</b></p>
+                        <p>
+                            <b>
+                                {% trans %}
+                                   text.advise_time
+                                {% endtrans %}
+                            </b>
+                        </p>
                         {{ form_row(form.pickupTime) }}
                     </div>
                 </div>
@@ -82,7 +110,11 @@
             <div class="reservation__content__form__division"></div>
 
             <div class="reservation__content__form__group">
-                <h2>Other details</h2>
+                <h2>
+                    {% trans %}
+                        field.number_passengers
+                    {% endtrans %}
+                </h2>
 
                 <div class="reservation__content__form__group__single passenger_price">
                     <div class="form__item">
@@ -90,8 +122,20 @@
                     </div>
 
                     <div class="form__item">
-                        <span id="priceText" class="price_text price_text--is-visible"><b>Price:</b> <span id="priceNumber">250</span> USD</span>
-                        <span id="priceTextNegotiation" class="price_text_negotiation"><b>We will send you a offer!</b></span>
+                        <span id="priceText" class="price_text price_text--is-visible">
+                            <b>
+                                {% trans %}
+                                    label.price
+                                {% endtrans %}
+                            </b>
+                            <span id="priceNumber">250</span> USD</span>
+                        <span id="priceTextNegotiation" class="price_text_negotiation">
+                            <b>
+                                {% trans %}
+                                    label.offer
+                                {% endtrans %}
+                            </b>
+                        </span>
                     </div>
                 </div>
 
@@ -100,7 +144,11 @@
             <div class="reservation__content__form__division"></div>
 
             <div class="reservation__content__form__group">
-                <h2>How we can contact with you?</h2>
+                <h2>
+                    {% trans %}
+                        field.personal_data
+                    {% endtrans %}
+                </h2>
 
                 <div class="reservation__content__form__group__single time">
 
@@ -113,14 +161,10 @@
                         {{ form_row(form.clientEmail) }}
                     </div>
 
-
                     <div class="form__item">
-
                         {{ form_row(form.telephone) }}
                     </div>
-
                 </div>
-
 
                 <div class="form__item">
                     {{ form_row(form.clientMessage, {'attr':{'cols':30, 'rows':5}}) }}
@@ -130,7 +174,7 @@
 
             {{ form_row(form.bookingLang, {value: app.request.locale}) }}
             {{ form_row(form.campaign, {value: 'vinales-web-form'}) }}
-            <input class="btn btn--primary-gradient" type="submit" value="{% trans %}Book.send{% endtrans %}">
+            <input class="btn btn--primary-gradient" type="submit" value="{% trans %}button.send{% endtrans %}">
         {{ form_end(form) }}
     </div>
 </section>

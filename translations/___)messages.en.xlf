@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xliff xmlns="urn:oasis:names:tc:xliff:document:1.2" version="1.2">
+  <file source-language="en" target-language="en" datatype="plaintext" original="file.ext">
+    <header>
+      <tool tool-id="symfony" tool-name="Symfony"/>
+    </header>
+    <body>
+      <trans-unit id="Lg6WCrM" resname="Form">
+        <source>Form</source>
+        <target>The Form</target>
+      </trans-unit>
+      <trans-unit id="jsa1A4y" resname="Your booking have been saved">
+        <source>Your booking have been saved</source>
+        <target>Your booking have been saved!</target>
+      </trans-unit>
+      <trans-unit id="yYutWwI" resname="Address or Fly/Cruise number">
+        <source>Address or Fly/Cruise number</source>
+        <target>Address or Fly/Cruise number</target>
+      </trans-unit>
+      <trans-unit id="JDifA2E" resname="Book.send">
+        <source>Book.send</source>
+        <target>Send reservation</target>
+      </trans-unit>
+      <trans-unit id="LlWqcUh" resname="Form.title">
+        <source>Form.title</source>
+        <target>Let's start planning 🌄</target>
+      </trans-unit>
+      <trans-unit id="lzN.3Fx" resname="Index.title">
+        <source>Index.title</source>
+        <target>Day trip from Havana to Vinales an authentic cuban tour</target>
+      </trans-unit>
+      <trans-unit id="d2RC.s_" resname="main.text">
+        <source>main.text</source>
+        <target>Day trip from Havana to Vinales an authentic cuban tour</target>
+      </trans-unit>
+      <trans-unit id="nON0WWH" resname="button.activities">
+        <source>button.activities</source>
+        <target>Activities</target>
+      </trans-unit>
+      <trans-unit id="lCpDnSb" resname="button.us">
+        <source>button.us</source>
+        <target>Us</target>
+      </trans-unit>
+      <trans-unit id="ok_7jxk" resname="button.other_options">
+        <source>button.other_options</source>
+        <target>More places</target>
+      </trans-unit>
+      <trans-unit id="ipMNW6E" resname="button.contact">
+        <source>button.contact</source>
+        <target>Contact & FAQ</target>
+      </trans-unit>
+      <trans-unit id="zKOFfei" resname="button.reservation">
+        <source>button.reservation</source>
+        <target>Make a reservation</target>
+      </trans-unit>
+      <trans-unit id="QMexVqn" resname="main.subtitle_1">
+        <source>main.subtitle_1</source>
+        <target>Airport pickup</target>
+      </trans-unit>
+      <trans-unit id="6GgNkOo" resname="main.subtitle_2">
+        <source>main.subtitle_2</source>
+        <target>Trips from Havana</target>
+      </trans-unit>
+      <trans-unit id="UOrdCPB" resname="main.subtitle_3">
+        <source>main.subtitle_3</source>
+        <target>Taxi driver</target>
+      </trans-unit>
+      <trans-unit id="50gU.qQ" resname="section_title.offers">
+        <source>section_title.offers</source>
+        <target>Our one day trip from Havana to Vinales offer</target>
+      </trans-unit>
+      <trans-unit id="JaqECq4" resname="section_title.why_with_us">
+        <source>section_title.why_with_us</source>
+        <target>Why make this trip with us?</target>
+      </trans-unit>
+      <trans-unit id="sguXMnu" resname="section_title.other_options">
+        <source>section_title.other_options</source>
+        <target>Do you need to go somewhere else</target>
+      </trans-unit>
+      <trans-unit id="tcjj2m5" resname="section_title.contact">
+        <source>section_title.contact</source>
+        <target>Contact & FAQ</target>
+      </trans-unit>
+    </body>
+  </file>
+</xliff>

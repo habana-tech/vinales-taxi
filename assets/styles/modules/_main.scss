@@ -36,12 +36,17 @@
                 text-shadow: 2px 2px 10px #000000e0;
 
                 @mixin atLarge {
-                    width: 35%;
+                    width: 40%;
                 }
             }
 
             &__subtext {
                 width: 100%;
+                display: none;
+
+                @mixin atLarge{
+                    display: block;
+                }
 
                 & span {
                     color: white;
