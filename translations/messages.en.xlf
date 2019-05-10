@@ -259,7 +259,7 @@
       </trans-unit>
       <trans-unit id="arTFX42" resname="label.price">
         <source>label.price</source>
-        <target>How can we stay in touch with you?</target>
+        <target>Price: </target>
       </trans-unit>
       <trans-unit id="mpNqQ4E" resname="label.offer">
         <source>label.offer</source>
