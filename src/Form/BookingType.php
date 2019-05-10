@@ -7,6 +7,7 @@ use Symfony\Component\Form\AbstractType;
 use Symfony\Component\Form\Extension\Core\DataMapper\RadioListMapper;
 use Symfony\Component\Form\Extension\Core\Type\ChoiceType;
 use Symfony\Component\Form\Extension\Core\Type\DateType;
+use Symfony\Component\Form\Extension\Core\Type\EmailType;
 use Symfony\Component\Form\Extension\Core\Type\RadioType;
 use Symfony\Component\Form\Extension\Core\Type\TimeType;
 use Symfony\Component\Form\Extension\Core\Type\TextareaType;
@@ -19,8 +20,8 @@ class BookingType extends AbstractType
     public function buildForm(FormBuilderInterface $builder, array $options)
     {
         $builder
-            ->add('peopleCount', null, ['attr'=>['min'=>1, 'max'=>40, 'placeholder'=>1, 'value'=>1]])
-            ->add('pickupDate', DateType::class, ['widget'=>'single_text', 'attr'=>['min'=>date('Y-m-d')]])
+            ->add('peopleCount', null, ['attr'=>['min'=>1, 'max'=>40, 'placeholder'=>1, 'value'=>1], 'label'=>'field.peopleCount'])
+            ->add('pickupDate', DateType::class, ['widget'=>'single_text', 'attr'=>['min'=>date('Y-m-d')],'label'=>'field.pickupDate'])
             //->add('pickupTime', TimeType::class, ['widget'=>'single_text'])
             ->add('pickupTime', ChoiceType::class,[
                 'choices'=>[
@@ -29,24 +30,24 @@ class BookingType extends AbstractType
                     '8:00 am'=>'08:00',
                     '8:30 am'=>'08:30',
                     '9:00 am'=>'09:00'
-                ],'expanded'=>false
+                ],'expanded'=>false,'label'=>'field.pickupTime'
             ])
 
             ->add('pickupPlace', ChoiceType::class,[
                 'choices'=>[
-                    'Airport'=>'Airport',
-                    'Cruise'=>'Cruise',
-                    'Hotel or House'=>'Hotel or House'
-                ],'expanded'=>true
+                    'option.Airport'=>'Airport',
+                    'option.Cruise'=>'Cruise',
+                    'option.Hotel'=>'Hotel or House'
+                ],'expanded'=>true, 'label'=>'field.pickupPlace'
             ])
-            ->add('pickupDetails')
+            ->add('pickupDetails',null, ['label'=>'field.pickupDetails'])
 
 
-            ->add('clientName')
-            ->add('clientEmail')
-            ->add('telephone')
+            ->add('clientName', null, ['label'=>'field.name'])
+            ->add('clientEmail',EmailType::class, ['label'=>'field.email'])
+            ->add('telephone', null, ['label'=>'field.telephone'])
             ->add('clientMessage', TextareaType::class, [
-                'required' => false,
+                'required' => false, 'label'=>'field.clientMessage'
             ])
 
             ->add('bookingLang', HiddenType::class)

@@ -5,33 +5,21 @@
       <tool tool-id="symfony" tool-name="Symfony"/>
     </header>
     <body>
-      <trans-unit id="Lg6WCrM" resname="Form">
-        <source>Form</source>
-        <target>El Formulario</target>
-      </trans-unit>
-      <trans-unit id="yFhOWqt" resname="People count">
-        <source>People count</source>
+      <trans-unit id="k6VaevK" resname="People.count">
+        <source>People.count</source>
         <target>Cantidad de personas</target>
       </trans-unit>
       <trans-unit id="jsa1A4y" resname="Your booking have been saved">
         <source>Your booking have been saved</source>
         <target>Su reserva fue registrada</target>
       </trans-unit>
-      <trans-unit id="yYutWwI" resname="Address or Fly/Cruise number">
-        <source>Address or Fly/Cruise number</source>
+      <trans-unit id="lnqPb5A" resname="Address.Fly.Cruise.number">
+        <source>Address.Fly.Cruise.number</source>
         <target>Dirección/Número del vuelo o crucero</target>
-      </trans-unit>
-      <trans-unit id="JDifA2E" resname="Book.send">
-        <source>Book.send</source>
-        <target>Enviar datos</target>
       </trans-unit>
       <trans-unit id="lzN.3Fx" resname="Index.title">
         <source>Index.title</source>
         <target>Viaje a Viñales</target>
-      </trans-unit>
-      <trans-unit id="LlWqcUh" resname="Form.title">
-        <source>Form.title</source>
-        <target>__Form.title</target>
       </trans-unit>
       <trans-unit id="d2RC.s_" resname="main.text">
         <source>main.text</source>
@@ -217,6 +205,10 @@
         <source>field.pickup_place</source>
         <target>¿Cuál es el lugar de recogida?</target>
       </trans-unit>
+      <trans-unit id="BLBXkh." resname="CY8Jv1600">
+        <source>CY8Jv1600</source>
+        <target>Le recogeremos en...</target>
+      </trans-unit>
       <trans-unit id="ewV4ZaA" resname="label.pickup_place.option_1">
         <source>label.pickup_place.option_1</source>
         <target>__label.pickup_place.option_1</target>
@@ -336,6 +328,30 @@
       <trans-unit id="t7xMynJ" resname="text.contact_footer_phone">
         <source>text.contact_footer_phone</source>
         <target>o llamarnos al </target>
+      </trans-unit>
+      <trans-unit id="f90Yo8u" resname="option.Airport">
+        <source>option.Airport</source>
+        <target>Aeropuerto</target>
+      </trans-unit>
+      <trans-unit id="VAEal7j" resname="option.Cruise">
+        <source>option.Cruise</source>
+        <target>Crucero</target>
+      </trans-unit>
+      <trans-unit id=".UNL_KN" resname="option.Hotel">
+        <source>option.Hotel</source>
+        <target>Hotel o Casa de renta</target>
+      </trans-unit>
+      <trans-unit id="HP8voUG" resname="field.pickupPlace">
+        <source>field.pickupPlace</source>
+        <target>Seleccione una de las siguientes opciones</target>
+      </trans-unit>
+      <trans-unit id="PqJqOVI" resname="field.pickupDate">
+        <source>field.pickupDate</source>
+        <target>Que día</target>
+      </trans-unit>
+      <trans-unit id="cknLw2Y" resname="field.pickupTime">
+        <source>field.pickupTime</source>
+        <target>Hora de salida</target>
       </trans-unit>
     </body>
   </file>
