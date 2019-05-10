@@ -972,6 +972,11 @@ input[type="submit"] {
     .reservation_details {
       margin-top: 0;
       padding-top: 3em; } }
+  .reservation_details__body {
+    text-align: left; }
+    @media (min-width: 800px) {
+      .reservation_details__body {
+        text-align: center; } }
 
 .activities {
   margin: 5% 0; }
