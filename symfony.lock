@@ -1,4 +1,7 @@
 {
+    "behat/transliterator": {
+        "version": "v1.2.0"
+    },
     "doctrine/annotations": {
         "version": "1.0",
         "recipe": {
@@ -95,6 +98,21 @@
             "ref": "8eb1cd0962ded6a6d6e1e5a9b6d3e888f9f94ff6"
         }
     },
+    "friendsofsymfony/user-bundle": {
+        "version": "v2.1.2"
+    },
+    "google/recaptcha": {
+        "version": "1.1",
+        "recipe": {
+            "repo": "github.com/symfony/recipes-contrib",
+            "branch": "master",
+            "version": "1.1",
+            "ref": "155d19cc6b4fddd9393064f553bdbe3f2f16c918"
+        },
+        "files": [
+            "config/packages/google_recaptcha.yaml"
+        ]
+    },
     "guzzlehttp/guzzle": {
         "version": "6.3.3"
     },
@@ -110,6 +128,9 @@
     "jdorn/sql-formatter": {
         "version": "v1.2.17"
     },
+    "jms/metadata": {
+        "version": "2.0.0"
+    },
     "liip/imagine-bundle": {
         "version": "1.8",
         "recipe": {
@@ -124,6 +145,9 @@
     },
     "nikic/php-parser": {
         "version": "v4.1.1"
+    },
+    "ocramius/package-versions": {
+        "version": "1.4.0"
     },
     "ocramius/proxy-manager": {
         "version": "2.1.1"
@@ -320,6 +344,9 @@
     "symfony/polyfill-intl-icu": {
         "version": "v1.10.0"
     },
+    "symfony/polyfill-intl-idn": {
+        "version": "v1.11.0"
+    },
     "symfony/polyfill-mbstring": {
         "version": "v1.10.0"
     },
@@ -463,6 +490,18 @@
     },
     "twig/twig": {
         "version": "v2.6.0"
+    },
+    "vich/uploader-bundle": {
+        "version": "1.5",
+        "recipe": {
+            "repo": "github.com/symfony/recipes-contrib",
+            "branch": "master",
+            "version": "1.5",
+            "ref": "c4f5755b37fb65b9c6a3cbdae91205c15a137ed4"
+        },
+        "files": [
+            "config/packages/vich_uploader.yaml"
+        ]
     },
     "webmozart/assert": {
         "version": "1.4.0"
