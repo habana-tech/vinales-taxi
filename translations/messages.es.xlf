@@ -205,25 +205,25 @@
         <source>field.pickup_place</source>
         <target>¿Cuál es el lugar de recogida?</target>
       </trans-unit>
-      <trans-unit id="BLBXkh." resname="CY8Jv1600">
-        <source>CY8Jv1600</source>
+      <trans-unit id="dYVCA7j" resname="label.pickup_place">
+        <source>label.pickup_place</source>
         <target>Le recogeremos en...</target>
       </trans-unit>
       <trans-unit id="ewV4ZaA" resname="label.pickup_place.option_1">
         <source>label.pickup_place.option_1</source>
-        <target>__label.pickup_place.option_1</target>
+        <target>Aeropuerto</target>
       </trans-unit>
       <trans-unit id="KouefVV" resname="label.pickup_place.option_2">
         <source>label.pickup_place.option_2</source>
-        <target>__label.pickup_place.option_2</target>
+        <target>Crucero</target>
       </trans-unit>
       <trans-unit id="jM1NhMe" resname="label.pickup_place.option_3">
         <source>label.pickup_place.option_3</source>
-        <target>__label.pickup_place.option_3</target>
+        <target>Hotel o Casa de Renta</target>
       </trans-unit>
       <trans-unit id="MLuhDzN" resname="field.pickup_time">
         <source>field.pickup_time</source>
-        <target>__field.pickup_time</target>
+        <target>Hora de salida</target>
       </trans-unit>
       <trans-unit id="XFUgJJT" resname="text.advise_time">
         <source>text.advise_time</source>
@@ -329,22 +329,6 @@
         <source>text.contact_footer_phone</source>
         <target>o llamarnos al </target>
       </trans-unit>
-      <trans-unit id="f90Yo8u" resname="option.Airport">
-        <source>option.Airport</source>
-        <target>Aeropuerto</target>
-      </trans-unit>
-      <trans-unit id="VAEal7j" resname="option.Cruise">
-        <source>option.Cruise</source>
-        <target>Crucero</target>
-      </trans-unit>
-      <trans-unit id=".UNL_KN" resname="option.Hotel">
-        <source>option.Hotel</source>
-        <target>Hotel o Casa de renta</target>
-      </trans-unit>
-      <trans-unit id="HP8voUG" resname="field.pickupPlace">
-        <source>field.pickupPlace</source>
-        <target>Seleccione una de las siguientes opciones</target>
-      </trans-unit>
       <trans-unit id="PqJqOVI" resname="field.pickupDate">
         <source>field.pickupDate</source>
         <target>Que día</target>
@@ -353,6 +337,39 @@
         <source>field.pickupTime</source>
         <target>Hora de salida</target>
       </trans-unit>
+      <trans-unit id="1lZ3ei0" resname="label.pickup_date">
+        <source>label.pickup_date</source>
+        <target>Día</target>
+      </trans-unit>
+      <trans-unit id="AHhQ6Bz" resname="field.name">
+        <source>field.name</source>
+        <target>Su nombre</target>
+      </trans-unit>
+      <trans-unit id="23I95Hb" resname="field.email">
+        <source>field.email</source>
+        <target>Su email</target>
+      </trans-unit>
+      <trans-unit id="Gge1NKL" resname="field.telephone">
+        <source>field.telephone</source>
+        <target>Su teléfono</target>
+      </trans-unit>
+      <trans-unit id="3wuTqGm" resname="span_pickup_place.option_1">
+        <source>span_pickup_place.option_1</source>
+        <target>Aerolinea y número de vuelo</target>
+      </trans-unit>
+      <trans-unit id="ST7gl6h" resname="span_pickup_place.option_2">
+        <source>span_pickup_place.option_2</source>
+        <target>Puerto y nombre del Crucero</target>
+      </trans-unit>
+      <trans-unit id="hFrg0Fj" resname="span_pickup_place.option_3">
+        <source>span_pickup_place.option_3</source>
+        <target>Hotel o Dirección de la casa de renta</target>
+      </trans-unit>
+      <trans-unit id="jgf833" resname="field.client_message">
+        <source>field.client_message</source>
+        <target>Danos más detalles</target>
+      </trans-unit>
+      
     </body>
   </file>
 </xliff>

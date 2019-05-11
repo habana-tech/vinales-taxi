@@ -235,11 +235,11 @@
       </trans-unit>
       <trans-unit id="ewV4ZaA" resname="label.pickup_place.option_1">
         <source>label.pickup_place.option_1</source>
-        <target>Flight number</target>
+        <target>Airport</target>
       </trans-unit>
       <trans-unit id="KouefVV" resname="label.pickup_place.option_2">
         <source>label.pickup_place.option_2</source>
-        <target>Cruise name</target>
+        <target>Cruise</target>
       </trans-unit>
       <trans-unit id="jM1NhMe" resname="label.pickup_place.option_3">
         <source>label.pickup_place.option_3</source>
@@ -247,7 +247,7 @@
       </trans-unit>
       <trans-unit id="MLuhDzN" resname="field.pickup_time">
         <source>field.pickup_time</source>
-        <target>Pickup date and time?</target>
+        <target>Time</target>
       </trans-unit>
       <trans-unit id="XFUgJJT" resname="text.advise_time">
         <source>text.advise_time</source>
@@ -324,6 +324,42 @@
       <trans-unit id="t7xMynJ" resname="text.contact_footer_phone">
         <source>text.contact_footer_phone</source>
         <target>or call us to phone </target>
+      </trans-unit>
+      <trans-unit id="3wuTqGm" resname="span_pickup_place.option_1">
+        <source>span_pickup_place.option_1</source>
+        <target>Airline and fly number</target>
+      </trans-unit>
+      <trans-unit id="ST7gl6h" resname="span_pickup_place.option_2">
+        <source>span_pickup_place.option_2</source>
+        <target>Port and Cruise name</target>
+      </trans-unit>
+      <trans-unit id="hFrg0Fj" resname="span_pickup_place.option_3">
+        <source>span_pickup_place.option_3</source>
+        <target>Hotel or Rent House</target>
+      </trans-unit>
+      <trans-unit id="asdads76S" resname="label.pickup_place">
+        <source>label.pickup_place</source>
+        <target>Where will we pickup you</target>
+      </trans-unit>
+      <trans-unit id="ad7872ks" resname="label.pickup_date">
+        <source>label.pickup_date</source>
+        <target>Day</target>
+      </trans-unit>
+      <trans-unit id="fdiosa98" resname="field.name">
+        <source>field.name</source>
+        <target>Your name</target>
+      </trans-unit>
+      <trans-unit id="afdsi79werjdn" resname="field.email">
+        <source>field.email</source>
+        <target>Your email</target>
+      </trans-unit>
+      <trans-unit id="asdfjhasd" resname="field.telephone">
+        <source>field.telephone</source>
+        <target>Your phone number</target>
+      </trans-unit>
+      <trans-unit id="jgf833" resname="field.client_message">
+        <source>field.client_message</source>
+        <target>Give us more info</target>
       </trans-unit>
     </body>
   </file>

@@ -60,18 +60,13 @@
                 <div class="reservation__content__form__group__single">
 
                     <div class="form__item">
+                        
                         <label for="{{ form.pickupDetails.vars.id }}">
-
-                            {#{% trans %}#}
-                                {#label.pickup_place.option_1#}
-                            {#{% endtrans %}#}
-                            {#{% trans %}#}
-                                {#label.pickup_place.option_2#}
-                            {#{% endtrans %}#}
-                            {#{% trans %}#}
-                                {#label.pickup_place.option_3#}
-                            {#{% endtrans %}#}
+                            <span class="hidden" id="span_pickup_place.option_1">{% trans %}span_pickup_place.option_1{% endtrans %}</span>
+                            <span class="hidden" id="span_pickup_place.option_2">{% trans %}span_pickup_place.option_2{% endtrans %}</span>
+                            <span class="hidden" id="span_pickup_place.option_3">{% trans %}span_pickup_place.option_3{% endtrans %}</span>
                         </label>
+                        
                         {{ form_widget(form.pickupDetails) }}
 
                     </div>
