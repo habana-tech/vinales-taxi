@@ -17,19 +17,19 @@ class ContactType extends AbstractType
         $builder
             ->add('name', null, [
                 'required'=>true,
-                'label'=>'Your name'
+                'label'=>'field.name'
             ])
             ->add('email', EmailType::class,[
                 'required'=>true,
-                'label'=>'Your email'
+                'label'=>'field.email'
             ])
             ->add('message', TextareaType::class,[
                 'required'=>true,
-                'label'=>'Your message'
+                'label'=>'field.client_message'
             ])
             ->add('submit', SubmitType::class,[
                 'attr'=>['class'=>'btn btn--primary-gradient'],
-                    'label'=>'Send message',
+                    'label'=>'subtitle.send_message',
             ])
         ;
     }

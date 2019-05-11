@@ -231,7 +231,7 @@
       </trans-unit>
       <trans-unit id="qB28uYO" resname="field.other_details">
         <source>field.other_details</source>
-        <target>__field.other_details</target>
+        <target>Más detalles</target>
       </trans-unit>
       <trans-unit id="arTFX42" resname="label.price">
         <source>label.price</source>
@@ -251,63 +251,63 @@
       </trans-unit>
       <trans-unit id="PBBCrMq" resname="image.description.mural">
         <source>image.description.mural</source>
-        <target>__image.description.mural</target>
+        <target>Mural de la prehistoria (Viñales)</target>
       </trans-unit>
       <trans-unit id="ET9hvCc" resname="image.description.horse">
         <source>image.description.horse</source>
-        <target>__image.description.horse</target>
+        <target>Montar caballos en Viñales</target>
       </trans-unit>
       <trans-unit id="JCDID7W" resname="image.description.view">
         <source>image.description.view</source>
-        <target>__image.description.view</target>
+        <target>Amplia vista del valle de Viñales</target>
       </trans-unit>
       <trans-unit id="jd5cLB5" resname="image.description.indian_cave">
         <source>image.description.indian_cave</source>
-        <target>__image.description.indian_cave</target>
+        <target>Cueva del Indio</target>
       </trans-unit>
       <trans-unit id="2znR9OS" resname="image.description.restaurant">
         <source>image.description.restaurant</source>
-        <target>__image.description.restaurant</target>
+        <target>Restaurantes en Viñales, comida tradicional cubana para almorzar</target>
       </trans-unit>
       <trans-unit id="ukuAKD2" resname="image.description.tabacco">
         <source>image.description.tabacco</source>
-        <target>__image.description.tabacco</target>
+        <target>Tabaco en Viñales, personas aprendiendo y fumando</target>
       </trans-unit>
       <trans-unit id="9760Pdt" resname="title.reservation_processed">
         <source>title.reservation_processed</source>
-        <target>__title.reservation_processed</target>
+        <target>Su reservación ha sido procesada</target>
       </trans-unit>
       <trans-unit id="JuRirNO" resname="subtitle.thank">
         <source>subtitle.thank</source>
-        <target>__subtitle.thank</target>
+        <target>Gracias por preferir Viñales.taxi</target>
       </trans-unit>
       <trans-unit id="V7oRZSU" resname="text.reservation_made">
         <source>text.reservation_made</source>
-        <target>__text.reservation_made</target>
+        <target>La reserva fue hecha en nombre de</target>
       </trans-unit>
       <trans-unit id="23vmdDz" resname="text.reservation_pickup_time">
         <source>text.reservation_pickup_time</source>
-        <target>__text.reservation_pickup_time</target>
+        <target>Le recogeremos</target>
       </trans-unit>
       <trans-unit id="wbSt5ZA" resname="text.amount_passenger">
         <source>text.amount_passenger</source>
-        <target>__text.amount_passenger</target>
+        <target>Cantidad de pertsonas</target>
       </trans-unit>
       <trans-unit id="vHPvIcK" resname="text.reservation_quota">
         <source>text.reservation_quota</source>
-        <target>__text.reservation_quota</target>
+        <target>Le enviaremos un presupuesto para este viaje</target>
       </trans-unit>
       <trans-unit id="6HhNoGG" resname="text.total_cost">
         <source>text.total_cost</source>
-        <target>__text.total_cost</target>
+        <target>El importe total es</target>
       </trans-unit>
       <trans-unit id="eczPIVQ" resname="text.pay_driver">
         <source>text.pay_driver</source>
-        <target>__text.pay_driver</target>
+        <target>Puede pagar al conductor al final del viaje</target>
       </trans-unit>
       <trans-unit id="TPzHjM8" resname="text.confirmation_email">
         <source>text.confirmation_email</source>
-        <target>__text.confirmation_email</target>
+        <target>Le enviaremos un email con los detalles de su reservación</target>
       </trans-unit>
       <trans-unit id="IXqKP3o" resname="field.pickup_date">
         <source>field.pickup_date</source>
@@ -319,7 +319,7 @@
       </trans-unit>
       <trans-unit id="xWzq4cx" resname="image.description.mural_car">
         <source>image.description.mural_car</source>
-        <target>__image.description.mural_car</target>
+        <target>Auto clásico en Viñales</target>
       </trans-unit>
       <trans-unit id="Vmtq870" resname="text.contact_footer_mail">
         <source>text.contact_footer_mail</source>

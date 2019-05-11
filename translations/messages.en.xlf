@@ -27,7 +27,7 @@
       </trans-unit>
       <trans-unit id="jsa1A4y" resname="Your booking have been saved">
         <source>Your booking have been saved</source>
-        <target>__Your booking have been saved</target>
+        <target>Your booking has been saved</target>
       </trans-unit>
       <trans-unit id="yYutWwI" resname="Address or Fly/Cruise number">
         <source>Address or Fly/Cruise number</source>
