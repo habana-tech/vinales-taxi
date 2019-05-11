@@ -11,7 +11,7 @@
       </trans-unit>
       <trans-unit id="yYutWwI" resname="Address or Fly/Cruise number">
         <source>Address or Fly/Cruise number</source>
-        <target>__Address or Fly/Cruise number</target>
+        <target>__Address or Fly/Cruise numéro</target>
       </trans-unit>
       <trans-unit id="lzN.3Fx" resname="Index.title">
         <source>Index.title</source>
@@ -347,7 +347,7 @@
       </trans-unit>
       <trans-unit id="asd85hasd" resname="field.telephone">
         <source>field.telephone</source>
-        <target>Votre numero du tèlèphone</target>
+        <target>Votre numéro de tèlèphone</target>
       </trans-unit>
       <trans-unit id="jgfsa833" resname="field.client_message">
         <source>field.client_message</source>
