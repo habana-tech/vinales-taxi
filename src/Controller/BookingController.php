@@ -37,10 +37,12 @@ class BookingController extends AbstractController
     }
 
     /**
-     * @Route("/booking/new", name="booking_new", methods={"GET","POST"})
+     * @Route("/{_locale}/booking/new", name="booking_new", methods={"GET","POST"}, defaults={"_locale": "en"},
+     *     requirements={"_locale": "en|es|fr"})
+     * @Route("/booking/new", methods={"GET","POST"})
      * @Route("/backend/booking/new", name="backend_booking_new", methods={"GET","POST"})
      */
-    public function new(Request $request, \Swift_Mailer $mailer): Response
+    public function new(Request $request, \Swift_Mailer $mailer, $_locale): Response
     {
         $booking = new Booking();
         $form = $this->createForm(BookingType::class, $booking);
@@ -106,7 +108,7 @@ class BookingController extends AbstractController
             $mailer->send($messageToClient);
             
 
-            return $this->redirectToRoute('booking_confirmation', ['orderNumber'=>$booking->getOrderNumber()]);
+            return $this->redirectToRoute('booking_confirmation', ['orderNumber'=>$booking->getOrderNumber(), '_locale'=> $_locale]);
         }
 
         return $this->render('backend/booking/new.html.twig', [
