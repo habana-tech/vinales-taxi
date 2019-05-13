@@ -116,12 +116,16 @@ class BookingController extends AbstractController
     }
 
     /**
-     * @Route("/booking/confirmation/{orderNumber}", name="booking_confirmation", methods={"GET"})
+     * @Route("/{_locale}/booking/confirmation/{orderNumber}", name="booking_confirmation", methods={"GET"},
+     *     defaults={"_locale": "en"},
+     *     requirements={"_locale": "en|es|fr"})     
+     * @Route("/booking/confirmation/{orderNumber}", methods={"GET"})
      */
     public function confirmation(Booking $booking): Response
     {
         return $this->render('frontend/booked.html.twig', [
                 'booking' => $booking,
+                'orderNumber'=>$booking->getOrderNumber()
             ]);
     }
 
