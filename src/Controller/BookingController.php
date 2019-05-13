@@ -50,7 +50,6 @@ class BookingController extends AbstractController
 
         if ($form->isSubmitted() && $form->isValid()) {
             $entityManager = $this->getDoctrine()->getManager();
-            //TODO: en prod. no se ha creado el schem
             $entityManager->persist($booking);
             $entityManager->flush();
 
