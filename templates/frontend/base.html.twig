@@ -13,6 +13,11 @@
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1" />
 
+        <link rel="alternate" hreflang="en" href="{{ absolute_url(path(app.request.get('_route'), {'_locale': 'en' } )) }}" />
+        <link rel="alternate" hreflang="es" href="{{ absolute_url(path(app.request.get('_route'), {'_locale': 'es' } )) }}" />
+        <link rel="alternate" hreflang="fr" href="{{ absolute_url(path(app.request.get('_route'), {'_locale': 'fr' } )) }}" />
+        <link rel="alternate" hreflang="x-default" href="{{ absolute_url(path(app.request.get('_route'), {'_locale': 'en' } )) }}" />
+
         <link rel="preconnect" href="https://fonts.googleapis.com">
         <meta name="theme-color" content="#378203">
 
@@ -137,6 +142,7 @@
         </script>
 
         <link rel="icon" type="image/png" href="{{ asset('img/favicon.png') }}" />
+
         <title>
             {% if app.request.locale == 'es' %}
                 {{ title_es }}
