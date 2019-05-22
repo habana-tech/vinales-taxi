@@ -96,12 +96,12 @@
                         {% trans %}
                             text.reservation_pickup_time
                         {% endtrans %}
-                        {% if booking.pickupPlace == 'place' %}
-                            the <b>house / hotel</b> at
-                        {% elseif booking.pickupPlace == 'airport' %}
-                            the <b>airport</b> looking for the flight with number
+                        {% if booking.pickupPlace == 'Hotel-House' %}
+                            the <b>Hotel or House</b> at
+                        {% elseif booking.pickupPlace == 'Airport' %}
+                            the <b>Airport</b> looking for the flight with number
                         {% else %}
-                            the <b>cruise</b> named
+                            the <b>Cruise</b> named
                         {% endif %}
                         <br>
                         <b>
