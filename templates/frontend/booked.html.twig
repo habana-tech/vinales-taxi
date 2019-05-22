@@ -1,6 +1,6 @@
 {% extends 'frontend/base.html.twig' %}
 
-{% bloc AlternateLang %}
+{% block AlternateLang %}
 <link rel="alternate" hreflang="en" href="{{ path(app.request.get('_route'), {'_locale': 'en', 'orderNumber': orderNumber } ) }}" />
 <link rel="alternate" hreflang="es" href="{{ path(app.request.get('_route'), {'_locale': 'es', 'orderNumber': orderNumber } ) }}" />
 <link rel="alternate" hreflang="fr" href="{{ path(app.request.get('_route'), {'_locale': 'fr', 'orderNumber': orderNumber } ) }}" />

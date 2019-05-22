@@ -13,7 +13,7 @@
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1" />
 
-        {% bloc AlternateLang %}
+        {% block AlternateLang %}
             <link rel="alternate" hreflang="en" href="{{ absolute_url(path(app.request.get('_route'), {'_locale': 'en' } )) }}" />
             <link rel="alternate" hreflang="es" href="{{ absolute_url(path(app.request.get('_route'), {'_locale': 'es' } )) }}" />
             <link rel="alternate" hreflang="fr" href="{{ absolute_url(path(app.request.get('_route'), {'_locale': 'fr' } )) }}" />
