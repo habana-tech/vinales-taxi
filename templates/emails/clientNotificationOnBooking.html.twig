@@ -1020,12 +1020,12 @@
                                                                         <td class="esd-block-text es-p5t es-p15b" align="left">
                                                                             <p style="color: #ffffff;">
                                                                                 We will pick you up at
-                                                                                {% if booking.pickupPlace == 'Hotel or House' %}
+                                                                                {% if booking.pickupPlace == 'Hotel-House' %}
                                                                                     the <b>Hotel or House</b> at
-                                                                                {% elseif booking.pickupPlace == 'airport' %}
-                                                                                    the <b>airport</b> looking for the flight with number
+                                                                                {% elseif booking.pickupPlace == 'Airport' %}
+                                                                                    the <b>Airport</b> looking for the flight with number
                                                                                 {% else %}
-                                                                                    the <b>cruise</b> named
+                                                                                    the <b>Cruise</b> named
                                                                                 {% endif %}
                                                                                 <b>
                                                                                     {{ booking.pickupDetails }}

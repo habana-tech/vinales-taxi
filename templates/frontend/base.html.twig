@@ -13,10 +13,12 @@
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1" />
 
-        <link rel="alternate" hreflang="en" href="{{ absolute_url(path(app.request.get('_route'), {'_locale': 'en' } )) }}" />
-        <link rel="alternate" hreflang="es" href="{{ absolute_url(path(app.request.get('_route'), {'_locale': 'es' } )) }}" />
-        <link rel="alternate" hreflang="fr" href="{{ absolute_url(path(app.request.get('_route'), {'_locale': 'fr' } )) }}" />
-        <link rel="alternate" hreflang="x-default" href="{{ absolute_url(path(app.request.get('_route'), {'_locale': 'en' } )) }}" />
+        {% bloc AlternateLang %}
+            <link rel="alternate" hreflang="en" href="{{ absolute_url(path(app.request.get('_route'), {'_locale': 'en' } )) }}" />
+            <link rel="alternate" hreflang="es" href="{{ absolute_url(path(app.request.get('_route'), {'_locale': 'es' } )) }}" />
+            <link rel="alternate" hreflang="fr" href="{{ absolute_url(path(app.request.get('_route'), {'_locale': 'fr' } )) }}" />
+            <link rel="alternate" hreflang="x-default" href="{{ absolute_url(path(app.request.get('_route'), {'_locale': 'en' } )) }}" />
+        {% endblock %}
 
         <link rel="preconnect" href="https://fonts.googleapis.com">
         <meta name="theme-color" content="#378203">
@@ -315,17 +317,17 @@
                 <ul>
                     <li>
                         <a href="https://www.tripadvisor.es/Attraction_Review-g147271-d13554747-Reviews-Taxi_Drivers_Cuba-Havana_Ciudad_de_la_Habana_Province_Cuba.html" target="_blank">
-                            <img src="{{ asset('img/icons/tripadvisor.svg') }}" alt="">
+                            <img src="{{ asset('img/icons/tripadvisor.svg') }}" alt="tripadvisor icon">
                         </a>
                     </li>
                     <li>
                         <a href="https://www.facebook.com/taxidriverscuba/" target="_blank">
-                            <img src="{{ asset('img/icons/facebook.svg') }}" alt="">
+                            <img src="{{ asset('img/icons/facebook.svg') }}" alt="facebook icon">
                         </a>
                     </li>
                     <li>
                         <a href="http://www.instagram.com/taxidriverscuba/" target="_blank">
-                            <img src="{{ asset('img/icons/instagram.svg') }}" alt="">
+                            <img src="{{ asset('img/icons/instagram.svg') }}" alt="instagram icon">
                         </a>
                     </li>
                 </ul>
