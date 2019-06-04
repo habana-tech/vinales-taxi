@@ -11,7 +11,7 @@ class ChangeTitle{
     }
 
     updateTitle(event){
-        let option = event.target.id;;
+        let option = event.target.id;
         let text = '';
         if (option=='booking_pickupPlace_0')
             text = 'Flight number';

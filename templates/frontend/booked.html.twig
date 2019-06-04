@@ -1,11 +1,17 @@
 {% extends 'frontend/base.html.twig' %}
 
+{% block AlternateLang %}
+<link rel="alternate" hreflang="en" href="{{ path(app.request.get('_route'), {'_locale': 'en', 'orderNumber': orderNumber } ) }}" />
+<link rel="alternate" hreflang="es" href="{{ path(app.request.get('_route'), {'_locale': 'es', 'orderNumber': orderNumber } ) }}" />
+<link rel="alternate" hreflang="fr" href="{{ path(app.request.get('_route'), {'_locale': 'fr', 'orderNumber': orderNumber } ) }}" />
+<link rel="alternate" hreflang="x-default" href="{{ path(app.request.get('_route'), {'_locale': 'en', 'orderNumber': orderNumber } ) }}" />
+{% endblock %}
+
 {% block javascripts_defer %}
     <script src="{{ asset('scripts/app.js') }}" defer></script>
 {% endblock %}
 
 {% block title %}{% trans %}Your booking have been saved{% endtrans %}{% endblock %}
-
 
 
 {% block trackingcodes %}
@@ -18,6 +24,7 @@
     </script>
 
 {% endblock %}
+
 
 {% block languagesSelector %}
         <div class="lang">
@@ -89,12 +96,12 @@
                         {% trans %}
                             text.reservation_pickup_time
                         {% endtrans %}
-                        {% if booking.pickupPlace == 'place' %}
-                            the <b>house / hotel</b> at
-                        {% elseif booking.pickupPlace == 'airport' %}
-                            the <b>airport</b> looking for the flight with number
+                        {% if booking.pickupPlace == 'Hotel-House' %}
+                            the <b>Hotel or House</b> at
+                        {% elseif booking.pickupPlace == 'Airport' %}
+                            the <b>Airport</b> looking for the flight with number
                         {% else %}
-                            the <b>cruise</b> named
+                            the <b>Cruise</b> named
                         {% endif %}
                         <br>
                         <b>
