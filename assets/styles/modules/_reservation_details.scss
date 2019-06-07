@@ -1,5 +1,19 @@
 .reservation_details{
+    padding-top: 1em;
     top: -3em;
     position: relative;
-    background-color: white;;
+    background-color: white;
+
+    @mixin atLarge{
+        margin-top: 0;
+        padding-top: 3em;
+    }
+
+    &__body{
+        text-align: left;
+
+        @mixin atLarge{
+            text-align: center;
+        }
+    }
 }

@@ -7,6 +7,7 @@ use Symfony\Component\Form\AbstractType;
 use Symfony\Component\Form\Extension\Core\DataMapper\RadioListMapper;
 use Symfony\Component\Form\Extension\Core\Type\ChoiceType;
 use Symfony\Component\Form\Extension\Core\Type\DateType;
+use Symfony\Component\Form\Extension\Core\Type\EmailType;
 use Symfony\Component\Form\Extension\Core\Type\RadioType;
 use Symfony\Component\Form\Extension\Core\Type\TimeType;
 use Symfony\Component\Form\Extension\Core\Type\TextareaType;
@@ -19,33 +20,35 @@ class BookingType extends AbstractType
     public function buildForm(FormBuilderInterface $builder, array $options)
     {
         $builder
-            ->add('peopleCount', null, ['attr'=>['min'=>1, 'max'=>40, 'placeholder'=>1]])
-            ->add('pickupDate', DateType::class, ['widget'=>'single_text', 'attr'=>['min'=>date('Y-m-d')]])
+            ->add('peopleCount', null, ['attr'=>['min'=>1, 'max'=>40, 'placeholder'=>1, 'value'=>1], 'label'=>'field.number_passengers'])
+            ->add('pickupDate', DateType::class, ['widget'=>'single_text', 'attr'=>['min'=>date('Y-m-d')],'label'=>'label.pickup_date'])
             //->add('pickupTime', TimeType::class, ['widget'=>'single_text'])
             ->add('pickupTime', ChoiceType::class,[
                 'choices'=>[
-                    '7:00 am'=>'07:00',
-                    '7:30 am'=>'07:30',
-                    '8:00 am'=>'08:00',
-                    '8:30 am'=>'08:30',
-                    '9:00 am'=>'09:00'
-                ],'expanded'=>false
+                    '07:00h'=>'07:00',
+                    '07:30h'=>'07:30',
+                    '08:00h'=>'08:00',
+                    '08:30h'=>'08:30',
+                    '09:00h'=>'09:00'
+                ],'expanded'=>false,'label'=>'field.pickup_time'
             ])
 
             ->add('pickupPlace', ChoiceType::class,[
                 'choices'=>[
-                    'Airport'=>'Airport',
-                    'Cruise'=>'Cruise',
-                    'Hotel or House'=>'Hotel or House'
-                ],'expanded'=>true
+                    'label.pickup_place.option_1'=>'Airport',
+                    'label.pickup_place.option_2'=>'Cruise',
+                    'label.pickup_place.option_3'=>'Hotel-House'
+                ],'expanded'=>true, 'label'=>'label.pickup_place'
             ])
-            ->add('pickupDetails')
+            ->add('pickupDetails',null, ['label'=>'field.pickup_place'])
 
 
-            ->add('clientName')
-            ->add('clientEmail')
-            ->add('telephone')
-            ->add('clientMessage', TextareaType::class)
+            ->add('clientName', null, ['label'=>'field.name'])
+            ->add('clientEmail',EmailType::class, ['label'=>'field.email'])
+            ->add('telephone', null, ['label'=>'field.telephone'])
+            ->add('clientMessage', TextareaType::class, [
+                'required' => false, 'label'=>'field.client_message'
+            ])
 
             ->add('bookingLang', HiddenType::class)
             ->add('campaign',HiddenType::class)

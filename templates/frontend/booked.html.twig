@@ -1,10 +1,18 @@
 {% extends 'frontend/base.html.twig' %}
 
+{% block AlternateLang %}
+<link rel="alternate" hreflang="en" href="{{ path(app.request.get('_route'), {'_locale': 'en', 'orderNumber': orderNumber } ) }}" />
+<link rel="alternate" hreflang="es" href="{{ path(app.request.get('_route'), {'_locale': 'es', 'orderNumber': orderNumber } ) }}" />
+<link rel="alternate" hreflang="fr" href="{{ path(app.request.get('_route'), {'_locale': 'fr', 'orderNumber': orderNumber } ) }}" />
+<link rel="alternate" hreflang="x-default" href="{{ path(app.request.get('_route'), {'_locale': 'en', 'orderNumber': orderNumber } ) }}" />
+{% endblock %}
+
 {% block javascripts_defer %}
     <script src="{{ asset('scripts/app.js') }}" defer></script>
 {% endblock %}
 
 {% block title %}{% trans %}Your booking have been saved{% endtrans %}{% endblock %}
+
 
 {% block trackingcodes %}
     <!-- Event snippet for Fill the registration form conversion page -->
@@ -17,46 +25,85 @@
 
 {% endblock %}
 
+
+{% block languagesSelector %}
+        <div class="lang">
+            <ul>
+                <li>
+                    <a href="#">{{ app.request.locale }}</a>
+                    <ul class="dropdown">
+                        {% if app.request.locale == 'es' %}
+                            <li><a href="{{ path(app.request.get('_route'), {'_locale': 'en', 'orderNumber': orderNumber } ) }}">EN</a></li>
+                            <li><a href="{{ path(app.request.get('_route'), {'_locale': 'fr', 'orderNumber': orderNumber } ) }}">FR</a></li>
+                        {% elseif app.request.locale == 'fr' %}
+                            <li><a href="{{ path(app.request.get('_route'), {'_locale': 'en', 'orderNumber': orderNumber } ) }}">EN</a></li>
+                            <li><a href="{{ path(app.request.get('_route'), {'_locale': 'es', 'orderNumber': orderNumber } ) }}">ES</a></li>
+                        {% else %}
+                            <li><a href="{{ path(app.request.get('_route'), {'_locale': 'es', 'orderNumber': orderNumber } ) }}">ES</a></li>
+                            <li><a href="{{ path(app.request.get('_route'), {'_locale': 'fr', 'orderNumber': orderNumber } ) }}">FR</a></li>
+                        {% endif %}
+                    </ul>
+                </li>
+            </ul>
+        </div>
+        {% endblock languagesSelector %}
+
 {% block body %}
     <main class="main">
-        <div class="main__image">
+        <section class="section section--no-margin main__image">
             <picture>
                 <source media="(min-width: 1200px)"
                     sizes="100vw"
                     srcset="
-                        {{ asset('img/our-car-in-mural-prehistoria.jpg') | imagine_filter('min_width_1920') }} 1920w,
-                        {{ asset('img/our-car-in-mural-prehistoria.jpg') | imagine_filter('min_width_1200') }} 1200w,
-                        {{ asset('img/our-car-in-mural-prehistoria.jpg') | imagine_filter('min_width_1000') }} 1000w"
+                        {{ asset('img/vinales-aereal-view-from-los-jasmines.jpg') | imagine_filter('min_width_1920') }} 1920w,
+                        {{ asset('img/vinales-aereal-view-from-los-jasmines.jpg') | imagine_filter('min_width_1200') }} 1200w,
+                        {{ asset('img/vinales-aereal-view-from-los-jasmines.jpg') | imagine_filter('min_width_1000') }} 1000w"
                     >
                 <!-- img tag for browsers that do not support picture element -->
                 <img sizes="100vw"
                     srcset="
-                        {{ asset('img/our-car-in-mural-prehistoria_portraid.jpg') | imagine_filter('min_width_900') }} 900w,
-                        {{ asset('img/our-car-in-mural-prehistoria_portraid.jpg') | imagine_filter('min_width_800') }} 800w"
+                        {{ asset('img/vinales-aereal-view-from-los-jasmines-portraid.jpg') | imagine_filter('min_width_900') }} 900w,
+                        {{ asset('img/vinales-aereal-view-from-los-jasmines-portraid.jpg') | imagine_filter('min_width_800') }} 800w"
                      alt="classic-car-taxi-in-cuba-in-vinales">
             </picture>
-        </div>
+        </section>
+
         <section class="section reservation_details">
             <div class="title title--center">
-                <h1>Your reservation has been processed</h1>
-                <h3>Thanks for choosing vinales.taxi</h3>
+                <h1>
+                    {% trans %}
+                        title.reservation_processed
+                    {% endtrans %}
+                </h1>
+                <h3>
+                    {% trans %}
+                        subtitle.thank
+                    {% endtrans %}
+                </h3>
             </div>
             <hr>
             <div class="reservation_details__body">
                 <ul>
                     <li>
-                        The reservation was made on behalf of <b>{{ booking.clientName }}</b>.
+
+                        {% trans %}
+                            text.reservation_made
+                        {% endtrans %}
+                        <b>{{ booking.clientName }}</b>.
                     </li>
 
                     <li>
-                        We will pick you up at
-                        {% if booking.pickupPlace == 'place' %}
-                            the <b>house / hotel</b> at
-                        {% elseif booking.pickupPlace == 'airport' %}
-                            the <b>airport</b> looking for the flight with number
+                        {% trans %}
+                            text.reservation_pickup_time
+                        {% endtrans %}
+                        {% if booking.pickupPlace == 'Hotel-House' %}
+                            the <b>Hotel or House</b> at
+                        {% elseif booking.pickupPlace == 'Airport' %}
+                            the <b>Airport</b> looking for the flight with number
                         {% else %}
-                            the <b>cruise</b> named
+                            the <b>Cruise</b> named
                         {% endif %}
+                        <br>
                         <b>
                             {{ booking.pickupDetails }}
                         </b>
@@ -68,21 +115,36 @@
                     </li>
 
                     <li>
-                        The number of passengers is <b>{{ booking.peopleCount }}</b>.
+
+                        {% trans %}
+                            text.amount_passenger
+                        {% endtrans %}
+                        <b>{{ booking.peopleCount }}</b>.
                     </li>
 
                     <li>
                         {% if booking.price is null %}
-                            We will send you a quote for this trip.
+                            {% trans %}
+                                text.reservation_quota
+                            {% endtrans %}
                         {% else %}
-                            The total cost is: <b>{{ booking.price }}.00 USD</b>.
+                            {% trans %}
+                                text.total_cost
+                            {% endtrans %}
+                            <b>{{ booking.price }}.00 USD</b>.
                             <br>
-                            You will pay to the driver at the end of the trip.
+                            {% trans %}
+                                text.pay_driver
+                            {% endtrans %}
                         {% endif %}
                     </li>
                 </ul>
 
-                <p>We send you an email with the reservation details.</p>
+                <p>
+                    {% trans %}
+                        text.confirmation_email
+                    {% endtrans %}
+                </p>
             </div>
         </section>
     </main>

@@ -16,8 +16,12 @@
     }
 
     & .logo {
-        width: 7em;
+        width: 4em;
         position: relative;
+
+        @mixin atLarge{
+            width: 5em;
+        }
     }
 
     & .nav {
@@ -40,7 +44,7 @@
 
                 & a {
                     margin: auto .5em;
-                    padding: .75em 1em;
+                    padding: .75em;
                     border: 1px transparent solid;
                     transition: border .3s ease-in-out;
 
@@ -69,6 +73,7 @@
     }
 
     & .menu-icon{
+        order: 2;
         width: 20px;
         height: 19px;
         position: relative;
@@ -134,12 +139,90 @@
         }
     }
 
+    & .lang{
+        order: 1;
+        display: flex;
+        width: auto;
+        z-index: -10;
+
+        @mixin atLarge {
+            opacity: 1;
+            z-index: 1;
+        }
+
+
+        & > ul > li {
+            border-bottom: 1px $mainGreen solid;
+            text-transform: uppercase;
+        }
+
+        & ul {
+            padding-left: 0;
+            margin: 0;
+        }
+
+        & li {
+            color: #fff;
+            background-color: $mainDark;
+            display: block;
+            float: left;
+            padding: .55em;
+            position: relative;
+            text-decoration: none;
+            transition-duration: 0.5s;
+            transition: all;
+            border-bottom: 1px transparent solid;
+
+            &:hover{
+                border-bottom: 1px $mainGreen solid;
+            }
+
+            & a{
+                color: white;
+                font-size: .9em;
+                font-weight: 500;
+            }
+        }
+
+        & ul li ul {
+            visibility: hidden;
+            opacity: 0;
+            position: absolute;
+            transition: all 0.5s ease;
+            margin-top: .5em;
+            left: 0;
+            display: none;
+            top: 1.6em;
+        }
+
+        & ul li:hover > ul,
+        & ul li ul:hover {
+            visibility: visible;
+            opacity: 1;
+            display: block;
+        }
+
+        & ul li ul li {
+            clear: both;
+            width: 100%;
+        }
+    }
+
     &--is-visible{
         flex-wrap: wrap;
         z-index: 2;
         background-color: rgba($mainDark, .9);
         li a{
             color: #fff;
+        }
+
+        & .menu-icon
+        {
+            order: 0;
+        }
+
+        & .lang{
+            display: none;
         }
 
     }
