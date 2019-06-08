@@ -18,6 +18,8 @@ class FrontendController extends AbstractController
      *     defaults={"_locale": "en"},
      *     requirements={"_locale": "en|es|fr"},
      *     name="frontend")
+     * @Route("index.html",
+     *     defaults={"_locale": "en"})
      *
      * @Cache(expires="+2 hour", maxage=15, public=true, mustRevalidate=false)
      */
