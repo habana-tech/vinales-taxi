@@ -1,5 +1,4 @@
 import MobileMenu from './modules/_menuMobile';
-
 new MobileMenu();
 
 //avoid vendor.js file, one requests less

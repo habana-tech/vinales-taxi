@@ -1,0 +1,296 @@
+<section id="activities" class="activities section">
+
+    <div class="title title--center">
+        <h2>
+            {% trans %}
+                section_title.offers
+            {% endtrans %}
+        </h2>
+    </div>
+
+    <div class="activities__item">
+        <div class="activities__item__image group1">
+            <picture>
+                <source class="lazyload"
+                        media="(min-width: 1200px)"
+                        sizes="(min-width: 1200px) 50vw"
+                        data-srcset="
+                    {{ asset('img/gallery/ride-horse-in-vinales.jpg') | imagine_filter('min_width_1200') }} 1200w,
+                    {{ asset('img/gallery/ride-horse-in-vinales.jpg') | imagine_filter('min_width_1000') }} 1000w
+                    ">
+
+                <img class="lazyload blur-up"
+                     sizes="100vw"
+                     data-srcset="
+                    {{ asset('img/gallery/ride-horse-in-vinales-portraid.jpg') | imagine_filter('min_width_800') }} 800w,
+                    {{ asset('img/gallery/ride-horse-in-vinales-portraid.jpg') | imagine_filter('min_width_600') }} 600w"
+                     src="{{ asset('img/gallery/ride-horse-in-vinales-portraid.jpg') | imagine_filter('small_thumbnail') }}"
+                     alt="
+                             {% trans %}
+                                image.description.horse
+                             {% endtrans %}
+                             ">
+            </picture>
+            <noscript>
+                <img
+                        src="{{ asset('img/gallery/ride-horse-in-vinales-portraid.jpg')}}"
+                        alt="
+                                     {% trans %}
+                                        image.description.horse
+                                     {% endtrans %}
+                                     ">
+            </noscript>
+
+            <picture>
+                <source class="lazyload"
+                        media="(min-width: 1200px)"
+                        sizes="(min-width: 1200px) 50vw"
+                        data-srcset="
+                        {{ asset('img/gallery/vinales-view.jpg') | imagine_filter('min_width_1200') }} 1200w,
+                        {{ asset('img/gallery/vinales-view.jpg') | imagine_filter('min_width_1000') }} 1000w
+                    ">
+
+                <img class="lazyload blur-up"
+                     sizes="100vw"
+                     data-srcset="
+                        {{ asset('img/gallery/vinales-view-portraid.jpg') | imagine_filter('min_width_800') }} 800w,
+                        {{ asset('img/gallery/vinales-view-portraid.jpg') | imagine_filter('min_width_600') }} 600w"
+                     src="{{ asset('img/gallery/vinales-view-portraid.jpg') | imagine_filter('small_thumbnail') }}"
+                     alt="
+                             {% trans %}
+                                image.description.view
+                             {% endtrans %}
+                             ">
+
+            </picture>
+            <noscript>
+                <img
+                        src="{{ asset('img/gallery/vinales-view-portraid.jpg') }}"
+                        alt="
+                                    {% trans %}
+                                        image.description.view
+                                     {% endtrans %}
+                                     ">
+            </noscript>
+        </div>
+        <div class="activities__item__text">
+            <p>
+                {% trans %}
+                    text.activities_1.part_1
+                {% endtrans %}
+            </p>
+
+            <br>
+
+            <p>
+                {% trans %}
+                    text.activities_1.part_2
+                {% endtrans %}
+            </p>
+
+            <br>
+
+            <p>
+                {% trans %}
+                    text.activities_1.part_3
+                {% endtrans %}
+            </p>
+        </div>
+    </div>
+
+    <div class="activities__item activities__item--inverse group2">
+        <div class="activities__item__image">
+            <picture>
+                <source class="lazyload"
+                        media="(min-width: 1200px)"
+                        sizes="(min-width: 1200px) 50vw"
+                        data-srcset="
+                        {{ asset('img/gallery/mural-de-la-preistoria-vinales.jpg') | imagine_filter('min_width_1200') }} 1200w,
+                        {{ asset('img/gallery/mural-de-la-preistoria-vinales.jpg') | imagine_filter('min_width_1000') }} 1000w
+                    ">
+
+                <img class="lazyload blur-up"
+                     sizes="100vw"
+                     data-srcset="
+                        {{ asset('img/gallery/mural-de-la-preistoria-vinales-portraid.jpg') | imagine_filter('min_width_800') }} 800w,
+                        {{ asset('img/gallery/mural-de-la-preistoria-vinales-portraid.jpg') | imagine_filter('min_width_600') }} 600w"
+                     src="{{ asset('img/gallery/mural-de-la-preistoria-vinales-portraid.jpg') | imagine_filter('small_thumbnail') }}"
+                     alt="
+                            {% trans %}
+                                image.description.mural
+                             {% endtrans %}
+                             ">
+            </picture>
+            <noscript>
+                <img
+                        src="{{ asset('img/gallery/mural-de-la-preistoria-vinales-portraid.jpg') }}"
+                        alt="
+                                    {% trans %}
+                                        image.description.mural
+                                     {% endtrans %}
+                                     ">
+            </noscript>
+
+            <picture>
+                <source class="lazyload"
+                        media="(min-width: 1200px)"
+                        sizes="(min-width: 1200px) 50vw"
+                        data-srcset="
+                        {{ asset('img/gallery/indio-cave-vinales.jpg') | imagine_filter('min_width_1200') }} 1200w,
+                        {{ asset('img/gallery/indio-cave-vinales.jpg') | imagine_filter('min_width_1000') }} 1000w
+                    ">
+
+                <img class="lazyload blur-up"
+                     sizes="100vw"
+                     data-srcset="
+                        {{ asset('img/gallery/indio-cave-vinales-portraid.jpg') | imagine_filter('min_width_800') }} 800w,
+                        {{ asset('img/gallery/indio-cave-vinales-portraid.jpg') | imagine_filter('min_width_600') }} 600w"
+                     src="{{ asset('img/gallery/indio-cave-vinales-portraid.jpg') | imagine_filter('small_thumbnail') }}"
+                     alt="
+                            {% trans %}
+                                image.description.indian_cave
+                             {% endtrans %}
+                             ">
+            </picture>
+            <noscript>
+                <img
+                        src="{{ asset('img/gallery/indio-cave-vinales-portraid.jpg') }}"
+                        alt="
+                                    {% trans %}
+                                        image.description.indian_cave
+                                     {% endtrans %}
+                                     ">
+            </noscript>
+        </div>
+        <div class="activities__item__text">
+
+            <p>
+                {% trans %}
+                    text.activities_2.part_1
+                {% endtrans %}
+            </p>
+
+            <br>
+
+            <p>
+                {% trans %}
+                    text.activities_2.part_2
+                {% endtrans %}
+            </p>
+
+            <br>
+
+            <p>
+                {% trans %}
+                    text.activities_2.part_3
+                {% endtrans %}
+            </p>
+
+            <br>
+
+            <p>
+                {% trans %}
+                    text.activities_2.part_4
+                {% endtrans %}
+            </p>
+
+        </div>
+    </div>
+
+    <div class="activities__item">
+        <div class="activities__item__image group3">
+            <picture>
+                <source class="lazyload"
+                        media="(min-width: 1200px)"
+                        sizes="(min-width: 1200px) 50vw"
+                        data-srcset="
+                        {{ asset('img/gallery/restaurant-cuban-food-vinales.jpg') | imagine_filter('min_width_1200') }} 1200w,
+                        {{ asset('img/gallery/restaurant-cuban-food-vinales.jpg') | imagine_filter('min_width_1000') }} 1000w
+                    ">
+
+                <img class="lazyload blur-up"
+                     sizes="100vw"
+                     data-srcset="
+                        {{ asset('img/gallery/restaurant-cuban-food-vinales-portraid.jpg') | imagine_filter('min_width_800') }} 800w,
+                        {{ asset('img/gallery/restaurant-cuban-food-vinales-portraid.jpg') | imagine_filter('min_width_600') }} 600w"
+                     src="{{ asset('img/gallery/restaurant-cuban-food-vinales-portraid.jpg') | imagine_filter('small_thumbnail') }}"
+                     alt="
+                            {% trans %}
+                                image.description.restaurant
+                             {% endtrans %}
+                             ">
+            </picture>
+            <noscript>
+                <img
+                        src="{{ asset('img/gallery/restaurant-cuban-food-vinales-portraid.jpg') }}"
+                        alt="
+                                    {% trans %}
+                                    image.description.restaurant
+                                     {% endtrans %}
+                                     ">
+            </noscript>
+
+            <picture>
+                <source class="lazyload"
+                        media="(min-width: 1200px)"
+                        sizes="(min-width: 1200px) 50vw"
+                        data-srcset="
+                        {{ asset('img/gallery/foto-tabaco-vinales.jpg') | imagine_filter('min_width_1200') }} 1200w,
+                        {{ asset('img/gallery/foto-tabaco-vinales.jpg') | imagine_filter('min_width_1000') }} 1000w
+                    ">
+
+                <img class="lazyload blur-up"
+                     sizes="100vw"
+                     data-srcset="
+                        {{ asset('img/gallery/foto-tabaco-vinales-portraid.jpg') | imagine_filter('min_width_800') }} 800w,
+                        {{ asset('img/gallery/foto-tabaco-vinales-portraid.jpg') | imagine_filter('min_width_600') }} 600w"
+                     src="{{ asset('img/gallery/foto-tabaco-vinales-portraid.jpg') | imagine_filter('small_thumbnail') }}"
+                     alt="
+                            {% trans %}
+                                image.description.tabacco
+                             {% endtrans %}
+                             ">
+            </picture>
+            <noscript>
+                <img
+                        src="{{ asset('img/gallery/foto-tabaco-vinales-portraid.jpg') }}"
+                        alt="
+                                {% trans %}
+                                    image.description.tabacco
+                                 {% endtrans %}
+                                 ">
+            </noscript>
+        </div>
+        <div class="activities__item__text">
+            <p>
+                {% trans %}
+                    text.activities_3.part_1
+                {% endtrans %}
+            </p>
+
+            <br>
+
+            <p>
+                {% trans %}
+                    text.activities_3.part_2
+                {% endtrans %}
+            </p>
+
+            <br>
+
+            <p>
+                {% trans %}
+                    text.activities_3.part_3
+                {% endtrans %}
+            </p>
+        </div>
+    </div>
+
+    <div class="activities__button">
+        <a class="btn btn--primary-gradient"
+                {#target="_self" href="{{ url }}">#}
+           target="_self" href="{{ path('booking') }}">
+            {% trans %}button.reservation{% endtrans %}
+        </a>
+    </div>
+</section>
