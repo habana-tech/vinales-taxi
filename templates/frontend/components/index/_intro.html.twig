@@ -42,14 +42,12 @@
     <div class="tripadvisor_certificate">
         <div class="tripadvisor_certificate__logo">
             <a target="_blank" href="https://www.tripadvisor.es/Attraction_Review-g147271-d13554747-Reviews-Taxi_Drivers_Cuba-Havana_Ciudad_de_la_Habana_Province_Cuba.html">
-                <img src="{{ asset('img/tripadvisor/excelencia_en.png') }}" alt="">
+                {% if app.request.locale == 'es' %}
+                    <img class="lazyload blur-up" src="{{ asset('img/tripadvisor/excelencia_es.png') }}" alt="">
+                {% else %}
+                    <img class="lazyload blur-up" src="{{ asset('img/tripadvisor/excelencia_en.png') }}" alt="">
+                {% endif %}
             </a>
         </div>
-        <div class="tripadvisor_certificate__text">
-            <a target="_blank" href="https://www.tripadvisor.es/Attraction_Review-g147271-d13554747-Reviews-Taxi_Drivers_Cuba-Havana_Ciudad_de_la_Habana_Province_Cuba.html">
-                <p>Lorem ipsum dolor sit amet, consectetur</p>
-            </a>
-        </div>
-
     </div>
 </section>

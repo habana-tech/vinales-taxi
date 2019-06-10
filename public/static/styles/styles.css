@@ -901,13 +901,6 @@ input[type="submit"] {
       .tripadvisor_certificate__logo {
         width: 40%;
         margin: 1em; } }
-  .tripadvisor_certificate__text {
-    display: none; }
-    @media (min-width: 800px) {
-      .tripadvisor_certificate__text {
-        display: flex;
-        align-items: center;
-        width: 50%; } }
 
 .reservation {
   margin-top: 0 !important;

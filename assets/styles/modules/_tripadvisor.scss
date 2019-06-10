@@ -4,6 +4,7 @@
     }
     100%{
         transform: translate(0);
+
     }
 }
 
@@ -36,13 +37,4 @@
         }
     }
 
-    &__text{
-        display: none;
-
-        @mixin atLarge {
-            display: flex;
-            align-items: center;
-            width: 50%;
-        }
-    }
 }
