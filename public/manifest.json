@@ -1,0 +1,20 @@
+{"dir" : "ltr",
+    "lang" : "en",
+    "name" : "One day trip from Havana to Vinales an authe…",
+    "scope" : "/",
+    "display" : "browser",
+    "start_url" : "https://vinales.taxi/",
+    "short_name" : "One day trip to Vinales",
+    "theme_color" : "#378203",
+    "description" : "If you want to live an authentic Cuban journey, that is Vinales. With our one day tour, you can feel many experiences, from nature to Cuban people. Discover the Horseback ride adventure, see the tobacco fields, the Indian Cave, Mural of Prehistory, the gazebo of Los Jazmines and have a launch in the restaurants.",
+    "orientation" : "any",
+    "background_color" : "transparent",
+    "related_applications" : "",
+    "prefer_related_applications" : "false",
+    "generated" : "true",
+    "icons" : [
+        {
+            "src": "https://vinales.taxi/static/img/favicon.png",
+            "sizes": "40x22"
+        }
+    ]}
