@@ -876,6 +876,28 @@ input[type="submit"] {
     -webkit-transform: translate(0);
     transform: translate(0); } }
 
+@-webkit-keyframes zoom {
+  0% {
+    -webkit-transform: scale(1);
+    transform: scale(1); }
+  50% {
+    -webkit-transform: scale(0.8);
+    transform: scale(0.8); }
+  100% {
+    -webkit-transform: scale(1);
+    transform: scale(1); } }
+
+@keyframes zoom {
+  0% {
+    -webkit-transform: scale(1);
+    transform: scale(1); }
+  50% {
+    -webkit-transform: scale(0.8);
+    transform: scale(0.8); }
+  100% {
+    -webkit-transform: scale(1);
+    transform: scale(1); } }
+
 .tripadvisor_certificate {
   position: absolute;
   background-color: white;
@@ -895,6 +917,10 @@ input[type="submit"] {
       right: 1em;
       width: 20%; } }
   .tripadvisor_certificate__logo {
+    -webkit-animation: zoom 2s ease-in-out 10;
+    animation: zoom 2s ease-in-out 10;
+    -webkit-animation-delay: 4s;
+    animation-delay: 4s;
     width: 100%;
     margin: .25em; }
     @media (min-width: 800px) {
