@@ -1,3 +1,4 @@
+
 <header class="header">
 
     <div class="logo">
@@ -43,25 +44,28 @@
         </ul>
     </nav>
 
-    {% block languagesSelector %}
-        <div class="lang">
-            <ul>
-                <li>
-                    <a href="#">{{ app.request.locale }}</a>
-                    <ul class="dropdown">
-                        {% if app.request.locale == 'es' %}
-                            <li><a href="{{ path(app.request.get('_route'), {'_locale': 'en' } ) }}">EN</a></li>
-                            <li><a href="{{ path(app.request.get('_route'), {'_locale': 'fr' } ) }}">FR</a></li>
-                        {% elseif app.request.locale == 'fr' %}
-                            <li><a href="{{ path(app.request.get('_route'), {'_locale': 'en' } ) }}">EN</a></li>
-                            <li><a href="{{ path(app.request.get('_route'), {'_locale': 'es' } ) }}">ES</a></li>
-                        {% else %}
-                            <li><a href="{{ path(app.request.get('_route'), {'_locale': 'es' } ) }}">ES</a></li>
-                            <li><a href="{{ path(app.request.get('_route'), {'_locale': 'fr' } ) }}">FR</a></li>
-                        {% endif %}
-                    </ul>
-                </li>
-            </ul>
-        </div>
-    {% endblock languagesSelector %}
+    <div class="lang">
+        <ul>
+            <li>
+                <a href="#">{{ app.request.locale }}</a>
+                <ul class="dropdown">
+
+                    {% if app.request.get('_route')!='booking_confirmation' %}
+                        {% set orderNumber = '' %}
+                    {% endif %}
+
+                    {% if app.request.locale == 'es' %}
+                        <li><a href="{{ path(app.request.get('_route'), {'_locale': 'en', 'orderNumber': orderNumber } ) }}">EN</a></li>
+                        <li><a href="{{ path(app.request.get('_route'), {'_locale': 'fr', 'orderNumber': orderNumber } ) }}">FR</a></li>
+                    {% elseif app.request.locale == 'fr' %}
+                        <li><a href="{{ path(app.request.get('_route'), {'_locale': 'en', 'orderNumber': orderNumber } ) }}">EN</a></li>
+                        <li><a href="{{ path(app.request.get('_route'), {'_locale': 'es', 'orderNumber': orderNumber } ) }}">ES</a></li>
+                    {% else %}
+                        <li><a href="{{ path(app.request.get('_route'), {'_locale': 'es', 'orderNumber': orderNumber } ) }}">ES</a></li>
+                        <li><a href="{{ path(app.request.get('_route'), {'_locale': 'fr', 'orderNumber': orderNumber } ) }}">FR</a></li>
+                    {% endif %}
+                </ul>
+            </li>
+        </ul>
+    </div>
 </header>
