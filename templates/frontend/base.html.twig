@@ -210,155 +210,34 @@
 
     <body>
 
-    <header class="header">
+        {% include('frontend/components/global/_header.html.twig') with {'_route':app.request.get('_route')} %}
 
-        <div class="logo">
-            <a href="/">
-                <img src="{{ asset('img/logo.png') }}" alt="Viñales-Taxi-Cuba-logo">
-            </a>
-        </div>
+        {% block body %}{% endblock %}
 
-        <div class="menu-icon">
-            <div class="menu-icon__middle"></div>
-        </div>
-
-        <nav class="nav">
-            <ul>
-                <li><a href="{{ path('frontend') }}#activities" data-section="#activities">
-                        {% trans %}
-                            button.activities
-                        {% endtrans %}
-                    </a></li>
-                <li><a href="{{ path('frontend') }}#why_with_us" data-section="#why_with_us">
-                        {% trans %}
-                            button.us
-                        {% endtrans %}
-                    </a></li>
-                <li><a href="{{ path('frontend') }}#more_places" data-section="#more_places">
-                        {% trans %}
-                            button.other_options
-                        {% endtrans %}
-                    </a></li>
-                <li><a href="{{ path('frontend') }}#contact" data-section="#contact">
-                        {% trans %}
-                            button.contact
-                        {% endtrans %}
-                    </a></li>
-                <li class="nav--special">
-                    {#<a target="_self" href="{{ url }}">#}
-                    <a target="_self" href="{{ path('booking') }}">
-                        {% trans %}
-                            button.reservation
-                        {% endtrans %}
-                    </a>
-                </li>
-            </ul>
-        </nav>
-
-        {% block languagesSelector %}
-        <div class="lang">
-            <ul>
-                <li>
-                    <a href="#">{{ app.request.locale }}</a>
-                    <ul class="dropdown">
-                        {% if app.request.locale == 'es' %}
-                            <li><a href="{{ path(app.request.get('_route'), {'_locale': 'en' } ) }}">EN</a></li>
-                            <li><a href="{{ path(app.request.get('_route'), {'_locale': 'fr' } ) }}">FR</a></li>
-                        {% elseif app.request.locale == 'fr' %}
-                            <li><a href="{{ path(app.request.get('_route'), {'_locale': 'en' } ) }}">EN</a></li>
-                            <li><a href="{{ path(app.request.get('_route'), {'_locale': 'es' } ) }}">ES</a></li>
-                        {% else %}
-                            <li><a href="{{ path(app.request.get('_route'), {'_locale': 'es' } ) }}">ES</a></li>
-                            <li><a href="{{ path(app.request.get('_route'), {'_locale': 'fr' } ) }}">FR</a></li>
-                        {% endif %}
-                    </ul>
-                </li>
-            </ul>
-        </div>
-        {% endblock languagesSelector %}
-    </header>
-
-    {% block body %}{% endblock %}
-
-    <footer class="footer">
-        <div class="footer__image">
-            <picture>
-                <source class="lazyload"
-                        media="(min-width: 1200px)"
-                        sizes="100vw"
-                        data-srcset="
-                            {{ asset('img/vinales-aereal-view-from-los-jasmines.jpg') | imagine_filter('min_width_1920') }} 1920w,
-                            {{ asset('img/vinales-aereal-view-from-los-jasmines.jpg') | imagine_filter('min_width_1200') }} 1200w,
-                            {{ asset('img/vinales-aereal-view-from-los-jasmines.jpg') | imagine_filter('min_width_1000') }} 1000w
-                        ">
-
-                <img class="lazyload blur-up"
-                     sizes="100vw"
-                     data-srcset="
-                            {{ asset('img/vinales-aereal-view-from-los-jasmines-portraid.jpg') | imagine_filter('min_width_800') }} 800w,
-                            {{ asset('img/vinales-aereal-view-from-los-jasmines-portraid.jpg') | imagine_filter('min_width_600') }} 600w"
-                     src="{{ asset('img/vinales-aereal-view-from-los-jasmines-portraid.jpg') | imagine_filter('small_thumbnail') }}"
-                     alt="Horse riding in vinales, you can make a reservation in advance with us">
-            </picture>
-        </div>
-
-        <div class="footer__contact">
-            <address>
-                {% trans %}
-                    text.contact_footer_mail
-                {% endtrans %}
-                <a href="mailto:taxidriverscuba@gmail.com">taxidriverscuba@gmail.com</a>
-                {% trans %}
-                    text.contact_footer_phone
-                {% endtrans %}
-                <a href="tel://+5355864523">+53 5 5864523</a>
-            </address>
-            
-            <div class="social">
-                <ul>
-                    <li>
-                        <a href="https://www.tripadvisor.es/Attraction_Review-g147271-d13554747-Reviews-Taxi_Drivers_Cuba-Havana_Ciudad_de_la_Habana_Province_Cuba.html" target="_blank">
-                            <img src="{{ asset('img/icons/tripadvisor.svg') }}" alt="tripadvisor icon">
-                        </a>
-                    </li>
-                    <li>
-                        <a href="https://www.facebook.com/taxidriverscuba/" target="_blank">
-                            <img src="{{ asset('img/icons/facebook.svg') }}" alt="facebook icon">
-                        </a>
-                    </li>
-                    <li>
-                        <a href="http://www.instagram.com/taxidriverscuba/" target="_blank">
-                            <img src="{{ asset('img/icons/instagram.svg') }}" alt="instagram icon">
-                        </a>
-                    </li>
-                </ul>
-            </div>
-        </div>
-
-    </footer>
+        {{ include('frontend/components/global/_footer.html.twig') }}
 
         {% block javascripts %}{% endblock %}
-        <script>
-        // This is the "Offline copy of pages" service worker
+        {#<script>#}
+        {#// This is the "Offline copy of pages" service worker#}
 
-        // Add this below content to your HTML page, or add the js file to your page at the very top to register service worker
+        {#// Add this below content to your HTML page, or add the js file to your page at the very top to register service worker#}
 
-        // Check compatibility for the browser we're running this in
-        if ("serviceWorker" in navigator) {
-          if (navigator.serviceWorker.controller) {
-            console.log("[PWA Builder] active service worker found, no need to register");
-          } else {
-            // Register the service worker
-            navigator.serviceWorker
-              .register("/pwabuilder-sw.js", {
-                scope: "./"
-              })
-              .then(function (reg) {
-                console.log("[PWA Builder] Service worker has been registered for scope: " + reg.scope);
-              });
-          }
-        }
+        {#// Check compatibility for the browser we're running this in#}
+        {#if ("serviceWorker" in navigator) {#}
+          {#if (navigator.serviceWorker.controller) {#}
+            {#console.log("[PWA Builder] active service worker found, no need to register");#}
+          {#} else {#}
+            {#// Register the service worker#}
+            {#navigator.serviceWorker#}
+              {#.register("/pwabuilder-sw.js", {#}
+                {#scope: "./"#}
+              {#})#}
+              {#.then(function (reg) {#}
+                {#console.log("[PWA Builder] Service worker has been registered for scope: " + reg.scope);#}
+              {#});#}
+          {#}#}
+        {#}#}
 
-        </script>
+        {#</script>#}
     </body>
 </html>

@@ -1,9 +1,13 @@
 .btn{
-    padding: .75em 2em;
+    padding: .5em 1.5em;
     background-color: transparent;
     border-radius: 4px;
     color: white;
     border: 0 transparent solid;
+
+    @mixin atLarge{
+        padding: .75em 2em;
+    }
 
     &--primary{
         color: white;
