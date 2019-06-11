@@ -10,6 +10,7 @@ use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
 use Dompdf\Dompdf;
+use Symfony\Component\Security\Core\Authorization\AuthorizationCheckerInterface;
 
 
 class BookingController extends AbstractController
@@ -40,9 +41,10 @@ class BookingController extends AbstractController
      * @Route("/{_locale}/booking/new", name="booking_new", methods={"GET","POST"}, defaults={"_locale": "en"},
      *     requirements={"_locale": "en|es|fr"})
      * @Route("/booking/new", methods={"GET","POST"})
-     * @Route("/backend/booking/new", name="backend_booking_new", methods={"GET","POST"})
      */
-    public function new(Request $request, \Swift_Mailer $mailer, $_locale): Response
+    public function new(Request $request,
+                         \Swift_Mailer $mailer,
+                         $_locale): Response
     {
         $booking = new Booking();
         $form = $this->createForm(BookingType::class, $booking);
@@ -110,11 +112,92 @@ class BookingController extends AbstractController
             return $this->redirectToRoute('booking_confirmation', ['orderNumber'=>$booking->getOrderNumber(), '_locale'=> $_locale]);
         }
 
-        return $this->render('backend/booking/new.html.twig', [
-            'booking' => $booking,
+         return $this->render('frontend/booking.html.twig', [
+            'controller_name' => 'FrontendController',
             'form' => $form->createView(),
         ]);
+
     }
+
+    /**
+     * @Route("/backend/booking/new", name="backend_booking_new", methods={"GET","POST"})
+     */
+    public function backend_new(Request $request,
+                         \Swift_Mailer $mailer): Response
+    {
+        $booking = new Booking();
+        $form = $this->createForm(BookingType::class, $booking);
+        $form->handleRequest($request);
+
+        if ($form->isSubmitted() && $form->isValid()) {
+            $entityManager = $this->getDoctrine()->getManager();
+            $entityManager->persist($booking);
+            $entityManager->flush();
+
+
+            $message = (new \Swift_Message('Nueva reserva en Vinales.taxi - '.$booking->getOrderNumber()))
+                ->setFrom('booking@taxidriverscuba.com')
+                ->setTo('taxidriverscuba@gmail.com')
+                ->setCc(['14ndy15@gmail.com','josmiguel92@gmail.com'])
+                ->setBody(
+                    $this->renderView(
+                    // templates/emails/registration.html.twig
+                        'emails/bookingNotification.html.twig',
+                        ['booking' => $booking]
+                    ),
+                    'text/html',
+                    'UTF-8'
+                )
+                ->addPart(
+                    $this->renderView(
+                        'emails/bookingNotification.txt.twig',
+                        ['booking' => $booking]
+                    ),
+                    'text/plain',
+                    'UTF-8'
+                );
+
+            $mailer->send($message);
+
+            $messageToClient = (new \Swift_Message(($booking->getBookingLang() == 'es' ? 'Reserva en Vinales.taxi' : 'Booking on Vinales.Taxi').' - '.$booking->getOrderNumber()))
+                ->setFrom('booking@taxidriverscuba.com')
+                ->setTo($booking->getClientEmail())
+                ->setBcc(['14ndy15@gmail.com','josmiguel92@gmail.com'])
+
+
+                ->setBody(
+                    $this->renderView(
+                     'emails/clientNotificationOnBooking.html.twig',
+                  //      'api/bookingPdfExport.html.twig',
+                        ['booking' => $booking]
+                    ),
+                    'text/html',
+                    'UTF-8'
+                )
+                ->addPart(
+                    $this->renderView(
+                        'emails/clientNotificationOnBooking.txt.twig',
+                        ['booking' => $booking]
+                    ),
+                    'text/plain',
+                    'UTF-8'
+                )
+            ;
+
+
+            $mailer->send($messageToClient);
+            
+
+            return $this->redirectToRoute('booking_index');
+        }
+
+            return $this->render('backend/booking/new.html.twig', [
+                'booking' => $booking,
+                'form' => $form->createView(),
+            ]);
+
+    }
+
 
     /**
      * @Route("/{_locale}/booking/confirmation/{orderNumber}", name="booking_confirmation", methods={"GET"},

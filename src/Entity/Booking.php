@@ -60,9 +60,10 @@ class Booking
 
     /**
      * @ORM\Column(type="date")
+     * @Assert\GreaterThanOrEqual(Booking::DATE_TO_START_BOOKINGS)
      */
     private $pickupDate;
-    //TODO: solo son validas fechas futuras
+    const DATE_TO_START_BOOKINGS = "today + 2 days";
 
 
     /**

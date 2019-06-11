@@ -19,9 +19,10 @@ class BookingType extends AbstractType
 {
     public function buildForm(FormBuilderInterface $builder, array $options)
     {
+        $date = new \DateTime(Booking::DATE_TO_START_BOOKINGS);
         $builder
             ->add('peopleCount', null, ['attr'=>['min'=>1, 'max'=>40, 'placeholder'=>1, 'value'=>1], 'label'=>'field.number_passengers'])
-            ->add('pickupDate', DateType::class, ['widget'=>'single_text', 'attr'=>['min'=>date('Y-m-d')],'label'=>'label.pickup_date'])
+            ->add('pickupDate', DateType::class, ['widget'=>'single_text', 'attr'=>['min'=>$date->format('Y-m-d')],'label'=>'label.pickup_date'])
             //->add('pickupTime', TimeType::class, ['widget'=>'single_text'])
             ->add('pickupTime', ChoiceType::class,[
                 'choices'=>[

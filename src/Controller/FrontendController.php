@@ -44,8 +44,9 @@ class FrontendController extends AbstractController
      *     requirements={"_locale": "en|es|fr"},
      *     name="booking")
      */
-    public function booking($_locale)
+    public function booking($_locale, $form = null)
     {
+        if(!$form)
         $form = $this->createForm(BookingType::class,
             new Booking(),
             ['action'=> $this->generateUrl('booking_new'),
