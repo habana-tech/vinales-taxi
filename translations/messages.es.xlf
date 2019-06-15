@@ -291,7 +291,7 @@
       </trans-unit>
       <trans-unit id="wbSt5ZA" resname="text.amount_passenger">
         <source>text.amount_passenger</source>
-        <target>Cantidad de pertsonas</target>
+        <target>Cantidad de personas</target>
       </trans-unit>
       <trans-unit id="vHPvIcK" resname="text.reservation_quota">
         <source>text.reservation_quota</source>
@@ -307,7 +307,7 @@
       </trans-unit>
       <trans-unit id="TPzHjM8" resname="text.confirmation_email">
         <source>text.confirmation_email</source>
-        <target>Le enviaremos un email con los detalles de su reservación</target>
+        <target>Le enviamos un email con los detalles de su reservación</target>
       </trans-unit>
       <trans-unit id="IXqKP3o" resname="field.pickup_date">
         <source>field.pickup_date</source>
@@ -365,11 +365,34 @@
         <source>span_pickup_place.option_3</source>
         <target>Hotel o Dirección de la casa de renta</target>
       </trans-unit>
-      <trans-unit id="jgf833" resname="field.client_message">
+      <trans-unit id="EQxBw9y" resname="field.client_message">
         <source>field.client_message</source>
         <target>Danos más detalles</target>
       </trans-unit>
-      
+      <trans-unit id="XgGhLGg" resname="the.hotel.or.house">
+        <source>the.hotel.or.house</source>
+        <target>en su</target>
+      </trans-unit>
+      <trans-unit id="dWzidAS" resname="the.airport">
+        <source>the.airport</source>
+        <target>en el </target>
+      </trans-unit>
+      <trans-unit id="JPMvr6m" resname="looking for the flight with number">
+        <source>looking for the flight with number</source>
+        <target>en espera del vuelo número </target>
+      </trans-unit>
+      <trans-unit id="csdf45fsd" resname="at">
+          <source>at</source>
+          <target>a las </target>
+        </trans-unit>
+      <trans-unit id="1T8ayC_" resname="the.cruise">
+        <source>the.cruise</source>
+        <target>en su </target>
+      </trans-unit>
+      <trans-unit id="dskfjsdd87" resname="on">
+          <source>on</source>
+          <target>el</target>
+        </trans-unit>
     </body>
   </file>
 </xliff>

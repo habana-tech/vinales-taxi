@@ -63,7 +63,7 @@ class Booking
      * @Assert\GreaterThanOrEqual(Booking::DATE_TO_START_BOOKINGS)
      */
     private $pickupDate;
-    const DATE_TO_START_BOOKINGS = "today + 2 days";
+    const DATE_TO_START_BOOKINGS = "now + 12 hours";
 
 
     /**

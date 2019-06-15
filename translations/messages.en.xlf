@@ -337,30 +337,54 @@
         <source>span_pickup_place.option_3</source>
         <target>Hotel or Rent House</target>
       </trans-unit>
-      <trans-unit id="asdads76S" resname="label.pickup_place">
+      <trans-unit id="dYVCA7j" resname="label.pickup_place">
         <source>label.pickup_place</source>
         <target>Where will we pickup you</target>
       </trans-unit>
-      <trans-unit id="ad7872ks" resname="label.pickup_date">
+      <trans-unit id="1lZ3ei0" resname="label.pickup_date">
         <source>label.pickup_date</source>
-        <target>Day</target>
+        <target>Date</target>
       </trans-unit>
-      <trans-unit id="fdiosa98" resname="field.name">
+      <trans-unit id="AHhQ6Bz" resname="field.name">
         <source>field.name</source>
         <target>Your name</target>
       </trans-unit>
-      <trans-unit id="afdsi79werjdn" resname="field.email">
+      <trans-unit id="23I95Hb" resname="field.email">
         <source>field.email</source>
         <target>Your email</target>
       </trans-unit>
-      <trans-unit id="asdfjhasd" resname="field.telephone">
+      <trans-unit id="Gge1NKL" resname="field.telephone">
         <source>field.telephone</source>
         <target>Your phone number</target>
       </trans-unit>
-      <trans-unit id="jgf833" resname="field.client_message">
+      <trans-unit id="EQxBw9y" resname="field.client_message">
         <source>field.client_message</source>
         <target>Give us more info</target>
       </trans-unit>
+      <trans-unit id="XgGhLGg" resname="the.hotel.or.house">
+        <source>the.hotel.or.house</source>
+        <target>__the.hotel.or.house</target>
+      </trans-unit>
+      <trans-unit id="dWzidAS" resname="the.airport">
+        <source>the.airport</source>
+        <target>the</target>
+      </trans-unit>
+      <trans-unit id="JPMvr6m" resname="looking for the flight with number">
+        <source>looking for the flight with number</source>
+        <target>looking for the flight with number</target>
+      </trans-unit>
+      <trans-unit id="1T8ayC_" resname="the.cruise">
+        <source>the.cruise</source>
+        <target>the</target>
+      </trans-unit>
+      <trans-unit id="sda5G2f" resname="at">
+        <source>at</source>
+        <target>at</target>
+      </trans-unit>
+      <trans-unit id="as9ejakh" resname="on">
+          <source>on</source>
+          <target>on</target>
+        </trans-unit>
     </body>
   </file>
 </xliff>

@@ -14,15 +14,24 @@ use Symfony\Component\Form\Extension\Core\Type\TextareaType;
 use Symfony\Component\Form\FormBuilderInterface;
 use Symfony\Component\OptionsResolver\OptionsResolver;
 use Symfony\Component\Form\Extension\Core\Type\HiddenType;
+use Symfony\Component\Form\FormEvent;
+use Symfony\Component\Form\FormEvents;
 
 class BookingType extends AbstractType
 {
     public function buildForm(FormBuilderInterface $builder, array $options)
     {
+
         $date = new \DateTime(Booking::DATE_TO_START_BOOKINGS);
+        dump([$date->format('Y-m-d'),date("Y-m-d H:i:s")]);
         $builder
             ->add('peopleCount', null, ['attr'=>['min'=>1, 'max'=>40, 'placeholder'=>1, 'value'=>1], 'label'=>'field.number_passengers'])
-            ->add('pickupDate', DateType::class, ['widget'=>'single_text', 'attr'=>['min'=>$date->format('Y-m-d')],'label'=>'label.pickup_date'])
+            ->add('pickupDate', DateType::class, [
+                 'widget'=>'single_text',
+                'attr'=>[
+                    'min'=>$date->format('Y-m-d')
+                ],
+                'label'=>'label.pickup_date'])
             //->add('pickupTime', TimeType::class, ['widget'=>'single_text'])
             ->add('pickupTime', ChoiceType::class,[
                 'choices'=>[
@@ -53,7 +62,10 @@ class BookingType extends AbstractType
 
             ->add('bookingLang', HiddenType::class)
             ->add('campaign',HiddenType::class)
-
+            ->addEventListener(
+                FormEvents::SUBMIT,
+                [$this, 'onSubmit']
+            )
         ;
     }
 
@@ -62,5 +74,19 @@ class BookingType extends AbstractType
         $resolver->setDefaults([
             'data_class' => Booking::class,
         ]);
+    }
+
+    public function onSubmit(FormEvent $event)
+    {
+        $booking = $event->getData();
+
+        if (!$booking) {
+            return;
+        }
+
+        $newDatetime = new \DateTime($booking->getPickupDate()->format('Y-m-d'). " " . $booking->getPickupTime()->format("H:i:s"));
+        $booking->setPickupDate($newDatetime);
+
+        $event->setData($booking);
     }
 }

@@ -97,20 +97,21 @@
                             text.reservation_pickup_time
                         {% endtrans %}
                         {% if booking.pickupPlace == 'Hotel-House' %}
-                            the <b>Hotel or House</b> at
+                            {% trans %}the.hotel.or.house{% endtrans %} <b>Hotel or House</b> at
                         {% elseif booking.pickupPlace == 'Airport' %}
-                            the <b>Airport</b> looking for the flight with number
+                            {% trans %}the.airport{% endtrans %} <b>Airport</b>
+                            {% trans %}looking for the flight with number{% endtrans %}
                         {% else %}
-                            the <b>Cruise</b> named
+                            {% trans %}the.cruise{% endtrans %} <b>Cruise</b> named
                         {% endif %}
                         <br>
                         <b>
                             {{ booking.pickupDetails }}
                         </b>
 
-                        on <b>{{ booking.pickupDate | date('l')  }}</b>,
+                        {% trans %}on{% endtrans %} <b>{{ booking.pickupDate | date('l')  }}</b>,
                         <b> {{ booking.pickupDate | date('F d, Y')  }}</b>
-                        at
+                        {% trans %}at{% endtrans %}
                         <b>{{ booking.pickupTime | date('H:i') }}</b>.
                     </li>
 
