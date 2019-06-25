@@ -23,7 +23,6 @@ class BookingType extends AbstractType
     {
 
         $date = new \DateTime(Booking::DATE_TO_START_BOOKINGS);
-        dump([$date->format('Y-m-d'),date("Y-m-d H:i:s")]);
         $builder
             ->add('peopleCount', null, ['attr'=>['min'=>1, 'max'=>40, 'placeholder'=>1, 'value'=>1], 'label'=>'field.number_passengers'])
             ->add('pickupDate', DateType::class, [
