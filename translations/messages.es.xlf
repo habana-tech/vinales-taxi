@@ -381,18 +381,26 @@
         <source>looking for the flight with number</source>
         <target>en espera del vuelo número </target>
       </trans-unit>
-      <trans-unit id="csdf45fsd" resname="at">
-          <source>at</source>
-          <target>a las </target>
-        </trans-unit>
+      <trans-unit id="sda5G2f" resname="at">
+        <source>at</source>
+        <target>a las </target>
+      </trans-unit>
       <trans-unit id="1T8ayC_" resname="the.cruise">
         <source>the.cruise</source>
         <target>en su </target>
       </trans-unit>
-      <trans-unit id="dskfjsdd87" resname="on">
-          <source>on</source>
-          <target>el</target>
-        </trans-unit>
+      <trans-unit id="uNMehSc" resname="on">
+        <source>on</source>
+        <target>el</target>
+      </trans-unit>
+      <trans-unit id="tH3Rzu0" resname="text.remainder_car_1">
+        <source>text.remainder_car_1</source>
+        <target>Tenemos un solo automóvil para usted este día, por favor, si necesita hacer algún cambio o cancelar su reserva, debe informarnos con al menos 2 días de anticipación, ya sea a nuestro correo electrónico </target>
+      </trans-unit>
+      <trans-unit id="kArCwN3" resname="text.remainder_car_2">
+        <source>text.remainder_car_2</source>
+        <target>o a nuestro número de teléfono</target>
+      </trans-unit>
     </body>
   </file>
 </xliff>

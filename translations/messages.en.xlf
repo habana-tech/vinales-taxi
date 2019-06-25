@@ -381,10 +381,18 @@
         <source>at</source>
         <target>at</target>
       </trans-unit>
-      <trans-unit id="as9ejakh" resname="on">
-          <source>on</source>
-          <target>on</target>
-        </trans-unit>
+      <trans-unit id="uNMehSc" resname="on">
+        <source>on</source>
+        <target>on</target>
+      </trans-unit>
+      <trans-unit id="tH3Rzu0" resname="text.remainder_car_1">
+        <source>text.remainder_car_1</source>
+        <target>We have only one car for you this day, please if you need to make any changes or cancel your reservation, you must inform us at least 2 days in advance, either to our email</target>
+      </trans-unit>
+      <trans-unit id="kArCwN3" resname="text.remainder_car_2">
+        <source>text.remainder_car_2</source>
+        <target>or to our phone number</target>
+      </trans-unit>
     </body>
   </file>
 </xliff>

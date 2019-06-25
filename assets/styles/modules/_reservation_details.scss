@@ -15,5 +15,9 @@
         @mixin atLarge{
             text-align: center;
         }
+
+        & a {
+            color: $mainGreen;
+        }
     }
 }
