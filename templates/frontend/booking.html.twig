@@ -4,12 +4,15 @@
     <script src="{{ asset('scripts/app.js') }}" defer></script>
     <script src="{{ asset('scripts/Form.js') }}" defer></script>
     <style type="text/css">
-    	.help-block ul{
+    	.reservation__content__form__group__single.time .help-block ul{
     		border: #cc5800 dashed 4px;
 			font-weight: 600;
 			font-size: 120%;
 			display: flex;
 			list-style: none;
+    	}
+    	.reservation__content__form__group__single.time .help-block ul li::before{
+    		content: '🚨';
     	}
     </style>
 {% endblock %}
