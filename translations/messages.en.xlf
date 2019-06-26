@@ -31,11 +31,11 @@
       </trans-unit>
       <trans-unit id="yYutWwI" resname="Address or Fly/Cruise number">
         <source>Address or Fly/Cruise number</source>
-        <target>__Address or Fly/Cruise number</target>
+        <target>Address or Fly/Cruise number</target>
       </trans-unit>
       <trans-unit id="JDifA2E" resname="Book.send">
         <source>Book.send</source>
-        <target>__Book.send</target>
+        <target>Send</target>
       </trans-unit>
       <trans-unit id="lzN.3Fx" resname="Index.title">
         <source>Index.title</source>
@@ -84,10 +84,6 @@
       <trans-unit id="RQJZCow" resname="button.other_places">
         <source>button.other_places</source>
         <target>See other destinations</target>
-      </trans-unit>
-      <trans-unit id="XLCcgGE" resname="text.reason_1">
-        <source>text.reason_1</source>
-        <target>__text.reason_1</target>
       </trans-unit>
       <trans-unit id="kVAp.jv" resname="text.reason_1_part_1">
         <source>text.reason_1_part_1</source>
@@ -363,7 +359,7 @@
       </trans-unit>
       <trans-unit id="XgGhLGg" resname="the.hotel.or.house">
         <source>the.hotel.or.house</source>
-        <target>__the.hotel.or.house</target>
+        <target>your</target>
       </trans-unit>
       <trans-unit id="dWzidAS" resname="the.airport">
         <source>the.airport</source>
