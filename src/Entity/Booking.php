@@ -63,7 +63,7 @@ class Booking
      * @Assert\GreaterThanOrEqual(Booking::DATE_TO_START_BOOKINGS)
      */
     private $pickupDate;
-    const DATE_TO_START_BOOKINGS = "now + 12 hours";
+    const DATE_TO_START_BOOKINGS = "now";
 
 
     /**
@@ -364,5 +364,13 @@ class Booking
         else $this->setPrice = null;
     }
 
+    public function differenceTimeGreaterThan12Hours(){
+
+        $diff = $this->bookingTime->diff($this->pickupDate);
+        $hours = $diff->h;
+        $hours = $hours + ($diff->days*24);
+
+        return $hours > 12;
+    }
 
 }

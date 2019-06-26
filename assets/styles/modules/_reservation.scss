@@ -98,6 +98,55 @@
     }
 }
 
+#booking_time_section{
+
+    &.invalid_time {
+        & h2 {
+            transition: all .3s ease-in-out;
+            color: #f78787;
+            transform-origin: 0 50%;
+            transform: scale(1.2);
+        }
+
+        & .advise_text {
+            display: block;
+        }
+
+        & .alert_icon{
+            display: inline-block;
+        }
+    }
+
+    h2{
+        display: inline-block;
+    }
+
+    & .advise_text {
+        display: none;
+        color: #f93737;
+
+         & a{
+             color: #f93737;
+             text-decoration: underline;
+         }
+    }
+
+    & .alert_icon{
+        width: 2em;
+        height: 2em;
+        position: relative;
+        display: none;
+        margin-right: .5em;
+        top: .25em;
+
+        img{
+            width: 100%;
+            height: 100%;
+        }
+    }
+
+}
+
 #booking_pickupPlace{
     display: flex;
 

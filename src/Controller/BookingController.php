@@ -109,7 +109,8 @@ class BookingController extends AbstractController
             $mailer->send($messageToClient);
             
 
-            return $this->redirectToRoute('booking_confirmation', ['orderNumber'=>$booking->getOrderNumber(), '_locale'=> $_locale]);
+            return $this->redirectToRoute('booking_confirmation',
+                ['orderNumber'=>$booking->getOrderNumber(), '_locale'=> $_locale]);
         }
 
          return $this->render('frontend/booking.html.twig', [

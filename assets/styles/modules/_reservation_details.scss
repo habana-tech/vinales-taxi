@@ -6,7 +6,27 @@
 
     @mixin atLarge{
         margin-top: 0;
-        padding-top: 3em;
+        padding: 3em 15% 0 15%;
+    }
+
+    & #time_alert{
+
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+
+        & img{
+            width: 4.5em;
+        }
+
+        & .advise_text {
+            color: #f93737;
+
+            & a{
+                color: #f93737;
+                text-decoration: underline;
+            }
+        }
     }
 
     &__body{

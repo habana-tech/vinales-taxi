@@ -1,4 +1,9 @@
 Nueva reserva en Vinales.taxi
+{% if not booking.differenceTimeGreaterThan12Hours %}
+----------------------------------------------------------------------------
+    Esta reserva tiene menos de 12 horas para realizarse!!
+----------------------------------------------------------------------------
+{% endif %}
 
 Número de reserva: {{ booking.orderNumber }}
 

@@ -75,6 +75,19 @@
                         title.reservation_processed
                     {% endtrans %}
                 </h1>
+
+                {% if not booking.differenceTimeGreaterThan12Hours %}
+                <div id="time_alert">
+                    <img src="{{ asset('/static/img/icons/alert.svg') }}" alt="">
+
+                    <p class="advise_text">
+                        {% trans %}
+                            text.advice_time
+                        {% endtrans %}
+                        <a href="tel://+5355864523">+53 5 5864523</a>.
+                    </p>
+                </div>
+                {% endif %}
                 <h3>
                     {% trans %}
                         subtitle.thank

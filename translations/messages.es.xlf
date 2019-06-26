@@ -401,6 +401,10 @@
         <source>text.remainder_car_2</source>
         <target>o a nuestro número de teléfono</target>
       </trans-unit>
+      <trans-unit id="VXDBH2t" resname="text.advice_time">
+        <source>text.advice_time</source>
+        <target>Usted está realizando una reservación con menos de 12 horas de antelación. Nosotros procesaremos su reserva y si tenemos disponibilidad le contactaremos en el plazo de 1 hora. En cualquier caso le recomendamos fuertemente que nos contacte a través de nuestro teléfono</target>
+      </trans-unit>
     </body>
   </file>
 </xliff>

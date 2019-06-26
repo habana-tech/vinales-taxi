@@ -3,19 +3,6 @@
 {% block javascripts_defer %}
     <script src="{{ asset('scripts/app.js') }}" defer></script>
     <script src="{{ asset('scripts/Form.js') }}" defer></script>
-    <style type="text/css">
-    	.reservation__content__form__group__single.time .help-block ul{
-    		border: #cc5800 dashed 4px;
-			font-weight: 600;
-			font-size: 110%;
-			display: flex;
-			list-style: none;
-			padding: 1em;
-    	}
-    	.reservation__content__form__group__single.time .help-block ul li::before{
-    		content: '🚨';
-    	}
-    </style>
 {% endblock %}
 
 {% set title = "Reservation Form for One day trip from Havana to Vinales | Vinales Taxi" %}
@@ -90,7 +77,10 @@
 
             <div class="reservation__content__form__division"></div>
 
-            <div class="reservation__content__form__group">
+            <div id="booking_time_section" class="reservation__content__form__group">
+                <div class="alert_icon">
+                    <img src="{{ asset('/static/img/icons/alert.svg') }}" alt="">
+                </div>
                 <h2>
                     {% trans %}
                         field.pickup_date
@@ -113,6 +103,13 @@
                         </p>
                         {{ form_row(form.pickupTime) }}
                     </div>
+
+                    <p class="advise_text">
+                        {% trans %}
+                            text.advice_time
+                        {% endtrans %}
+                        <a href="tel://+5355864523">+53 5 5864523</a>.
+                    </p>
                 </div>
             </div>
 

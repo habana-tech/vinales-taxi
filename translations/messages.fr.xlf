@@ -385,6 +385,10 @@
         <source>text.remainder_car_2</source>
         <target>ou à notre numéro de téléphone</target>
       </trans-unit>
+      <trans-unit id="VXDBH2t" resname="text.advice_time">
+        <source>text.advice_time</source>
+        <target>Vous effectuez une réservation moins de 12 heures à l'avance. Nous traiterons votre réservation et si nous avons la disponibilité, nous vous contacterons dans l'heure qui suit. Dans tous les cas, nous vous recommandons vivement de nous contacter via notre téléphone</target>
+      </trans-unit>
     </body>
   </file>
 </xliff>

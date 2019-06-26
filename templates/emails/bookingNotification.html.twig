@@ -1,5 +1,12 @@
     <h1>Nueva reserva en Vinales.taxi.</h1>
 
+    {% if not booking.differenceTimeGreaterThan12Hours %}
+        <h2 style="color: #491217">
+            ==================================<br>
+            Esta reserva tiene menos de 12 horas para realizarse!!<br>
+            ==================================
+        </h2>
+    {% endif %}
     <table class="table">
         <tbody>
             <tr>

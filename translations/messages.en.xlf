@@ -393,6 +393,10 @@
         <source>text.remainder_car_2</source>
         <target>or to our phone number</target>
       </trans-unit>
+      <trans-unit id="VXDBH2t" resname="text.advice_time">
+        <source>text.advice_time</source>
+        <target>You are making a reservation less than 12 hours in advance. We will process your reservation and if we have availability we will contact you within 1 hour. In any case we strongly recommend that you contact us through our phone</target>
+      </trans-unit>
     </body>
   </file>
 </xliff>
