@@ -75,7 +75,7 @@
 
     {% if not booking.differenceTimeGreaterThan12Hours  and not booking.actionTaken %}
         <p>Debe realizar una acción antes del término de una hora <strong>({{ 'now + 1 hour' | date ('H:m') }})</strong>. </p>
-        <table>
+        <table style="width: 100%">
             <tr>
                 <td>
                     <h3>
@@ -83,12 +83,15 @@
                     </h3>
                 </td>
 
+                <td colspan="3" style="width: 75%"></td>
+
                 <td><h3> | | </h3></td>
+
                 <td>
                     <h3>
                         <a href="{{ absolute_url(path('action_disapprove_booking', {'uniqueToken': booking.uniqueToken})) }}" title="No aprobar">No Aprobar</a>
                     </h3>
-                      </td>
+                </td>
             </tr>
         </table>
 
@@ -96,7 +99,7 @@
 
 
 
-    <a href="{{ absolute_url('booking_index') }}">Ver todas las reservast</a>
+    <a href="{{ absolute_url('booking_index') }}">Ver todas las reservas</a>
 
     <a href="{{ absolute_url('booking_edit', {'id': booking.id}) }}">Edit</a>
 
