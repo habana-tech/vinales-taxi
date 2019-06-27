@@ -74,7 +74,7 @@
     </table>
 
     {% if not booking.differenceTimeGreaterThan12Hours  and not booking.actionTaken %}
-        <p>Debe realizar una acción antes del término de una hora <strong>({{ 'now' | date ('H:m') }})</strong>. </p>
+        <p>Debe realizar una acción antes del término de una hora <strong>({{ 'now + 1 hour' | date ('H:m') }})</strong>. </p>
         <table>
             <tr>
                 <td>
