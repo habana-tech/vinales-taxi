@@ -11,6 +11,9 @@ use Symfony\Component\Validator\Constraints as Assert;
  */
 class Booking
 {
+
+    CONST ACTION_APPROVED_BOOKING = 'APROBADA';
+    CONST ACTION_DISAPPROVE_BOOKING = 'DESAPROBADA';
     /**
      * @ORM\Id()
      * @ORM\GeneratedValue()
@@ -86,6 +89,17 @@ class Booking
      */
     private $orderNumber;
 
+
+    /**
+     * @ORM\Column(type="string", length=255, nullable=true)
+     */
+    private $actionTaken;
+
+    /**
+     * @ORM\Column(type="string", length=300, nullable=true)
+     */
+    private $uniqueToken;
+
     /**
      * @ORM\Column(type="float")
      */
@@ -132,6 +146,7 @@ class Booking
     {
         $this->bookingTime = new \DateTime();
         $this->orderNumber = "vin-".date("md")."-".substr(uniqid(),8,4);
+        $this->uniqueToken = uniqid();
         $this->setUserConfirmed(false);
         $this->setTaxiConfirmed(false);
         $this->setIsDone(false);
@@ -365,12 +380,48 @@ class Booking
     }
 
     public function differenceTimeGreaterThan12Hours(){
+        $pickupDateTime = new \DateTime($this->getPickupDate()->format('Y-m-d'). " " . $this->getPickupTime()->format("H:i:s"));
 
-        $diff = $this->bookingTime->diff($this->pickupDate);
+        $diff = $this->bookingTime->diff($pickupDateTime);
         $hours = $diff->h;
         $hours = $hours + ($diff->days*24);
 
-        return $hours > 12;
+        return ($hours > 12);
     }
+
+    /**
+     * @return mixed
+     */
+    public function getUniqueToken()
+    {
+        return $this->uniqueToken;
+    }
+
+    /**
+     * @param mixed $uniqueToken
+     */
+    public function setUniqueToken($uniqueToken): void
+    {
+        $this->uniqueToken = $uniqueToken;
+    }
+
+    /**
+     * @return mixed
+     */
+    public function getActionTaken()
+    {
+        return $this->actionTaken;
+    }
+
+    /**
+     * @param mixed $actionTaken
+     */
+    public function setActionTaken($actionTaken): void
+    {
+        $this->actionTaken = $actionTaken;
+    }
+
+
+
 
 }

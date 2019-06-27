@@ -1,10 +1,10 @@
     <h1>Nueva reserva en Vinales.taxi.</h1>
 
-    {% if not booking.differenceTimeGreaterThan12Hours %}
+    {% if not booking.differenceTimeGreaterThan12Hours and not booking.actionTaken%}
         <h2 style="color: #491217">
-            ==================================<br>
+            ======================================================<br>
             Esta reserva tiene menos de 12 horas para realizarse!!<br>
-            ==================================
+            ======================================================
         </h2>
     {% endif %}
     <table class="table">
@@ -72,6 +72,29 @@
 
         </tbody>
     </table>
+
+    {% if not booking.differenceTimeGreaterThan12Hours  and not booking.actionTaken %}
+        <p>Debe realizar una acción antes del término de una hora <strong>({{ 'now' | date ('H:m') }})</strong>. </p>
+        <table>
+            <tr>
+                <td>
+                    <h3>
+                        <a href="{{ absolute_url(path('action_approve_booking', {'uniqueToken': booking.uniqueToken})) }}" title="aprobar">Aprobar</a>
+                    </h3>
+                </td>
+
+                <td><h3> | | </h3></td>
+                <td>
+                    <h3>
+                        <a href="{{ absolute_url(path('action_disapprove_booking', {'uniqueToken': booking.uniqueToken})) }}" title="No aprobar">No Aprobar</a>
+                    </h3>
+                      </td>
+            </tr>
+        </table>
+
+    {% endif %}
+
+
 
     <a href="{{ absolute_url('booking_index') }}">Ver todas las reservast</a>
 

@@ -154,11 +154,14 @@
                     </li>
                 </ul>
 
-                <p>
-                    {% trans %}
-                        text.confirmation_email
-                    {% endtrans %}
-                </p>
+
+                {% if booking.differenceTimeGreaterThan12Hours %}
+                    <p>
+                        {% trans %}
+                            text.confirmation_email
+                        {% endtrans %}
+                    </p>
+                {% endif %}
                 <p>
                     {% trans %}
                         text.remainder_car_1

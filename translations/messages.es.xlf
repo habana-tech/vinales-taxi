@@ -405,6 +405,154 @@
         <source>text.advice_time</source>
         <target>Usted está realizando una reservación con menos de 12 horas de antelación. Nosotros procesaremos su reserva y si tenemos disponibilidad le contactaremos en el plazo de 1 hora. En cualquier caso le recomendamos fuertemente que nos contacte a través de nuestro teléfono</target>
       </trans-unit>
+      <trans-unit id="hrkYNqm" resname="approved_booking_email_subject">
+        <source>approved_booking_email_subject</source>
+        <target>Su reserva a Viñales fue aceptada</target>
+      </trans-unit>
+      <trans-unit id="ONlV2v3" resname="disapproved_booking_email_subject">
+        <source>disapproved_booking_email_subject</source>
+        <target>Su reserva a Viñales no pudo ser aprobada</target>
+      </trans-unit>
+      <trans-unit id="ylHOH7F" resname="Hi!">
+        <source>Hi!</source>
+        <target>Hola!</target>
+      </trans-unit>
+      <trans-unit id="7NoPyyh" resname="this are you trip details">
+        <source>this are you trip details</source>
+        <target>Estos son los detalles de su viaje</target>
+      </trans-unit>
+      <trans-unit id="oxiGd5k" resname="Saludos">
+        <source>Saludos</source>
+        <target>Saludos</target>
+      </trans-unit>
+      <trans-unit id="NTc9TVV" resname="Recientemente reservó un viaje a Viñales, Cuba, con los siguientes datos:">
+        <source>Recientemente reservó un viaje a Viñales, Cuba, con los siguientes datos:</source>
+        <target>Recientemente reservó un viaje a Viñales, Cuba, con los siguientes datos:</target>
+      </trans-unit>
+      <trans-unit id="MbisnFm" resname="Fecha y Hora:">
+        <source>Fecha y Hora:</source>
+        <target>Fecha y Hora:</target>
+      </trans-unit>
+      <trans-unit id="oiUOYvM" resname="Cantidad de personas:">
+        <source>Cantidad de personas:</source>
+        <target>Cantidad de personas:</target>
+      </trans-unit>
+      <trans-unit id="e0zjeGe" resname="Precio:">
+        <source>Precio:</source>
+        <target>Precio:</target>
+      </trans-unit>
+      <trans-unit id="NIKXKrB" resname="Puede ver estos y otros detalles en la siguiente dirección web:">
+        <source>Puede ver estos y otros detalles en la siguiente dirección web:</source>
+        <target>Puede ver estos y otros detalles en la siguiente dirección web:</target>
+      </trans-unit>
+      <trans-unit id="M6f4eRS" resname="Your reservation has been approved, we will be waiting for you, following the information you provided.">
+        <source>Your reservation has been approved, we will be waiting for you, following the information you provided.</source>
+        <target>Su reservación fue aprovada, le estaremos espeerando, siguiendo las indicaciones que nos dio.</target>
+      </trans-unit>
+      <trans-unit id="mhKoCRE" resname="we have some news for you">
+        <source>we have some news for you</source>
+        <target>Tenemos algunas noticias para usted</target>
+      </trans-unit>
+      <trans-unit id="kAAKi5W" resname="Recently you tried to book a trip to Vinales, Cuba but due to the little time left to organize it, it was not possible to process your request. We recommend you try again with another date.">
+        <source>Recently you tried to book a trip to Vinales, Cuba but due to the little time left to organize it, it was not possible to process your request. We recommend you try again with another date.</source>
+        <target>Recientemente intentó reservar un viaje a Viñales, Cuba. Debido al corto tiempo para preparar el viaje, no será posible procesar su solicitud. Le recomendamos intentarlo nuevamente con otra fecha.</target>
+      </trans-unit>
+      <trans-unit id="dq4E1dX" resname="View details in browser">
+        <source>View details in browser</source>
+        <target>Ver detalles en el navegador</target>
+      </trans-unit>
+      <trans-unit id="rHk4OG6" resname="is a branch of">
+        <source>is a branch of</source>
+        <target>Una marca de</target>
+      </trans-unit>
+      <trans-unit id="aWq01b_" resname="Who we are">
+        <source>Who we are</source>
+        <target>Quienes somos</target>
+      </trans-unit>
+      <trans-unit id="YE3ORF4" resname="Services">
+        <source>Services</source>
+        <target>Servicios</target>
+      </trans-unit>
+      <trans-unit id="tFBkXev" resname="Contacts">
+        <source>Contacts</source>
+        <target>Contacto</target>
+      </trans-unit>
+      <trans-unit id="QKaRryB" resname="You are receiving this email because you make a reservation in our site.">
+        <source>You are receiving this email because you make a reservation in our site.</source>
+        <target>Está recibiendo este email porque hizo una reservación en nuestro sitio.</target>
+      </trans-unit>
+      <trans-unit id="FeNu0DN" resname="if this is not the case, please">
+        <source>if this is not the case, please</source>
+        <target>si este no es el caso, por favor</target>
+      </trans-unit>
+      <trans-unit id="qvfJ38J" resname="let us know">
+        <source>let us know</source>
+        <target>haganos saber</target>
+      </trans-unit>
+      <trans-unit id="GCGdlbC" resname="Thanks for choosing vinales.taxi">
+        <source>Thanks for choosing vinales.taxi</source>
+        <target>Gracias por escoger vinales.taxi</target>
+      </trans-unit>
+      <trans-unit id="0VmCppv" resname="Su reserva fue aprovada, le esperaremos según los datos que nos proporcionó.">
+        <source>Su reserva fue aprovada, le esperaremos según los datos que nos proporcionó.</source>
+        <target>Su reserva fue aprovada, le esperaremos según los datos que nos proporcionó.</target>
+      </trans-unit>
+      <trans-unit id="GOhyviN" resname="Total:">
+        <source>Total:</source>
+        <target>Total:</target>
+      </trans-unit>
+      <trans-unit id="kbDOLlq" resname="The amount of passenger is:">
+        <source>The amount of passenger is:</source>
+        <target>La cantidad de viajeros es:</target>
+      </trans-unit>
+      <trans-unit id="En9pUX3" resname="We recommend you bring light clothes, sunglasses, a hat or cap, camera, plus a bottle of water. Also a extra bit of cash for buying cigar if you want ;) The return to Havana will take place in the afternoon, at the end of the tour.">
+        <source>We recommend you bring light clothes, sunglasses, a hat or cap, camera, plus a bottle of water. Also a extra bit of cash for buying cigar if you want ;) The return to Havana will take place in the afternoon, at the end of the tour.</source>
+        <target>Recomendamos traerse ropas de color claro, gafas de sol, un sombrero o capa, camara, mas de una botella de agua. Tambien un poco de efectivo extra, por si desea comprar algo de tabaco ;) El retorno a La Habana será en horas de la tarde, al final del tour.</target>
+      </trans-unit>
+      <trans-unit id="FKr8xXM" resname="We provide a private service only for you and your family.">
+        <source>We provide a private service only for you and your family.</source>
+        <target>Proporcionamos un servicio privado, solo para usted y su familia.</target>
+      </trans-unit>
+      <trans-unit id="4_6Eym8" resname="We will pick you up at">
+        <source>We will pick you up at</source>
+        <target>Le recogeremos en</target>
+      </trans-unit>
+      <trans-unit id="uXdtfd9" resname="the">
+        <source>the</source>
+        <target>el</target>
+      </trans-unit>
+      <trans-unit id="ZYj4xR3" resname="Hotel or House">
+        <source>Hotel or House</source>
+        <target>Hotel o Casa</target>
+      </trans-unit>
+      <trans-unit id="f0QPWdA" resname="Airport">
+        <source>Airport</source>
+        <target>Aeropuerto</target>
+      </trans-unit>
+      <trans-unit id="J4BQS5C" resname="Cruise">
+        <source>Cruise</source>
+        <target>Crucero</target>
+      </trans-unit>
+      <trans-unit id="oVfTanO" resname="named">
+        <source>named</source>
+        <target>llamado</target>
+      </trans-unit>
+      <trans-unit id="fzVWzL8" resname="Hi! my name is Lesther Rodriguez.">
+        <source>Hi! my name is Lesther Rodriguez.</source>
+        <target>Hola! mi nombre es Lesther Rodriguez.</target>
+      </trans-unit>
+      <trans-unit id="uKtVlgp" resname="We are small team with great passion for classic cars and adventures at the most amazing places that Cuba has to offer.">
+        <source>We are small team with great passion for classic cars and adventures at the most amazing places that Cuba has to offer.</source>
+        <target>Somos un pequeño equipo con una inmensa pasión por los autos clásicos y las aventuras en los lugares más maravillosos que Cuba tiene para ofrecer.</target>
+      </trans-unit>
+      <trans-unit id="5T1uXi1" resname="Your feedback is important">
+        <source>Your feedback is important</source>
+        <target>Su opinión es importante</target>
+      </trans-unit>
+      <trans-unit id="Z6kUS6n" resname="Let us know what you think about travel with us!">
+        <source>Let us know what you think about travel with us!</source>
+        <target>Déjenos saber que piensa de viajar con nosotros!</target>
+      </trans-unit>
     </body>
   </file>
 </xliff>

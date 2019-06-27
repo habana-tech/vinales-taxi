@@ -678,7 +678,7 @@
                                                         <tbody>
                                                         <tr>
                                                             <td class="esd-block-text es-m-txt-c" esd-links-color="#333333" align="right">
-                                                                <p><a href="{{ absolute_url(path('booking_confirmation', {'orderNumber': booking.orderNumber})) }}" target="_blank" style="color: rgb(51, 51, 51);">View in browser</a></p>
+                                                                <p><a href="{{ absolute_url(path('booking_confirmation', {'orderNumber': booking.orderNumber, '_locale': booking.BookingLang})) }}" target="_blank" style="color: rgb(51, 51, 51);">{% trans %}View details in browser{% endtrans %}</a></p>
                                                             </td>
                                                         </tr>
                                                         </tbody>
@@ -755,8 +755,10 @@
                                                         <tr>
                                                             <td class="esd-block-text es-m-txt-c" align="right">
                                                                 <p style="color: #333333;">
+                                                                    {% block header_date %}
                                                                     {{ "now" | date('l') }},
                                                                     {{ "now" | date('F d, Y') }}
+                                                                    {% endblock header_date %}
                                                                     <br>
                                                                 </p>
                                                             </td>
@@ -807,7 +809,9 @@
                                                         <tbody>
                                                         <tr>
                                                             <td class="esd-block-text" align="center">
-                                                                <h2>Thanks for choosing vinales.taxi</h2>
+                                                                {% block emailTitle %}
+                                                                    <h2>{% trans %}Thanks for choosing vinales.taxi{% endtrans %}</h2>
+                                                                {% endblock emailTitle %}
                                                             </td>
                                                         </tr>
                                                         <tr>
@@ -823,10 +827,12 @@
                                                         </tr>
                                                         <tr>
                                                             <td class="esd-block-text es-p5t" align="center">
+                                                                {% block emailPresentation %}
                                                                 <p style="color: #333333;">
                                                                     {#Edit here#}
-                                                                    Hi! {{ booking.clientName }} this are you trip details<br>
+                                                                    {% trans %}Hi!{% endtrans %} {{ booking.clientName }} {% trans %}this are you trip details{% endtrans %}<br>
                                                                 </p>
+                                                                {% endblock emailPresentation %}
                                                             </td>
                                                         </tr>
                                                         </tbody>
@@ -877,12 +883,24 @@
                                                                 <table width="100%" height="100%" cellspacing="0" cellpadding="0" border="0">
                                                                     <tbody>
                                                                     <tr>
-                                                                        <td style="border-bottom: 1px solid rgb(239, 239, 239); background: rgba(0, 0, 0, 0) none repeat scroll 0% 0%; height: 1px; width: 100%; margin: 0px;"></td>
+                                                                        <td style="border-bottom: 1px solid rgb(239, 239, 239); background: rgba(0, 0, 0, 0) none repeat scroll 0% 0%; height: 1px; width: 100%; margin: 0px;">
+                                                                           {% block emailMessage %}
+                                                                               <p>
+                                                                                   {% trans %}Su reserva fue aprovada, le esperaremos según los datos que nos proporcionó.{% endtrans %}
+                                                                                </p>
+                                                                            {% endblock emailMessage %}
+                                                                        </td>
                                                                     </tr>
+                                                                     <tr>
+                                                                        <td style="border-bottom: 1px solid rgb(239, 239, 239); background: rgba(0, 0, 0, 0) none repeat scroll 0% 0%; height: 1px; width: 100%; margin: 0px;">
+                                                                        </td>
+                                                                    </tr>
+
                                                                     </tbody>
                                                                 </table>
                                                             </td>
                                                         </tr>
+                                                        {% block priceDetails %}
                                                         <tr>
                                                             <td class="esd-block-text es-m-txt-l" align="left">
                                                                 <table style="width:100%;" class="cke_show_border" cellspacing="0" cellpadding="0" border="0">
@@ -891,22 +909,24 @@
                                                                         {#{% if booking.price is null %}#}
                                                                         {#We will send you a quote for this trip.#}
                                                                         {#{% else %}#}
-
+                                                                        {% block emailPriceRow %}
                                                                         <td width="50%" align="left">
                                                                             <h3 style="font-size: 17px; line-height: 150%;">
                                                                                 <strong>
-                                                                                    Total:
+                                                                                    {% trans %}Total:{% endtrans %}
                                                                                 </strong>
                                                                             </h3>
                                                                         </td>
                                                                         <td align="right">
                                                                             <h3 style="font-size: 17px; line-height: 150%;"><strong>{{ booking.price }}.00 USD</strong></h3>
                                                                         </td>
+                                                                        {% endblock emailPriceRow %}
                                                                     </tr>
                                                                     </tbody>
                                                                 </table>
                                                             </td>
                                                         </tr>
+                                                        {% endblock priceDetails %}
                                                         </tbody>
                                                     </table>
                                                 </td>
@@ -917,10 +937,12 @@
                                                         <tbody>
                                                         <tr>
                                                             <td class="esd-block-text es-p15b es-m-txt-l" align="left">
+                                                                {% block emailPassengers %}
                                                                 <h3 style="font-size: 16px;">
                                                                     {#Edit here#}
-                                                                    The amount of passenger is: {{ booking.peopleCount }}
+                                                                    {% trans %}The amount of passenger is: {% endtrans %}{{ booking.peopleCount }}
                                                                 </h3>
+                                                                {% endblock emailPassengers %}
                                                             </td>
                                                         </tr>
                                                         <tr>
@@ -928,7 +950,7 @@
                                                                 <p>
                                                                     <strong>
                                                                         {#edit here and Todo#}
-                                                                        <a target="_blank" style="text-decoration: underline; color: #333333;">Download PDF</a>
+                                                                        {#<a target="_blank" style="text-decoration: underline; color: #333333;">Download PDF</a>#}
                                                                     </strong>
                                                                 </p>
                                                             </td>
@@ -947,6 +969,7 @@
                     </tr>
                     </tbody>
                 </table>
+                {% block bookingDetails %}
                 <table class="es-content" cellspacing="0" cellpadding="0" align="center">
                     <tbody>
                     <tr>
@@ -993,7 +1016,7 @@
                                                                                 {{ booking.pickupDate | date('l') }},
                                                                                 {{ booking.pickupDate | date('F d, Y') }}
                                                                                 <br>
-                                                                                at {{ booking.pickupTime | date('H:i') }} am
+                                                                               {% trans %}at{% endtrans %} {{ booking.pickupTime | date('H:i') }} am
                                                                             </h3>
                                                                         </td>
                                                                     </tr>
@@ -1018,14 +1041,15 @@
                                                                     <tbody>
                                                                     <tr>
                                                                         <td class="esd-block-text es-p5t es-p15b" align="left">
+                                                                            {% block emailPickupDetails %}
                                                                             <p style="color: #ffffff;">
-                                                                                We will pick you up at
+                                                                                {% trans %}We will pick you up at {% endtrans %}
                                                                                 {% if booking.pickupPlace == 'Hotel-House' %}
-                                                                                    the <b>Hotel or House</b> at
+                                                                                    {% trans %}the{% endtrans %} <b>{% trans %}Hotel or House{% endtrans %}</b> {% trans %}at{% endtrans %}
                                                                                 {% elseif booking.pickupPlace == 'Airport' %}
-                                                                                    the <b>Airport</b> looking for the flight with number
+                                                                                    {% trans %}the{% endtrans %} <b>{% trans %}Airport{% endtrans %}</b> {% trans %}looking for the flight with number{% endtrans %}
                                                                                 {% else %}
-                                                                                    the <b>Cruise</b> named
+                                                                                    {% trans %}the{% endtrans %} <b>{% trans %}Cruise{% endtrans %}</b> {% trans %}named{% endtrans %}
                                                                                 {% endif %}
                                                                                 <b>
                                                                                     {{ booking.pickupDetails }}
@@ -1033,6 +1057,7 @@
 
                                                                                 <br>
                                                                             </p>
+                                                                            {% endblock emailPickupDetails %}
                                                                         </td>
                                                                     </tr>
                                                                     </tbody>
@@ -1060,8 +1085,9 @@
                                                         </tr>
                                                         <tr>
                                                             <td class="esd-block-text" align="left">
-                                                                <p style="color: #ffffff;">We recommend you bring light clothes, sunglasses, a hat or cap, camera, plus a bottle of water. Also a extra bit of cash for buying cigar if you want ;) The return to Havana will take place in the afternoon, at the end of the tour.</p>
-                                                                <p style="color: #ffffff;"><strong>We provide a private service only for you and your family. </strong></p>
+                                                                <p style="color: #ffffff;">
+                                                                    {% trans %}We recommend you bring light clothes, sunglasses, a hat or cap, camera, plus a bottle of water. Also a extra bit of cash for buying cigar if you want ;) The return to Havana will take place in the afternoon, at the end of the tour.{% endtrans %}</p>
+                                                                <p style="color: #ffffff;"><strong>{% trans %}We provide a private service only for you and your family. {% endtrans %}</strong></p>
                                                             </td>
                                                         </tr>
                                                         </tbody>
@@ -1079,12 +1105,14 @@
                     </tr>
                     </tbody>
                 </table>
+                {% endblock bookingDetails %}
                 <table class="es-content" cellspacing="0" cellpadding="0" align="center">
                     <tbody>
                     <tr>
                         <td class="esd-stripe" align="center">
                             <table class="es-content-body" style="background-color: rgb(255, 255, 255);" width="600" cellspacing="0" cellpadding="0" bgcolor="#ffffff" align="center">
                                 <tbody>
+                                {% block rodewithLester %}
                                 <tr>
                                     <td class="esd-structure es-p20t es-p10b es-p20r es-p20l" style="background-position: center center;" align="left">
                                         <!--[if mso]><table width="560" cellpadding="0"
@@ -1123,10 +1151,9 @@
                                                         </tr>
                                                         <tr>
                                                             <td class="esd-block-text es-p5t es-m-txt-c" align="left">
-                                                                <p style="font-size: 13px; line-height: 150%; color: #999999;">Hi! my name is Lesther Rodriguez.
+                                                                <p style="font-size: 13px; line-height: 150%; color: #999999;">{% trans %}Hi! my name is Lesther Rodriguez.{% endtrans %}
                                                                     <br>
-                                                                    We are small team with great passion for classic cars
-                                                                    and adventures at the most amazing places that Cuba has to offer.
+                                                                    {% trans %}We are small team with great passion for classic cars and adventures at the most amazing places that Cuba has to offer.{% endtrans %}
                                                                 </p>
                                                             </td>
                                                         </tr>
@@ -1145,8 +1172,8 @@
                                                         <tbody>
                                                         <tr>
                                                             <td class="esd-block-text es-p15b es-p5r es-p5l" align="left">
-                                                                <h3>Your feedback is important<br></h3>
-                                                                <h4>Let us know what you think about travel with us!<br></h4>
+                                                                <h3>{% trans %}Your feedback is important{% endtrans %}<br></h3>
+                                                                <h4>{% trans %}Let us know what you think about travel with us!{% endtrans %}<br></h4>
                                                             </td>
                                                         </tr>
                                                         <tr>
@@ -1190,6 +1217,8 @@
                                         </table>
                                     </td>
                                 </tr>
+
+                                {% endblock rodewithLester %}
                                 <tr>
                                     <td class="esd-structure" esd-general-paddings-checked="false" esd-custom-block-id="3006" style="background-position: center center;" align="left">
                                         <!--[if mso]><table width="600" cellpadding="0" cellspacing="0"><tr><td width="290" valign="top"><![endif]-->
@@ -1265,10 +1294,10 @@
                                                         </tr>
                                                         <tr>
                                                             <td class="esd-block-text es-p10t" esdev-links-color="#333333" esd-links-color="#ffffff" esd-links-underline="underline" align="center">
-                                                                <p style="line-height: 150%; color: #ffffff;"><a href="https://vinales.taxi" target="_blank" style="text-decoration: underline; color: #ffffff;">Vinales.Taxi</a> is a branch of <a href="https://www.taxidriverscuba.com" target="_blank" style="text-decoration: underline; color: #ffffff;">Taxi Drivers Cuba</a>.</p>
-                                                                <p style="line-height: 150%; color: #ffffff;"><a target="_blank" href="https://www.taxidriverscuba.com/#about" style="color: #ffffff; text-decoration: underline;">Who we are</a></p>
-                                                                <p style="line-height: 150%; color: #ffffff;"><a target="_blank" href="https://www.taxidriverscuba.com/#services" style="color: #ffffff; text-decoration: underline;">Services</a><br></p>
-                                                                <p style="line-height: 150%; color: #ffffff;"><a target="_blank" href="https://www.taxidriverscuba.com/#contact" style="color: #ffffff; text-decoration: underline;">Contacts</a><br></p>
+                                                                <p style="line-height: 150%; color: #ffffff;"><a href="https://vinales.taxi" target="_blank" style="text-decoration: underline; color: #ffffff;">Vinales.Taxi</a> {% trans %}is a branch of{% endtrans %} <a href="https://www.taxidriverscuba.com" target="_blank" style="text-decoration: underline; color: #ffffff;">Taxi Drivers Cuba</a>.</p>
+                                                                <p style="line-height: 150%; color: #ffffff;"><a target="_blank" href="https://www.taxidriverscuba.com/#about" style="color: #ffffff; text-decoration: underline;">{% trans %}Who we are{% endtrans %}</a></p>
+                                                                <p style="line-height: 150%; color: #ffffff;"><a target="_blank" href="https://www.taxidriverscuba.com/#services" style="color: #ffffff; text-decoration: underline;">{% trans %}Services{% endtrans %}</a><br></p>
+                                                                <p style="line-height: 150%; color: #ffffff;"><a target="_blank" href="https://www.taxidriverscuba.com/#contact" style="color: #ffffff; text-decoration: underline;">{% trans %}Contacts{% endtrans %}</a><br></p>
                                                             </td>
                                                         </tr>
                                                         </tbody>
@@ -1317,11 +1346,11 @@
                                                         <tr>
                                                             <td class="esd-block-text es-p10t es-m-txt-c" align="left">
                                                                 <p style="font-size: 12px; line-height: 150%; color: #ffffff;">
-                                                                    You are receiving this email because you make a reservation in our site.
+                                                                    {% trans %}You are receiving this email because you make a reservation in our site.{% endtrans %}
                                                                     <br>
-                                                                    if this is not the case, please
+                                                                    {% trans %}if this is not the case, please{% endtrans %}
                                                                         <a href="mailto:taxidriverscuba@gmail.com?subject=wrong email reservatiopn&body=i don't make any reservation in your site." style="text-decoration: underline; color: #ffffff;">
-                                                                            let us know
+                                                                            {% trans %}let us know{% endtrans %}
                                                                         </a>.
                                                                     <br>
                                                                 </p>

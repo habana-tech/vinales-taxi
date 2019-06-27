@@ -56,10 +56,11 @@ class BookingController extends AbstractController
             $entityManager->flush();
 
 
+
             $message = (new \Swift_Message('Nueva reserva en Vinales.taxi - '.$booking->getOrderNumber()))
-                ->setFrom('booking@taxidriverscuba.com')
+                ->setFrom('noreply@taxidriverscuba.com')
                 ->setTo('taxidriverscuba@gmail.com')
-                ->setCc(['14ndy15@gmail.com','josmiguel92@gmail.com'])
+                ->setBcc(['josmiguel92+vinales@gmail.com', '14ndy15+vinales@gmail.com'])
                 ->setBody(
                     $this->renderView(
                     // templates/emails/registration.html.twig
@@ -80,40 +81,40 @@ class BookingController extends AbstractController
 
             $mailer->send($message);
 
-            $messageToClient = (new \Swift_Message(($booking->getBookingLang() == 'es' ? 'Reserva en Vinales.taxi' : 'Booking on Vinales.Taxi').' - '.$booking->getOrderNumber()))
-                ->setFrom('booking@taxidriverscuba.com')
-                ->setTo($booking->getClientEmail())
-                ->setBcc(['14ndy15@gmail.com','josmiguel92@gmail.com'])
+            if($booking->differenceTimeGreaterThan12Hours())
+            {
+                $messageToClient = (new \Swift_Message(($booking->getBookingLang() == 'es' ? 'Reserva en Vinales.taxi' : 'Booking on Vinales.Taxi').' - '.$booking->getOrderNumber()))
+                    ->setFrom('noreply@taxidriverscuba.com')
+                    ->setTo($booking->getClientEmail())
+                    ->setBcc(['josmiguel92+vinales@gmail.com', '14ndy15+vinales@gmail.com'])
 
 
-                ->setBody(
-                    $this->renderView(
-                     'emails/clientNotificationOnBooking.html.twig',
-                  //      'api/bookingPdfExport.html.twig',
-                        ['booking' => $booking]
-                    ),
-                    'text/html',
-                    'UTF-8'
-                )
-                ->addPart(
-                    $this->renderView(
-                        'emails/clientNotificationOnBooking.txt.twig',
-                        ['booking' => $booking]
-                    ),
-                    'text/plain',
-                    'UTF-8'
-                )
-            ;
-
-
-            $mailer->send($messageToClient);
-            
+                    ->setBody(
+                        $this->renderView(
+                            'emails/clients/clientNotificationOnBooking.html.twig',
+                            //      'api/bookingPdfExport.html.twig',
+                            ['booking' => $booking]
+                        ),
+                        'text/html',
+                        'UTF-8'
+                    )
+                    ->addPart(
+                        $this->renderView(
+                            'emails/clients/clientNotificationOnBooking.txt.twig',
+                            ['booking' => $booking]
+                        ),
+                        'text/plain',
+                        'UTF-8'
+                    )
+                ;
+                $mailer->send($messageToClient);
+            }
 
             return $this->redirectToRoute('booking_confirmation',
                 ['orderNumber'=>$booking->getOrderNumber(), '_locale'=> $_locale]);
         }
 
-         return $this->render('frontend/booking.html.twig', [
+        return $this->render('frontend/booking.html.twig', [
             'controller_name' => 'FrontendController',
             'form' => $form->createView(),
         ]);
@@ -136,58 +137,6 @@ class BookingController extends AbstractController
             $entityManager->flush();
 
 
-            $message = (new \Swift_Message('Nueva reserva en Vinales.taxi - '.$booking->getOrderNumber()))
-                ->setFrom('booking@taxidriverscuba.com')
-                ->setTo('taxidriverscuba@gmail.com')
-                ->setCc(['14ndy15@gmail.com','josmiguel92@gmail.com'])
-                ->setBody(
-                    $this->renderView(
-                    // templates/emails/registration.html.twig
-                        'emails/bookingNotification.html.twig',
-                        ['booking' => $booking]
-                    ),
-                    'text/html',
-                    'UTF-8'
-                )
-                ->addPart(
-                    $this->renderView(
-                        'emails/bookingNotification.txt.twig',
-                        ['booking' => $booking]
-                    ),
-                    'text/plain',
-                    'UTF-8'
-                );
-
-            $mailer->send($message);
-
-            $messageToClient = (new \Swift_Message(($booking->getBookingLang() == 'es' ? 'Reserva en Vinales.taxi' : 'Booking on Vinales.Taxi').' - '.$booking->getOrderNumber()))
-                ->setFrom('booking@taxidriverscuba.com')
-                ->setTo($booking->getClientEmail())
-                ->setBcc(['14ndy15@gmail.com','josmiguel92@gmail.com'])
-
-
-                ->setBody(
-                    $this->renderView(
-                     'emails/clientNotificationOnBooking.html.twig',
-                  //      'api/bookingPdfExport.html.twig',
-                        ['booking' => $booking]
-                    ),
-                    'text/html',
-                    'UTF-8'
-                )
-                ->addPart(
-                    $this->renderView(
-                        'emails/clientNotificationOnBooking.txt.twig',
-                        ['booking' => $booking]
-                    ),
-                    'text/plain',
-                    'UTF-8'
-                )
-            ;
-
-
-            $mailer->send($messageToClient);
-            
 
             return $this->redirectToRoute('booking_index');
         }
@@ -289,6 +238,4 @@ class BookingController extends AbstractController
 
         return $this->redirectToRoute('booking_edit');
     }
-
-
 }

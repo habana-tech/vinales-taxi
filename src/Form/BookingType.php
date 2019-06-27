@@ -34,6 +34,7 @@ class BookingType extends AbstractType
             //->add('pickupTime', TimeType::class, ['widget'=>'single_text'])
             ->add('pickupTime', ChoiceType::class,[
                 'choices'=>[
+                    '04:00h'=>'04:00',
                     '07:00h'=>'07:00',
                     '07:30h'=>'07:30',
                     '08:00h'=>'08:00',

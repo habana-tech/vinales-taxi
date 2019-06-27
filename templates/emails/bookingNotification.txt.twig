@@ -1,5 +1,5 @@
 Nueva reserva en Vinales.taxi
-{% if not booking.differenceTimeGreaterThan12Hours %}
+{% if not booking.differenceTimeGreaterThan12Hours  and not booking.actionTaken %}
 ----------------------------------------------------------------------------
     Esta reserva tiene menos de 12 horas para realizarse!!
 ----------------------------------------------------------------------------
@@ -32,6 +32,20 @@ Idioma: {{ booking.bookingLang }}
 Fecha/Hora en que reserva: { booking.bookingTime ? booking.bookingTime|date('Y-m-d H:i:s') : '' }}
 
 Campaña: {{ booking.campaign }}
+
+{% if not booking.differenceTimeGreaterThan12Hours  and not booking.actionTaken %}
+
+**********
+Para aceptar, visite este enlace:
+
+{{ absolute_url(path('action_approve_booking', {'uniqueToken': booking.uniqueToken})) }}
+**********
+Para rechazarlo:
+
+{{ absolute_url(path('action_disapprove_booking', {'uniqueToken': booking.uniqueToken})) }}
+**********
+
+{% endif %}
 
 [{{ absolute_url('booking_index') }}]Ver todas las reservast
 
