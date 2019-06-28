@@ -25,7 +25,7 @@ class ActionController extends AbstractController
 
             //mensaje a admin
             $message = (new \Swift_Message('Nueva reserva en Vinales.taxi - '.$booking->getOrderNumber()))
-                ->setFrom('noreply@taxidriverscuba.com')
+                ->setFrom(['noreply@taxidriverscuba.com'=>'TaxidriversCuba'])
                 ->setTo('taxidriverscuba@gmail.com')
                 ->setBcc(['josmiguel92+vinales@gmail.com', '14ndy15+vinales@gmail.com'])
                 ->setBody(
@@ -57,7 +57,7 @@ class ActionController extends AbstractController
             $subject = $translator->trans('approved_booking_email_subject');
 
             $client_message = (new \Swift_Message($subject . ' - '. $booking->getOrderNumber() . ' | Vinales.taxi'))
-                ->setFrom('noreply@taxidriverscuba.com')
+                ->setFrom(['noreply@taxidriverscuba.com'=>'TaxidriversCuba'])
                 ->setTo($booking->getClientEmail())
                 ->setBcc(['josmiguel92+vinales@gmail.com', '14ndy15+vinales@gmail.com'])
                 ->setBody(
@@ -112,7 +112,7 @@ class ActionController extends AbstractController
             $subject = $translator->trans('disapproved_booking_email_subject');
 
             $client_message = (new \Swift_Message($subject . ' - '. $booking->getOrderNumber() . ' | Vinales.taxi'))
-                ->setFrom('noreply@taxidriverscuba.com')
+                ->setFrom(['noreply@taxidriverscuba.com'=>'TaxidriversCuba'])
                 ->setTo($booking->getClientEmail())
                 ->setBcc(['josmiguel92+vinales@gmail.com', '14ndy15+vinales@gmail.com'])
                 ->setBody(
