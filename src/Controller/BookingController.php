@@ -58,7 +58,7 @@ class BookingController extends AbstractController
 
 
             $message = (new \Swift_Message('Nueva reserva en Vinales.taxi - '.$booking->getOrderNumber()))
-                ->setFrom(['noreply@taxidriverscuba.com'=>'TaxidriversCuba'])
+                ->setFrom(['noreply@taxidriverscuba.com'=>'TaxiDriversCuba'])
                 ->setTo('taxidriverscuba@gmail.com')
                 ->setBcc(['josmiguel92+vinales@gmail.com', '14ndy15+vinales@gmail.com'])
                 ->setBody(
@@ -84,7 +84,7 @@ class BookingController extends AbstractController
             if($booking->differenceTimeGreaterThan12Hours())
             {
                 $messageToClient = (new \Swift_Message(($booking->getBookingLang() == 'es' ? 'Reserva en Vinales.taxi' : 'Booking on Vinales.Taxi').' - '.$booking->getOrderNumber()))
-                    ->setFrom(['noreply@taxidriverscuba.com'=>'TaxidriversCuba'])
+                    ->setFrom(['noreply@taxidriverscuba.com'=>'TaxiDriversCuba'])
                     ->setTo($booking->getClientEmail())
                     ->setBcc(['josmiguel92+vinales@gmail.com', '14ndy15+vinales@gmail.com'])
 

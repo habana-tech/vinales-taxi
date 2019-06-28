@@ -76,7 +76,7 @@ class FrontendController extends AbstractController
 
 
             $message = (new \Swift_Message('Nuevo mensaje en Vinales.taxi'))
-                ->setFrom(['noreply@taxidriverscuba.com'=>'TaxidriversCuba'])
+                ->setFrom(['noreply@taxidriverscuba.com'=>'TaxiDriversCuba'])
                 ->setTo('taxidriverscuba@gmail.com')
                 ->setCc(['14ndy15@gmail.com','josmiguel92@gmail.com'])
 
