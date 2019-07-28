@@ -3,7 +3,43 @@
 {% block javascripts_defer %}
     <script src="{{ asset('scripts/app.js') }}" defer></script>
     <script src="{{ asset('scripts/Form.js') }}" defer></script>
+    <script src="{{ asset('assets/js/intlTelInput.min.js') }}"></script>
+    <script>
+
+        function defer(method) {
+            // if (window.intlTelInput) {//wait till page is loaded
+            if (document.readyState === "complete") {//wait till page is loaded
+                console.log("IntTl is now loaded");
+                var input = document.querySelector("#{{ form.telephone.vars.id }}");
+                window.intlTelInput(input, {
+                    hiddenInput: "{{ form.telephone.vars.full_name }}",
+                    preferredCountries: ["cu", "us", "gb"],
+                    utilsScript: "{{ asset('assets/js/IntlTelInputLib-utils.js') }}" // just for formatting/placeholders etc
+                });
+            } else {
+                console.log("IntTl not yet");
+                setTimeout(function() {
+                    defer(method);
+
+                }, 50);
+            }
+        }
+        defer();
+    </script>
 {% endblock %}
+
+{% block stylesheets %}
+    {{ parent() }}
+<link rel="stylesheet" href="{{ asset('assets/css/intlTelInput.min.css') }}">
+<style>
+    .iti__flag {background-image: url("{{ asset('img/flags.png') }}");}
+    .iti--allow-dropdown{ width: 100%;  }
+
+    @media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi) {
+        .iti__flag {background-image: url("{{ asset('img/flags@2x.png') }}");}
+    }
+</style>
+{% endblock stylesheets %}
 
 {% set title = "Reservation Form for One day trip from Havana to Vinales | Vinales Taxi" %}
 
@@ -167,8 +203,13 @@
                         {{ form_row(form.clientEmail) }}
                     </div>
 
+
                     <div class="form__item">
-                        {{ form_row(form.telephone) }}
+                        <div class=form-group">
+                            <label for="{{ form.telephone.vars.id }}" class="control-label required">{% trans %}field.telephone{% endtrans %}</label>
+                            <input id="{{ form.telephone.vars.id }}" class="form-control" type="text">
+                        </div>
+{#                        {{ form_row(form.telephone) }}#}
                     </div>
                 </div>
 
@@ -179,9 +220,10 @@
 
 
             {{ form_row(form.bookingLang, {value: app.request.locale}) }}
+            {{ form_widget(form._token) }}
             {{ form_row(form.campaign, {value: 'vinales-web-form'}) }}
             <input class="btn btn--primary-gradient" type="submit" value="{% trans %}button.send{% endtrans %}">
-        {{ form_end(form) }}
+        {{ form_end(form, {'render_rest': false}) }}
     </div>
 </section>
 

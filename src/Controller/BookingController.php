@@ -2,6 +2,7 @@
 
 namespace App\Controller;
 
+use App\DataHelper\TelephoneNumber;
 use App\Entity\Booking;
 use App\Form\BookingType;
 use App\Repository\BookingRepository;
@@ -56,6 +57,8 @@ class BookingController extends AbstractController
             $entityManager->flush();
 
 
+            $phone = new TelephoneNumber($booking->getTelephone());
+            $booking->setTelephone($booking->getTelephone() . ', '.$phone->getCountry());
 
             $message = (new \Swift_Message('Nueva reserva en Vinales.taxi - '.$booking->getOrderNumber()))
                 ->setFrom(['noreply@taxidriverscuba.com'=>'TaxiDriversCuba'])
