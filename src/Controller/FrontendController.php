@@ -74,8 +74,7 @@ class FrontendController extends AbstractController
         if ($form->isSubmitted() && $form->isValid()) {
 
             if(isset($_POST['g-recaptcha-response'])){
-                dump($_POST['g-recaptcha-response']);
-                dump($recaptcha);
+                
 
                 // If the form submission includes the "g-captcha-response" field
                 // Create an instance of the service using your secret
@@ -89,8 +88,8 @@ class FrontendController extends AbstractController
                       if ($resp->isSuccess())
                       {
                         
-                        return $this->json([$_SERVER['SERVER_NAME'], $_SERVER['REMOTE_ADDR'],['resp'=>$resp]]);
-                        exit;
+                        $this->addFlash('success', 'Message sended!');
+
                         $entityManager = $this->getDoctrine()->getManager();
                         $entityManager->persist($contact);
                         $entityManager->flush();
@@ -121,9 +120,6 @@ class FrontendController extends AbstractController
 
                         $mailer->send($message);
                       }
-
-                return $this->json([$_SERVER['SERVER_NAME'], $_SERVER['REMOTE_ADDR'],['resp'=>$resp]]);
-                exit;
             }
             
 
@@ -131,8 +127,8 @@ class FrontendController extends AbstractController
             //return $this->json(['info'=>'Message delivered'], 200);
         }
 
-       // return $this->redirectToRoute('frontend');
-        return $this->json(['info'=>'The form is not valid'], 400);
+        return $this->redirectToRoute('frontend');
+        //return $this->json(['info'=>'The form is not valid'], 400);
     }
 
 

@@ -24,6 +24,12 @@
    
     <main>
 
+        {% for message in app.flashes('success') %}
+            <div class="alert alert-success">
+                {{ message }}
+            </div>
+        {% endfor %}
+
         {{ include('frontend/components/index/_intro.html.twig') }}
 
         {{ include('frontend/components/index/_activity.html.twig') }}
