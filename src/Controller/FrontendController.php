@@ -10,6 +10,8 @@ use App\Entity\Booking;
 use App\Form\BookingType;
 use App\Form\ContactType;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Cache;
+use Symfony\Component\DependencyInjection\ParameterBag\ParameterBagInterface;
+use \ReCaptcha\ReCaptcha;
 
 class FrontendController extends AbstractController
 {
@@ -63,48 +65,75 @@ class FrontendController extends AbstractController
      * @Route("/contact",
      *     name="contact")
      */
-    public function contact(Request $request,  \Swift_Mailer $mailer)
+    public function contact(Request $request,  \Swift_Mailer $mailer, ReCaptcha $recaptcha)
     {
         $contact = new Contact();
         $form = $this->createForm(ContactType::class, $contact);
         $form->handleRequest($request);
 
         if ($form->isSubmitted() && $form->isValid()) {
-            $entityManager = $this->getDoctrine()->getManager();
-            $entityManager->persist($contact);
-            $entityManager->flush();
+
+            if(isset($_POST['g-recaptcha-response'])){
+                dump($_POST['g-recaptcha-response']);
+                dump($recaptcha);
+
+                // If the form submission includes the "g-captcha-response" field
+                // Create an instance of the service using your secret
+               // $secret =  $params->get('GOOGLE_RECAPTCHA_SECRET');
+                //$recaptcha = new \ReCaptcha\ReCaptcha();
+
+                $resp = $recaptcha->setExpectedHostname($_SERVER['SERVER_NAME'])
+                      ->verify($_POST['g-recaptcha-response'], $_SERVER['REMOTE_ADDR']);
+
+                       // If the response is a success, that's it!
+                      if ($resp->isSuccess())
+                      {
+                        
+                        return $this->json([$_SERVER['SERVER_NAME'], $_SERVER['REMOTE_ADDR'],['resp'=>$resp]]);
+                        exit;
+                        $entityManager = $this->getDoctrine()->getManager();
+                        $entityManager->persist($contact);
+                        $entityManager->flush();
 
 
-            $message = (new \Swift_Message('Nuevo mensaje en Vinales.taxi'))
-                ->setFrom(['noreply@taxidriverscuba.com'=>'TaxiDriversCuba'])
-                ->setTo('taxidriverscuba@gmail.com')
-                ->setCc(['14ndy15@gmail.com','josmiguel92@gmail.com'])
+                        $message = (new \Swift_Message('Nuevo mensaje en Vinales.taxi'))
+                            ->setFrom(['noreply@taxidriverscuba.com'=>'TaxiDriversCuba'])
+                            ->setTo('taxidriverscuba@gmail.com')
+                            ->setCc(['14ndy15@gmail.com','josmiguel92@gmail.com'])
 
 
-                ->setBody(
-                    $this->renderView(
-                    // templates/emails/registration.html.twig
-                        'emails/contact.html.twig',
-                        ['contact' => $contact]
-                    ),
-                    'text/html'
-                )
-                ->addPart(
-                    $this->renderView(
-                        'emails/contact.txt.twig',
-                        ['contact' => $contact]
-                    ),
-                    'text/plain'
-                )
-            ;
+                            ->setBody(
+                                $this->renderView(
+                                // templates/emails/registration.html.twig
+                                    'emails/contact.html.twig',
+                                    ['contact' => $contact]
+                                ),
+                                'text/html'
+                            )
+                            ->addPart(
+                                $this->renderView(
+                                    'emails/contact.txt.twig',
+                                    ['contact' => $contact]
+                                ),
+                                'text/plain'
+                            )
+                        ;
 
-            $mailer->send($message);
+                        $mailer->send($message);
+                      }
+
+                return $this->json([$_SERVER['SERVER_NAME'], $_SERVER['REMOTE_ADDR'],['resp'=>$resp]]);
+                exit;
+            }
+            
 
             //todo: enviar form mediante AJAX para evitar la redireccion al home
             //return $this->json(['info'=>'Message delivered'], 200);
         }
 
-        return $this->redirectToRoute('frontend');
-        //return $this->json(['info'=>'The form is not valid'], 400);
+       // return $this->redirectToRoute('frontend');
+        return $this->json(['info'=>'The form is not valid'], 400);
     }
+
+
 }

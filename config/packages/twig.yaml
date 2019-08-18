@@ -3,3 +3,7 @@ twig:
     debug: '%kernel.debug%'
     strict_variables: '%kernel.debug%'
     form_themes: ['bootstrap_3_layout.html.twig']
+    globals:
+        #google_tagmanager_id: '%google_tagmanager_id%'
+        GOOGLE_RECAPTCHA_SITE_KEY: '%env(GOOGLE_RECAPTCHA_SITE_KEY)%'
+        GOOGLE_RECAPTCHA_SECRET: '%env(GOOGLE_RECAPTCHA_SECRET)%'

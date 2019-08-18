@@ -78,7 +78,24 @@
                     subtitle.send_message
                 {% endtrans %}
             </h4>
-            {{ form(form) }}
+            {{ form_start(form, { attr: { 'id': 'contact-form'}} ) }}
+
+            {{ form_row(form.name)}}
+            {{ form_row(form.email)}}
+            {{ form_row(form.message)}}
+            {{ form_row(form.submit, { attr: {
+                    'data-sitekey':GOOGLE_RECAPTCHA_SITE_KEY,
+                     'data-callback':'onContactSubmit'} })}}
+
+
+            {{ form_end(form) }}
+
+            <script>
+               function onContactSubmit(token) {
+                 document.getElementById("contact-form").submit();
+               }
+             </script>
+
         </div>
     </div>
 </section>

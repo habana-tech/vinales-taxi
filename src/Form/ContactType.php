@@ -28,7 +28,7 @@ class ContactType extends AbstractType
                 'label'=>'field.client_message'
             ])
             ->add('submit', SubmitType::class,[
-                'attr'=>['class'=>'btn btn--primary-gradient'],
+                'attr'=>['class'=>'btn btn--primary-gradient g-recaptcha'],
                     'label'=>'subtitle.send_message',
             ])
         ;
