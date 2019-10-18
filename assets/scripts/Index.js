@@ -1,7 +1,5 @@
-import SmoothScrooll from './modules/_smoothScroll';
 import ImageFade from './modules/_imageFade';
 
-new SmoothScrooll();
 let group1 = document.querySelectorAll(".group1 picture");
 let group2 = document.querySelectorAll(".group2 picture");
 let group3 = document.querySelectorAll(".group3 picture");
