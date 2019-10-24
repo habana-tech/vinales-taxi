@@ -8,6 +8,7 @@
         </h2>
     </div>
 
+{#    TODO: change for a gallery with touch swipe#}
     <div class="activities__item">
         <div class="activities__item__image group1">
             <picture>
@@ -61,16 +62,15 @@
                                 image.description.view
                              {% endtrans %}
                              ">
-
             </picture>
             <noscript>
                 <img
-                        src="{{ asset('img/gallery/vinales-view-portraid.jpg') }}"
-                        alt="
-                                    {% trans %}
-                                        image.description.view
-                                     {% endtrans %}
-                                     ">
+                    src="{{ asset('img/gallery/vinales-view-portraid.jpg') }}"
+                    alt="
+                                {% trans %}
+                                    image.description.view
+                                 {% endtrans %}
+                                 ">
             </noscript>
         </div>
         <div class="activities__item__text">
@@ -287,10 +287,13 @@
     </div>
 
     <div class="activities__button">
-        <a class="btn btn--primary-gradient"
-                {#target="_self" href="{{ url }}">#}
-           target="_self" href="{{ path('booking') }}">
+        <a href="#" id="trekksoft_9491"><img src="https://cubyke.trekksoft.com/cache/images/widget-buttons/eyJsYWJlbCI6Ilwvd2lkZ2V0XC9ib29rLWJ1dHRvbi5wbmciLCJjYXB0aW9uIjoiQm9vayBOb3chIiwiZm9yZUNvbG9yIjoiI2ZmZmZmZiIsImJhY2tDb2xvciI6IiNkYjAyMjQifQ==.png" alt="Book Now!" title="Book Now!" border="0" /></a>
+        <a class="btn btn--primary-gradient" href="#" id="trekksoft_9491">
             {% trans %}button.reservation{% endtrans %}
         </a>
+{#        <a class="btn btn--primary-gradient"#}
+{#                #}{#target="_self" href="{{ url }}">#}
+{#           target="_self" href="{{ path('booking') }}">#}
+{#        </a>#}
     </div>
 </section>
