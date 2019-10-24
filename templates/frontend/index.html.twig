@@ -48,13 +48,16 @@
     <script src="https://cubyke.trekksoft.com/en_GB/api/public"></script>
     <script>
         (function() {
-            var button = new TrekkSoft.Embed.Button();
-            button
-                .setAttrib("target", "fancy")
-                .setAttrib("entryPoint", "tour_details")
-                .setAttrib("tourId", "283249")
-                .setAttrib("fancywidth", "615px")
-                .registerOnClick("#trekksoft_9491");
+
+            for (let i = 1; i <= 5; i++){
+                var button = new TrekkSoft.Embed.Button();
+                button
+                    .setAttrib("target", "fancy")
+                    .setAttrib("entryPoint", "tour_details")
+                    .setAttrib("tourId", "283249")
+                    .setAttrib("fancywidth", "615px")
+                    .registerOnClick("#trekksoft_6610_"+i);
+            }
         })();
     </script>
 {% endblock %}
