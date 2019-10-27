@@ -21,7 +21,7 @@
                 setTimeout(function() {
                     defer(method);
 
-                }, 50);
+                }, 800);
             }
         }
         defer();
@@ -222,9 +222,90 @@
             {{ form_row(form.bookingLang, {value: app.request.locale}) }}
             {{ form_widget(form._token) }}
             {{ form_row(form.campaign, {value: 'vinales-web-form'}) }}
-            <input class="btn btn--primary-gradient" type="submit" value="{% trans %}button.send{% endtrans %}">
+
+            <div class="reservation__content__form__division"></div>
+
+
+            <div class="reservation__content__form__group">
+                <h2>
+                    {% trans %}
+                        form.text.deposit.header
+                    {% endtrans %}
+                </h2>
+
+                <div class="reservation__content__form__group__single trekksoft_deposit">
+
+
+                    <div class="form__item">
+                        <p>
+                            <b>
+                                {% trans %}
+                                    form.text.deposit.description
+                                {% endtrans %}
+                            </b>
+                        </p>
+                        <a class="btn btn--primary-gradient" href="#" id="trekksoft_9119">
+                            {% trans %}
+                                button.pay.deposit
+                            {% endtrans %}
+                        </a>
+                    </div>
+                </div>
+
+            </div>
+
+            <div class="reservation__content__form__division"></div>
+
+
+            <div class="reservation__content__form__group submit-area">
+                <h2>
+                    {% trans %}
+                        form.text.submit.header
+                    {% endtrans %}
+                </h2>
+
+                <div class="reservation__content__form__group__single submit-btn-area">
+
+
+                    <div class="form__item">
+                        <p>
+                            <b>
+                                {% trans %}
+                                    form.text.submit.description
+                                {% endtrans %}
+                            </b>
+                        </p>
+                        <input class="btn btn--primary-gradient" type="submit" value="{% trans %}button.send{% endtrans %}">
+                    </div>
+                </div>
+
+
+            </div>
+
+
+
         {{ form_end(form, {'render_rest': false}) }}
     </div>
 </section>
 
 {% endblock body %}
+
+{% block javascripts %}
+    <script src="https://cubyke.trekksoft.com/en_GB/api/public"></script>
+    <script>
+
+        (function() {
+            console.log('init trekksoft')
+            // for (let i = 1; i <= 5; i++){
+                var button = new TrekkSoft.Embed.Button();
+                button
+                    .setAttrib("target", "fancy")
+                    .setAttrib("entryPoint", "tour_details")
+                    .setAttrib("tourId", "282391")
+                    .setAttrib("fancywidth", "615px")
+                    .registerOnClick("#trekksoft_9119");
+                    // .registerOnClick("#trekksoft_9119_"+i);
+            // }
+        })();
+    </script>
+{% endblock %}

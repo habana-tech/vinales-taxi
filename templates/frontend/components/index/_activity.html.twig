@@ -287,12 +287,13 @@
     </div>
 
     <div class="activities__button">
-        <a class="btn btn--primary-gradient" href="#" id="trekksoft_6610_3">
-            {% trans %}button.reservation{% endtrans %}
+        {#<a class="btn btn--primary-gradient" href="#" id="trekksoft_6610_3">#}
+            {#{% trans %}button.reservation{% endtrans %}#}
+        {#</a>#}
+        <a class="btn btn--primary-gradient"
+                {#target="_self" href="{{ url }}">#}
+           target="_self" href="{{ path('booking') }}">
+        {% trans %}button.reservation{% endtrans %}
         </a>
-{#        <a class="btn btn--primary-gradient"#}
-{#                #}{#target="_self" href="{{ url }}">#}
-{#           target="_self" href="{{ path('booking') }}">#}
-{#        </a>#}
     </div>
 </section>
