@@ -955,6 +955,11 @@ input[type="submit"] {
   .btn--primary {
     color: white;
     background-color: #60a902; }
+  .btn--small {
+    padding: .5em 1.5em;
+    font-size: 85%; }
+  .btn--inline {
+    line-height: 3em; }
   .btn--primary-gradient {
     color: white;
     background: linear-gradient(90deg, #60a902 80%, #776c6c);

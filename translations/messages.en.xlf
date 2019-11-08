@@ -541,6 +541,10 @@
         <source>Let us know what you think about travel with us!</source>
         <target>Let us know what you think about travel with us!</target>
       </trans-unit>
+      <trans-unit id="as3fadsf" resname="text.activities_3.goto.taxidrivers.group.tour">
+        <source>text.activities_3.goto.taxidrivers.group.tour</source>
+        <target>If you're looking for more economic option, you can travel in a group, all-inclusive for 61.10 USD</target>
+      </trans-unit>
     </body>
   </file>
 </xliff>

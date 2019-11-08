@@ -14,6 +14,15 @@
         background-color: $mainGreen;
     }
 
+    &--small{
+        padding: .5em 1.5em;
+        font-size: 85%;
+    }
+
+    &--inline{
+        line-height: 3em;
+    }
+
     &--primary-gradient{
         color: white;
         background: linear-gradient(90deg, #60a902 80%, #776c6c);

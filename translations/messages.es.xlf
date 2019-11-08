@@ -553,6 +553,10 @@
         <source>Let us know what you think about travel with us!</source>
         <target>Déjenos saber que piensa de viajar con nosotros!</target>
       </trans-unit>
+      <trans-unit id="as3fadsf" resname="text.activities_3.goto.taxidrivers.group.tour">
+        <source>text.activities_3.goto.taxidrivers.group.tour</source>
+        <target>Si buscas una opción más económica, puedes viajar en colectivo, con todo incluido por 61.10 USD.</target>
+      </trans-unit>
     </body>
   </file>
 </xliff>
