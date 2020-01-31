@@ -17,7 +17,7 @@ Lugar: {{ booking.pickupPlace }}
 
 Cantidad de personas: {{ booking.peopleCount }}
 
-Precio: {{ booking.price }} USD
+Precio: {{ booking.price ? booking.price ~ 'USD' : 'sin definir'  }}
 
 Detalles: {{ booking.pickupDetails }}
 

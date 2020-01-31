@@ -906,9 +906,6 @@
                                                                 <table style="width:100%;" class="cke_show_border" cellspacing="0" cellpadding="0" border="0">
                                                                     <tbody>
                                                                     <tr>
-                                                                        {#{% if booking.price is null %}#}
-                                                                        {#We will send you a quote for this trip.#}
-                                                                        {#{% else %}#}
                                                                         {% block emailPriceRow %}
                                                                         <td width="50%" align="left">
                                                                             <h3 style="font-size: 17px; line-height: 150%;">
@@ -918,7 +915,15 @@
                                                                             </h3>
                                                                         </td>
                                                                         <td align="right">
-                                                                            <h3 style="font-size: 17px; line-height: 150%;"><strong>{{ booking.price }}.00 USD</strong></h3>
+                                                                            <h3 style="font-size: 17px; line-height: 150%;">
+                                                                                <strong>
+                                                                                    {% if booking.price is null %}
+                                                                                          {% trans %}We will send you a quote for this trip.{% endtrans %}
+                                                                                    {% else %}
+                                                                                         {{ booking.price }}.00 USD
+                                                                                     {% endif %}
+                                                                                </strong>
+                                                                            </h3>
                                                                         </td>
                                                                         {% endblock emailPriceRow %}
                                                                     </tr>
