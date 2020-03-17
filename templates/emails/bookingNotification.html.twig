@@ -37,7 +37,7 @@
 
             <tr>
                 <th>Precio</th>
-                <td>{{ booking.price }} USD</td>
+                <td>{{ booking.price ? booking.price ~ 'USD' : 'sin definir'  }}</td>
             </tr>
             
             <tr>

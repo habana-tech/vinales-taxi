@@ -1,0 +1,138 @@
+'Your booking have been saved': 'Votre réservation a été enregistrée'
+'Address or Fly/Cruise number': 'Adresse ou numéro de vol / croisière'
+Index.title: bienvenu
+main.text: 'Excursion d´une journée de La Havane à Vinales. Un tour cubain authentique.'
+button.activities: Activités
+button.us: Nous
+button.other_options: Ailleurs
+button.contact: Contact
+button.reservation: Réservez
+main.subtitle_1: 'Prise en charge à l´aéroport'
+main.subtitle_2: 'Voyage depuis La Havane'
+main.subtitle_3: 'Chouffer de taxi'
+section_title.offers: 'Offerte d´excursion d´une journée de La Havane à Vinales.'
+text.activities_1.part_1: 'Nous vous assurons la prise en charge à l´aéroport, à la croisière, à l´hôtel ou à la maison à louer à La Havane et le retour à la fin de l´excursion.'
+text.activities_1.part_2: 'Promenez-vous dans les lieux de récolte du tabac, où vous pourrez acquérir des connaissances sur le tabac traditionnel cubain, en apprendre davantage sur sa plantation et son élaboration. Si vous le souhaitez, vous pouvez les fumer et emmener vos amis, vous pouvez déguster l''exquis café cubain et le rhum Guayabita del Pinar.'
+text.activities_1.part_3: 'Profitant de l''attrayante balade à cheval d''environ 2 heures, vous pourrez visiter lors de cette excursion un lac, situé dans la vallée du silence, d''une beauté naturelle extrême, car à votre goût, vous pourrez vous rafraîchir dans ses eaux froides de la chaleur du soleil cubain. . Seulement pour le prix supplémentaire de 20.00CUC par personne le tour à cheval de 2 heures.'
+text.activities_2.part_1: 'Visitez la Cueva del Indio, un refuge naturel de nos premiers habitants où vous pouvez profiter d´une promenade en bateau à travers d´eaux souterraines par le prix additionnel de 5.00 cuc par personne.'
+text.activities_2.part_2: 'Visitez le Mural de la Préhistoire, l´un des plus grands muraux extérieurs au monde. '
+text.activities_2.part_3: 'Visitez le belvédère de l´hôtel Los Jazmines et jouissez de la beauté du paysage naturel. '
+text.activities_2.part_4: 'Cette excursion est accompagné d´un délicieux déjeuner au restaurant par le prix additionnel de 15 cuc par personne.  '
+text.activities_3.part_1: 'Nous vous recommandons d´apporter des vêtements légers, des lunettes de soleil, un chapeau ou une casquette, une caméra pour prendre des belles photos et une bouteille d´eau. En plus, si vous voulez, apportez un peu plus d´argent pour acheter des tabacs. '
+text.activities_3.part_2: 'Nous vous recommandons de commencer cette excursion à 7 :30 h à cause du temps qu´il est nécessaire pour se transporter de La Havane à Vinales. Le retour à La Havane sera au soir, à la fin de l´excursion.'
+text.activities_3.part_3: 'Nous vous offrons un service individuel pour vous et pour toute votre famille.  '
+section_title.why_with_us: 'Pour quoi vous devez faire cette excursion avec nous ?'
+text.reason_1_part_1: 'Nous sommes au top cinq de'
+text.reason_1_part_2: 'depuis un an.'
+text.reason_2: 'Nous vous offrons de la PONTUALITÉ, des BONS PRIX et de CONFORT.'
+text.reason_3: 'Nous pouvons réserver les promenades à cheval et le déjeuner pour faire de cette excursion une expérience magnifique. '
+text.reason_4: 'BÉBÉS…, FAUTEUILS ROULANTS…, sans prix additionnel.'
+section_title.other_options: 'Est-ce que vous besoin de vous transporter à un autre lieu ?'
+destination.airport: Aéroport
+button.other_places: 'Regardez autres destinations'
+section_title.contact: 'Contact et questions fréquemment posées'
+subtitle.frequently_askly_questions: 'Des Questions Fréquentes'
+text.question_1: 'Est-ce que je peux réserver en ligne ?'
+text.answer_1: 'Oui, vous devez cliquer sur '
+button.reservation_form: Réservation
+text.question_2: 'Est-ce que je peux payer cash et dans quelle monnaie?'
+text.answer_2: 'Oui vous pouvez payer cash. Nous acceptons EUR, USD, CAD et CUC.'
+text.question_3: 'Le taxi à Vinales inclue le retour ?'
+text.answer_3: 'Oui, nous vous retournons au lieu de la prise en charge ou bien à quelque lieu de La Havane de votre préférence.'
+text.question_4: 'Est-ce que vous offrez de la prise en charge à l`aéroport ou au Croisière ?'
+text.answer_4: 'Oui, vous devez marquer cette option au '
+subtitle.send_message: 'Envoyez-nous un message'
+section_title.why_with_us.subtitle: 'Ilya plusieurs d´option mais'
+keywords: 'taxi à, excursions depuis La Havane, de la havane à vinales, tour cubain, taxi à l´aéroport, une journée de la havane à vinales, voyage havane, prix de taxi, chauffeurs de taxi '
+description: 'Si vous voulez exprimer un tour cubain authentique, la réponse c´est Vinales. Avec notre offerte d´une journée vous aurez plusieurs expériences, dès la nature au peuple cubain. Découvrez l´aventure d´une promenade á cheval, voyez les plantations de tabacs, la Cueva del Indio, le Mural de la Préhistoire, le belvédère Los Jazmines et profitez d´un délicieux déjeuner au restaurant.'
+title.reservation: Réservation
+field.pickup_place: 'Lieu de ramassage'
+label.pickup_place.option_1: Aéroport
+label.pickup_place.option_2: Croisière
+label.pickup_place.option_3: 'Hôtel ou maison de location'
+field.pickup_time: Heure
+text.advise_time: 'Nous vous recommandons commencer cette excursion à 7:30 h à cause du temps qu´on en besoin pour se transporter de La Havane à Vinales.'
+label.price: Prix
+label.offer: 'Nous vous enverrons une offre'
+field.personal_data: 'Comment pouvons-nous vous contacter?'
+image.description.mural: 'Mural de la Préhistoire '
+image.description.horse: 'Promenade à cheval, montagne et ciel dégagé'
+image.description.view: 'Plantation de tabac, montagne et ciel dégagé'
+image.description.indian_cave: 'Intérieur d´une grotte, Cueva del Indio'
+image.description.restaurant: 'Personnes au restaurant'
+image.description.tabacco: 'Personnes à la plantation de tabac'
+button.send: 'Envoyer réservation'
+field.number_passengers: 'Numéro de Personnes'
+image.description.mural_car: 'Notre taxi classique à Vinales'
+field.pickup_date: 'Date de prise en charge'
+title.reservation_processed: 'Votre réservation a été reçue'
+subtitle.thank: 'Merci de choisir vinales.taxi'
+text.reservation_made: 'La rèservation a été faite au nom de '
+text.reservation_pickup_time: 'Nous viendrons vous chercher à'
+text.amount_passenger: 'Le numéro de personnes est:'
+text.reservation_quota: 'Nous vous enverrons un devis pour ce voyage'
+text.total_cost: 'Il coute en adition:'
+text.pay_driver: 'Vous devez payer au chauffeur à la fin de l´excursion.'
+text.confirmation_email: 'Nous vous enverrons un email avec tous les détails de la réservation.    '
+text.contact_footer_mail: 'Vous pouvez nous contacter à '
+text.contact_footer_phone: 'ou téléphonez-nous au'
+label.pickup_place: 'Où allons-nous vous chercher?'
+span_pickup_place.option_1: 'Compagnie aérienne et numéro de vol'
+span_pickup_place.option_2: 'Nom du port et de la croisière'
+span_pickup_place.option_3: 'Hôtel ou adresse de la maison de location'
+label.pickup_date: Date
+field.name: 'Votre nom'
+field.email: 'Votre email'
+field.telephone: 'Votre numéro de tèlèphone'
+field.client_message: 'Donnez-nous plus d''infos'
+the.hotel.or.house: ''
+the.airport: 'l'''
+'looking for the flight with number': 'en attendant le numéro de vol'
+the.cruise: á
+at: á
+'on': le
+text.remainder_car_1: 'Nous avons seulement une voiture pour vous ce jour-là. S''il vous plaît, si vous devez faire des changements ou annuler votre réservation, vous devez nous en informer au moins 2 jours à l''avance, soit à notre adresse électronique'
+text.remainder_car_2: 'ou à notre numéro de téléphone'
+text.advice_time: 'Vous effectuez une réservation moins de 12 heures à l''avance. Nous traiterons votre réservation et si nous avons la disponibilité, nous vous contacterons dans l''heure qui suit. Dans tous les cas, nous vous recommandons vivement de nous contacter via notre téléphone'
+approved_booking_email_subject: 'Your booking for travel to Vinales was approved'
+disapproved_booking_email_subject: 'Your booking for travel to Vinales wasnt approved'
+Hi!: Hi!
+'this are you trip details': 'this are you trip details'
+Saludos: Greetings
+'Recientemente reservó un viaje a Viñales, Cuba, con los siguientes datos:': 'Recently, you booked a trip to Vinales, Cuba, with the followings details:'
+'Fecha y Hora:': 'Date and Time:'
+'Cantidad de personas:': 'Amount of travelers:'
+'Precio:': 'Price:'
+'Puede ver estos y otros detalles en la siguiente dirección web:': 'You can see this ans others details visiting the following URL:'
+'Your reservation has been approved, we will be waiting for you, following the information you provided.': 'Your booking has been approved, we will be waiting for you, following the information you provided.'
+'we have some news for you': 'we have some news for you'
+'Recently you tried to book a trip to Vinales, Cuba but due to the little time left to organize it, it was not possible to process your request. We recommend you try again with another date.': 'Recently you tried to book a trip to Vinales, Cuba but due to the little time left to organize it, it was not possible to process your request. We recommend you try again with another date.'
+'View details in browser': 'View details in browser'
+'is a branch of': 'is a branch of'
+'Who we are': 'Who we are'
+Services: Services
+Contacts: Contacts
+'You are receiving this email because you make a reservation in our site.': 'You are receiving this email because you make a reservation in our site.'
+'if this is not the case, please': 'if this is not the case, please'
+'let us know': 'let us know'
+'Thanks for choosing vinales.taxi': 'Thanks for choosing vinales.taxi'
+'Su reserva fue aprovada, le esperaremos según los datos que nos proporcionó.': 'Your booking was approved, we''ll be waiting for you as you asked.'
+'Total:': 'Total:'
+'The amount of passenger is:': 'The amount of passenger is:'
+'We recommend you bring light clothes, sunglasses, a hat or cap, camera, plus a bottle of water. Also a extra bit of cash for buying cigar if you want ;) The return to Havana will take place in the afternoon, at the end of the tour.': 'We recommend you bring light clothes, sunglasses, a hat or cap, camera, plus a bottle of water. Also a extra bit of cash for buying cigar if you want ;) The return to Havana will take place in the afternoon, at the end of the tour.'
+'We provide a private service only for you and your family.': 'We provide a private service only for you and your family.'
+'We will pick you up at': 'We will pick you up at'
+the: the
+'Hotel or House': 'Hotel or House'
+Airport: Airport
+Cruise: Cruise
+named: named
+'Hi! my name is Lesther Rodriguez.': 'Hi! my name is Lesther Rodriguez.'
+'We are small team with great passion for classic cars and adventures at the most amazing places that Cuba has to offer.': 'We are small team with great passion for classic cars and adventures at the most amazing places that Cuba has to offer.'
+'Your feedback is important': 'Your feedback is important'
+'Let us know what you think about travel with us!': 'Let us know what you think about travel with us!'
+form.text.deposit.header: Tout d'abord, un paiement de sécurité
+form.text.deposit.description: Pour confirmer votre réservation et tout préparer, vous devez verser une petite somme d’argent à titre de dépôt de garantie à l’avance.
+button.pay.deposit: Faire le paiement
+form.text.submit.header: Enfin, complétez la réservation
+form.text.submit.description: Vous recevrez un email contenant tous les détails de votre réservation et de votre paiement.
